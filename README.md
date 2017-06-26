@@ -1,2 +1,1 @@
-# Alligrater.github.io
-My Site
+# mysite
