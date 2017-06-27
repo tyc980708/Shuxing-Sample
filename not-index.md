@@ -1,3 +1,5 @@
+<center>
+
 # Welcome to My Blog!
 
 ### Hello World!
@@ -13,12 +15,13 @@
  Nothing here. Lame.
 
 <small>
-<center>
+
 <br/>
 <br/>
 
 
 <font color="AAAAAA"><i>You have reached the end. <br/>
 Nothing here. Lame. </i></font>
-</center>
 </small>
+</center>
+
