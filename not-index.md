@@ -21,6 +21,6 @@
 <br/>
 
 
-<i>You have reached the end. <br/>
-Nothing here. Lame. </i>
+<font color="AAAAAA"><i>You have reached the end. <br/>
+Nothing here. Lame. </i></font>
 </center>
