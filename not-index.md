@@ -21,6 +21,6 @@
 <br/>
 
 
-***You have reached the end. ***<br/>
-***Nothing here. Lame. ***
+<i>You have reached the end. <br/>
+Nothing here. Lame. </i>
 </center>
