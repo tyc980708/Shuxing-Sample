@@ -13,10 +13,12 @@
  Nothing here. Lame.
 
 
-<center>*
-*
+<center>
+\n
+\n
+
 
 ***You have reached the end. ***
-
+\n
 ***Nothing here. Lame. ***
 </center>
