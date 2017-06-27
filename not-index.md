@@ -1,16 +1,16 @@
 <center>
 
-# Welcome to My Blog!
+<h1> Welcome to My Blog! </h1>
 
-### Hello World!
+<h3> Hello World </h3>
 <small><i>By Myself</i></small><br/>
  But Nobody Came.
 
-### Jekyll + Markdown
+<h3> Jekyll + Markdown </h3>
 <small><i>By Myself</i></small><br/>
  Test Test Hello World
 
-### Nope.
+<h3> Nope. </h3>
 <small><i>By Nobody</i></small><br/>
  Nothing here. Lame.
 
