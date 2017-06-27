@@ -1,15 +1,15 @@
 # Welcome to My Blog!
 
 ### Hello World!
-***By Myself:***
+<small>***By Myself:***</small>
  Test Test Hello World
 
 ### Jekyll + Markdown
-***By Myself:***
+<small>***By Myself:***</small>
  Test Test Hello World
 
 ### Nope.
-***By Nobody:***
+<small>***By Nobody:***</small>
  Nothing here. Lame.
 
 
