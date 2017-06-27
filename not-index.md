@@ -1,5 +1,5 @@
 ## Welcome to Static Page!
 
-Baidu:[BBB](https://www.baidu.com)
+Visit [Baidu](https://www.baidu.com)
 
 123456
