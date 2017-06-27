@@ -1,15 +1,15 @@
 # Welcome to My Blog!
 
 ### Hello World!
-<font color="AAAAAA"><small><i>By Myself</i></small></font><br/>
+<small><i>By Myself</i></small><br/>
  Test Test Hello World
 
 ### Jekyll + Markdown
-<font color="AAAAAA"><small><i>By Myself</i></small></font><br/>
+<small><i>By Myself</i></small><br/>
  Test Test Hello World
 
 ### Nope.
-<font color="AAAAAA"><small><i>By Nobody</i></small></font><br/>
+<small><i>By Nobody</i></small><br/>
  Nothing here. Lame.
 
 <small>
