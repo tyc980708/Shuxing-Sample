@@ -1,5 +1,8 @@
-## Welcome to Static Page!
+## Welcome to My Blog!
 
-Visit [Baidu](https://www.baidu.com)
+### Hello World!
+###### *By Myself*
+Test Test Hello World
 
-123456
+### Jekyll + Markdown
+###### *By Myself*
