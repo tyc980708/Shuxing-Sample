@@ -14,11 +14,10 @@
 
 
 <center>
-\n
-\n
+<br/>
+<br/>
 
 
-***You have reached the end. ***
-\n
+***You have reached the end. ***<br/>
 ***Nothing here. Lame. ***
 </center>
