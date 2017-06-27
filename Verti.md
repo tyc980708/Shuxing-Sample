@@ -1,5 +1,0 @@
-#HELLO WORLD!
-##HELLO HELLO
-###BYE-BYE
-
- content
