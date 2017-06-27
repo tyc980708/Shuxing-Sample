@@ -2,14 +2,17 @@
 
 ### Hello World!
 <small><i>By Myself</i></small>
+<br/>
  Test Test Hello World
 
 ### Jekyll + Markdown
 <small><i>By Myself</i></small>
+<br/>
  Test Test Hello World
 
 ### Nope.
 <small><i>By Nobody</i></small>
+<br/>
  Nothing here. Lame.
 
 
