@@ -1,7 +1,18 @@
-h1 { color: #EA9215; }
-h2 { color: #9AA7B0; }
+h1 { 
+
+	color: #EA9215; 
+	text-align:center;
+
+}
+h2 { 
+	color: #9AA7B0;
+	text-align:center; 
+}
 hr { background-color:#9AA7B0; }
-small {color: #5A6770}
+small {
+	color: #5A6770;
+	text-align:center;
+}
 body {
   color: #CCCCCC;
   background: #303841;
