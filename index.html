@@ -2,17 +2,27 @@
 <html>
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
+
 $(document).ready(function(){
   $("blockquote").mouseover(function(){
     $("blockquote").css("color","#C9C9C9");
   });
-});
 
-$(document).ready(function(){
-  $("blockquote").mouseleave(function(){
+  $("blockquote").mouseout(function(){
     $("blockquote").css("color","#BBBBBB");
   });
 });
+
+$(document).ready(function(){
+  $("img").mouseover(function(){
+    $("img").css("opacity","1.0");
+  });
+
+  $("img").mouseout(function(){
+    $("img").css("opacity","0.7");
+  });
+});
+
 </script>
 
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -22,7 +32,20 @@ $(document).ready(function(){
 	align:center;
 	text-align:justify;
     background-color:#404851;
-    margin:5px auto;
+    margin:10px auto;
+	padding-bottom:10px;
+	padding-top:10px;
+	padding-left:20px;
+	padding-right:20px;
+	max-width:800px;
+	min-width:400px;
+}
+
+.headings {
+	align:center;
+	text-align:center;
+    background-color:#404851;
+    margin:auto;
 	padding-bottom:10px;
 	padding-top:10px;
 	padding-left:20px;
@@ -32,17 +55,17 @@ $(document).ready(function(){
 }
 </style>
 
-<body>
+<body> 
 
 <h1 align="center">基于HTML的博客</h1>
-<h2 align="center">假装有副标题</h2>
+<h2 align="center">Alligrater</h2>
 
 <div class = "special">
-
 <h2>为什么在css中设置了font-family:" 微软雅黑"没有用？</h2>
 <center>
 <small>作者：很强</small>
 </center>
+
 <blockquote>建议使用font-family: "Microsoft YaHei";
 <br/>
 支持UTF-8和GB2312字符集。
@@ -63,6 +86,7 @@ body {font-family: "Microsoft YaHei";}对表单input就不生效，
 <center>
 <small>作者：非常强</small>
 </center>
+
 <blockquote>另一个创建响应式设计的方法，是使用现成的 CSS 框架。
 <br/>
 Bootstrap 是最流行的开发响应式 web 的 HTML, CSS, 和 JS 框架。
@@ -75,6 +99,7 @@ Bootstrap 帮助您开发在任何尺寸都外观出众的站点：显示器、�
 <center>
 <small>作者：是最帅的</small>
 </center>
+
 <blockquote>Test Test 123 123 123
 <br/>
 <img src="2.jpg"/>
@@ -86,6 +111,7 @@ Bootstrap 帮助您开发在任何尺寸都外观出众的站点：显示器、�
 <center>
 <small>作者：超帅</small>
 </center>
+
 <blockquote>现在这篇已经一点也不特殊了。
 <br/>
 </blockquote>	
