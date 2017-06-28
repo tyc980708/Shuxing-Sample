@@ -2,11 +2,13 @@ h1 {
 
 	color: #EA9215; 
 	text-align:center;
+	  font-family: "Microsoft YaHei";
 
 }
 h2 { 
 	color: #9AA7B0;
 	text-align:center; 
+  font-family: "Microsoft YaHei";
 }
 hr { background-color:#9AA7B0; }
 small {
@@ -18,7 +20,12 @@ body {
   background: #303841;
   margin: 50px;
   padding: 50px;
-  font-family: "Microsoft Yahei";
+  font-family: "Microsoft JhengHei";
+
+  }
+  
+  p {
+	
   }
   
 img {
