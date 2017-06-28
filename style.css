@@ -1,0 +1,11 @@
+h1 { color: #EA9215; }
+h2 { color: #9AA7B0; }
+hr { background-color:#9AA7B0; }
+small {color: #5A6770}
+body {
+  color: #CCCCCC;
+  background: #303841;
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft Yahei";
+  }
