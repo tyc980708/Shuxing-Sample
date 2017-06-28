@@ -1,5 +1,19 @@
 <!DOCTYPE HTML>
 <html>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("blockquote").mouseover(function(){
+    $("blockquote").css("color","#C9C9C9");
+  });
+});
+
+$(document).ready(function(){
+  $("blockquote").mouseleave(function(){
+    $("blockquote").css("color","#BBBBBB");
+  });
+});
+</script>
 
 <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -8,7 +22,6 @@
 	align:center;
 	text-align:justify;
     background-color:#404851;
-    color:#BBBBBB;
     margin:5px auto;
 	padding-bottom:10px;
 	padding-top:10px;
