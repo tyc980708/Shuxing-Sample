@@ -161,10 +161,11 @@ $(document).ready(function(){
 </div>
 
 <div class = "doc_text">
-<blockquote>都会调用.animate()函数来自动滚动至距页面顶部1/4的位置
+<blockquote>每次点击标题展开时，都会调用.animate()函数来自动滚动至距页面顶部1/4的位置。
 <br/>
-在阅读的时候相当方便。
+在阅读的时候相当方便。同时，通过.is(':hidden')检测，关闭内容时页面不会调用.animate()。
 <center>
+<br/>
 <img src="2.jpg"/>
 </center>
 </blockquote>
