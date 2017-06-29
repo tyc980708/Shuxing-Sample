@@ -4,7 +4,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$(".doc_text").stop();
-    $(".doc_text").slideUp(10);
+    $(".doc_text").hide();
 });
 
 $(document).ready(function(){
@@ -21,18 +21,21 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $(".heading").click(function(){
+  	var size = $(window).height();
+	var X = $(this).position().top;
     $(this).parent().find(".doc_text").stop();
     $(this).parent().find(".doc_text").slideToggle("fast");
+	$("html,body").animate({scrollTop:X-size/4*1}, 500);
   });
 });
 
 $(document).ready(function(){
   $("img").mouseover(function(){
-    $("img").css("opacity","1.0");
+    $(this).css("opacity","1.0");
   });
 
   $("img").mouseout(function(){
-    $("img").css("opacity","0.7");
+    $(this).css("opacity","0.7");
   });
 });
 
@@ -123,15 +126,16 @@ $(document).ready(function(){
 
 <div class = "doc_frame">
 <div class = "heading">
-<h2>↓这几篇文章的位置真反人类↓</h2>
+<h2>点击标题展开的改进</h2>
 <center>
 <small>By Alligrater</small>
 </center>
 </div>
 
 <div class = "doc_text">
-<blockquote>靠近下方的文章，虽然也有选中标题出现文字的特技，但是因为没有自动滚动，所以下面的文章读起来非常不方便（惨）
+<blockquote>都会调用.animate()函数来自动滚动至距页面顶部1/4的位置
 <br/>
+在阅读的时候相当方便。
 <center>
 <img src="2.jpg"/>
 </center>
@@ -166,10 +170,12 @@ $(document).ready(function(){
 </blockquote>	
 </div></div>
 
+
+ 
 <center>
 <br/>
 <br/>
-<i><small>没有更多文章</small>
+<i><small id="scb">没有更多文章</small>
 <br/>
 <small>(真可惜)</small></i>
 </center>

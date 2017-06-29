@@ -6,18 +6,14 @@
 <head>
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-  $("button").mouseover(function(){
-    $("button").
-  });
-});
-
-$(document).ready(function(){
-  $("blockquote").mouseleave(function(){
-    $("blockquote").css("color","#BBBBBB");
-  });
-});
+function loadXMLDoc(){
+	var xmlhttp=new XMLHttpRequest();
+	xmlhttp.open("GET","test1.txt",false);
+	xmlhttp.send();
+}
 </script>
 
 </head>
+
+<button type="button" onclick="loadXMLDoc()">通过 AJAX 改变内容</button>
 </html>
