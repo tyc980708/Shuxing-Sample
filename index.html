@@ -2,6 +2,7 @@
 <html>
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
+
 $(document).ready(function(){
 	$(".doc_text").stop();
     $(".doc_text").hide();
@@ -17,15 +18,23 @@ $(document).ready(function(){
   });
 });
 
-
+var X;
+var size;
 
 $(document).ready(function(){
   $(".heading").click(function(){
-  	var size = $(window).height();
-	var X = $(this).position().top;
+  	size = $(window).height();
+	X = $(this).position().top;
     $(this).parent().find(".doc_text").stop();
-    $(this).parent().find(".doc_text").slideToggle("fast");
+	$(this).parent().find(".doc_text").slideToggle("fast");
 	$("html,body").animate({scrollTop:X-size/4*1}, 500);
+
+  });
+});
+
+$(document).ready(function(){
+  $("#wrap").click(function(){
+	$('html, body').animate({scrollTop : 0}, 500);
   });
 });
 
@@ -83,7 +92,22 @@ $(document).ready(function(){
 
 <h1 align="center">基于HTML的(反人类)博客</h1>
 <h2 align="center">By Alligrater</h2>
+<br/>
+<br/>
 
+<div class = "doc_frame">
+<div class = "heading">
+<h2>[伪·置顶]点击相应标题即可浏览文章内容</h2>
+<center>
+<small>By Alligrater</small>
+</center>
+</div>
+
+<div class = "doc_text">
+<blockquote>没错，就是要这么反人类。是不是很6666（雾）？
+<br/>
+</blockquote>	
+</div></div>
 
 <div class = "doc_frame">
 <div class = "heading">
@@ -144,20 +168,6 @@ $(document).ready(function(){
 
 <div class = "doc_frame">
 <div class = "heading">
-<h2>点击相应标题即可浏览文章内容</h2>
-<center>
-<small>By Alligrater</small>
-</center>
-</div>
-
-<div class = "doc_text">
-<blockquote>没错，就是要这么反人类。是不是很6666（雾）？
-<br/>
-</blockquote>	
-</div></div>
-
-<div class = "doc_frame">
-<div class = "heading">
 <h2>不存在的第五篇文章</h2>
 <center>
 <small>By Alligrater</small>
@@ -169,6 +179,10 @@ $(document).ready(function(){
 <br/>
 </blockquote>	
 </div></div>
+
+<aside id="wrap" style="position:fixed; bottom:100px; right:80px; opacity:0.5;">
+  <img src="top.png"; width="50px";height="50px";></section>
+</aside>
 
 
  
