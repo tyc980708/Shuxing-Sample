@@ -26,9 +26,13 @@ $(document).ready(function(){
   	size = $(window).height();
 	X = $(this).position().top;
     $(this).parent().find(".doc_text").stop();
+	if ($(this).parent().find(".doc_text").is(':hidden')) {
+		$("html,body").animate({scrollTop:X-size/4*1}, 500);
+	}
+	else{
+	
+	}
 	$(this).parent().find(".doc_text").slideToggle("fast");
-	$("html,body").animate({scrollTop:X-size/4*1}, 500);
-
   });
 });
 
