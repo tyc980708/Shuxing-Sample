@@ -2,6 +2,10 @@
 <html>
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
+$(document).ready(function(){
+	$(".doc_text").stop();
+    $(".doc_text").slideUp(10);
+});
 
 $(document).ready(function(){
   $("blockquote").mouseover(function(){
@@ -10,6 +14,15 @@ $(document).ready(function(){
 
   $("blockquote").mouseout(function(){
     $("blockquote").css("color","#BBBBBB");
+  });
+});
+
+
+
+$(document).ready(function(){
+  $(".heading").click(function(){
+    $(this).parent().find(".doc_text").stop();
+    $(this).parent().find(".doc_text").slideToggle("fast");
   });
 });
 
@@ -28,7 +41,7 @@ $(document).ready(function(){
 <link rel="stylesheet" type="text/css" href="style.css">
 
 <style>
-.special {
+.doc_text {
 	align:center;
 	text-align:justify;
     background-color:#404851;
@@ -41,7 +54,7 @@ $(document).ready(function(){
 	min-width:400px;
 }
 
-.headings {
+.doc_frame {
 	align:center;
 	text-align:center;
     background-color:#404851;
@@ -57,65 +70,91 @@ $(document).ready(function(){
 
 <body> 
 
-<h1 align="center">基于HTML的博客</h1>
-<h2 align="center">Alligrater</h2>
+<h1 align="center">基于HTML的(反人类)博客</h1>
+<h2 align="center">By Alligrater</h2>
 
-<div class = "special">
-<h2>为什么在css中设置了font-family:" 微软雅黑"没有用？</h2>
+
+<div class = "doc_frame">
+<div class = "heading">
+<h2>jQuery实现选中标题后展示文字</h2>
 <center>
-<small>作者：很强</small>
+<small>By Alligrater</small>
 </center>
-
-<blockquote>建议使用font-family: "Microsoft YaHei";
-<br/>
-支持UTF-8和GB2312字符集。
-<br/>
-不生效的3种情况：
-<br/>
-1.当此属性定义的是全局样式时，对于表单类的标签就不会生效，还需要再次定义如：
-body {font-family: "Microsoft YaHei";}对表单input就不生效，
-还需要定义一个input {font-family: "Microsoft YaHei";}才可以。
-<br/>
-2.本地计算机不存在微软雅黑字体，有的系统默认没有微软雅黑，则一般默认为宋体，只要下载一个微软雅黑字体，安装后即可。
-<br/>
-3.还有一个是字符集问题，建议把中文font-family:" 微软雅黑";改为font-family: "Microsoft YaHei";字符集申明一下UTF-8或GB2312。</blockquote>
 </div>
 
-<div class = "special">
-<h2>使用 Bootstrap</h2>
-<center>
-<small>作者：非常强</small>
-</center>
+<div class = "doc_text">
+<blockquote>嘛，反正成功了，就是现在页面上的这个效果。
+<br/>
+利用slideUp()和slideDown()可以实现这个效果
+<br/>
+然而，还需要增加stop()函数来阻止展示和消失动画鬼畜。
+<br/>
+最开始的时候，当你选中一个标题时，所有标题下面的文字都会出现。这并不是我想要的效果。
+<br/>
+但是，后来找到了这样的办法：$(this).find(".doc_text")，于是现在只有选中标题下面的文字才会出现。
+<br/>
+综上所述，大体还是比较容易的。不过，好像性能上有问题？
+</blockquote>
+</div></div>
 
-<blockquote>另一个创建响应式设计的方法，是使用现成的 CSS 框架。
-<br/>
-Bootstrap 是最流行的开发响应式 web 的 HTML, CSS, 和 JS 框架。
-<br/>
-Bootstrap 帮助您开发在任何尺寸都外观出众的站点：显示器、笔记本电脑、平板电脑或手机：</blockquote>
+<div class = "doc_frame">
+<div class = "heading">
+<h2>CSS是个好东西</h2>
+<center>
+<small>By Alligrater</small>
+</center>
 </div>
 
-<div class = "special">
-<h2>带图片文章3</h2>
-<center>
-<small>作者：是最帅的</small>
-</center>
+<div class = "doc_text">
+<blockquote>改模板真方便，而且效果惊人。
+<br/>
+不知道高到哪里去了。
+<br/>
+</blockquote>
+</div></div>
 
-<blockquote>Test Test 123 123 123
+<div class = "doc_frame">
+<div class = "heading">
+<h2>↓这几篇文章的位置真反人类↓</h2>
+<center>
+<small>By Alligrater</small>
+</center>
+</div>
+
+<div class = "doc_text">
+<blockquote>靠近下方的文章，虽然也有选中标题出现文字的特技，但是因为没有自动滚动，所以下面的文章读起来非常不方便（惨）
 <br/>
 <img src="2.jpg"/>
 </blockquote>
+</div></div>
+
+<div class = "doc_frame">
+<div class = "heading">
+<h2>点击相应标题即可浏览文章内容</h2>
+<center>
+<small>By Alligrater</small>
+</center>
 </div>
 
-<div class = "special">
-<h2>特殊文章4</h2>
-<center>
-<small>作者：超帅</small>
-</center>
-
-<blockquote>现在这篇已经一点也不特殊了。
+<div class = "doc_text">
+<blockquote>没错，就是要这么反人类。是不是很6666（雾）？
 <br/>
 </blockquote>	
+</div></div>
+
+<div class = "doc_frame">
+<div class = "heading">
+<h2>不存在的第五篇文章</h2>
+<center>
+<small>By Alligrater</small>
+</center>
 </div>
+
+<div class = "doc_text">
+<blockquote>这就是第五篇文章？
+<br/>
+</blockquote>	
+</div></div>
 
 <center>
 <br/>
