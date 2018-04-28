@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$(".doc_text").stop();
+    $(".doc_text").hide();
+});
+
+$(document).ready(function(){
+  $("blockquote").mouseover(function(){
+    $(this).css("color","#C9C9C9");
+  });
+
+  $("blockquote").mouseout(function(){
+    $(this).css("color","#BBBBBB");
+  });
+});
+
+var X;
+var size;
+
+$(document).ready(function(){
+  $(".heading").click(function(){
+  	size = $(window).height();
+	X = $(this).position().top;
+    $(this).parent().find(".doc_text").stop();
+	if ($(this).parent().find(".doc_text").is(':hidden')) {
+		$("html,body").animate({scrollTop:X-size/4*1}, 500);
+	}
+	else{
+	
+	}
+	$(this).parent().find(".doc_text").slideToggle("fast");
+  });
+});
+
+$(document).ready(function(){
+  $("#wrap").click(function(){
+	$('html, body').animate({scrollTop : 0}, 500);
+  });
+});
+
+$(document).ready(function(){
+  $("img").mouseover(function(){
+    $(this).css("opacity","1.0");
+  });
+
+  $("img").mouseout(function(){
+    $(this).css("opacity","0.7");
+  });
+});
+
+</script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<style>
+.doc_text {
+	align:center;
+	text-align:justify;
+    background-color:#404851;
+    margin:10px auto;
+	padding-bottom:10px;
+	padding-top:10px;
+	padding-left:10px;
+	padding-right:10px;
+	max-width:800px;
+	min-width:500px;
+}
+
+.doc_frame {
+	align:center;
+	text-align:center;
+    background-color:#404851;
+    margin:3px auto;
+	padding-bottom:10px;
+	padding-top:10px;
+	padding-left:20px;
+	padding-right:20px;
+	max-width:800px;
+	min-width:500px;
+}
+
+.heading {
+	align:center;
+	text-align:center;
+	margin:3px auto;
+	max-width:800px;
+	min-width:500px;
+}
+</style>
+
+<body> 
+
+<h1 align="center">The Portfolio Based off HTML</h1>
+<h2 align="center">By Shuxing "Alligrater" Li</h2>
+<br/>
+<br/>
+
+<div class = "doc_frame">
+<div class = "heading">
+<h2>[Pinned]Click on a Title to Expand</h2>
+<center>
+<small>By Alligrater</small>
+</center>
+</div>
+
+<div class = "doc_text">
+<blockquote>The page utilizes jQuery codes to have this effect.
+<br/>Using .slideUp() and .slideDown(), we were able to expand the article inside a page.
+<br/>It also features auto scrolling, so the you will always be viewing the articles at approximately eye level.
+
+</blockquote>	
+</div>
+</div>
+
+<div class = "doc_frame">
+<div class = "heading">
+<h2>[Pinned]About Me</h2>
+<center>
+<small>By Alligrater</small>
+</center>
+</div>
+
+<div class = "doc_text">
+<blockquote>
+<br/>
+Hello, I am Shuxing Li, a computer science / IMGD double major student in WPI.
+<br/>
+As of D-Term, 2018, many were learnt from the CS3041 Design Process. Here's some of our designs.
+</blockquote>
+</div>
+</div>
+
+<div class = "doc_frame">
+<div class = "heading">
+<h2>Design for Others</h2>
+<center>
+<small>By Alligrater</small>
+</center>
+</div>
+
+<div class = "doc_text">
+<blockquote>
+<img src="DFO.png" height="100%" width="100%"/>
+<br/>
+In this design, we attempted to recreate Worcester Public Library's homepage into a smartphone application. The application is intended to be used by women who are aged 30-40, who is more likely to have less time, and not so skilled with technologies.
+<br/>
+<br/>
+ <a href="https://medium.com/@hr23232323/designing-for-others-60cee5bf62b3">You can visit the Medium page here.</a>
+</blockquote>
+</div></div>
+
+<div class = "doc_frame">
+<div class = "heading">
+<h2>Design for Understanding</h2>
+<center>
+<small>By Alligrater</small>
+</center>
+</div>
+
+<div class = "doc_text">
+<blockquote>
+<img src="DFU.png" height="100%" width="100%"/>
+<br/>
+We looked up the data on billionaires all over the world, and attempted to visualize them with both graphs and a short video. The graphs attempted to show a gender difference between the billionaires, and how their age differents.
+<br/>
+<br/>
+ <a href="https://medium.com/@tiffanykayo96/design-for-understanding-billionaire-data-b04b9f6ba220">You can visit the Medium page here.</a>
+</center>
+</blockquote>
+</div></div>
+
+<div class = "doc_frame">
+<div class = "heading">
+<h2>Design for Tension</h2>
+<center>
+<small>By Alligrater</small>
+</center>
+</div>
+
+<div class = "doc_text">
+<blockquote>
+<iframe width="100%" height="393" src="https://www.youtube.com/embed/vC1sTFoBqHs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<br/>
+<br/>
+A chatbot is created to take with you about the animal testing issues. He will ask some questions, or answer some of your questions. This is the Animal Testing Bot(ATB).
+<br/>
+<br/>
+ <a href="https://medium.com/@corrinmcourville/design-for-tension-8fa1dcdc96dc">You can visit the Medium page here.</a>
+</blockquote>	
+</div></div>
+
+<div class = "doc_frame">
+<div class = "heading">
+<h2>Design for Wellbeing</h2>
+<center>
+<small>By Alligrater</small>
+</center>
+</div>
+
+<div class = "doc_text">
+<blockquote>
+<iframe width="100%" height="393" src="https://www.youtube.com/embed/8Kjkheb4-PA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<br/>
+<br/>
+We used Affectiva API to create this webpage. Turn on your camera, and you will be able to hear music based on your emotions.
+<br/>
+<br/>
+ <a href="https://medium.com/@matticoli/design-for-wellbeing-reflecting-users-emotional-state-using-dynamic-music-and-visual-effects-ce55358ae68">You can visit the Medium page here.</a>
+</blockquote>	
+</div></div>
+
+
+<aside id="wrap" style="position:fixed; bottom:100px; right:80px; opacity:0.5;">
+  <img src="top.png"; width="50px";height="50px";></section>
+</aside>
+
+<div class = "doc_frame">
+<div class = "heading">
+<h2>The Design Manifesto: A Wrap Up</h2>
+<center>
+<small>By Alligrater</small>
+</center>
+</div>
+
+<div class = "doc_text">
+<blockquote>
+<br/>
+As all projects are coming to an end, many things had an effect on my design ideas. This is my design manifesto.
+<br/>
+ <a href="https://medium.com/@erelzly/design-manifesto-how-the-design-process-changed-my-concepts-cd21f37e3c84">You can visit the Medium page here.</a>
+</blockquote>
+</div>
+</div>
+
+
+ 
+<center>
+<br/>
+<br/>
+<i><small id="scb">You have reached the end.</small>
+<br/>
+<small>(Lame.)</small></i>
+</center>
+</body>
+</html>
