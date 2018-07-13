@@ -29,7 +29,10 @@ var display = 15;
 var time = 2000;
 var score = 0;
 
-var acceptinput = true;
+var darktime = 0;
+var waitforinput = true;
+
+var bjoe;
 
 class Sprite{
 	
@@ -72,7 +75,6 @@ class MUR extends Sprite{
 	}
 	
 	update(){
-		if(acceptinput){
 			if (keyIsDown(87)) {
 				this.y -= 5;
 			}
@@ -85,7 +87,6 @@ class MUR extends Sprite{
 			if (keyIsDown(68)) {
 				this.x += 5;
 			}
-		}
 
 		
 		if(this.x > document.body.clientWidth){
@@ -249,13 +250,10 @@ class popout extends Sprite{
 
 	ready(){
 		display = 40;
+		bjoe.play();
 	}
 	
 	show(){
-		if(display == 40){
-			//play a sound fx. implement later.
-		}
-		
 		if(display > 0){
 			display -= 1;
 			imageMode(CENTER);
@@ -268,6 +266,11 @@ class popout extends Sprite{
 		}
 	}
 	
+}
+
+function preload() {
+  soundFormats('mp3', 'ogg');
+  bjoe = loadSound('https://Alligrater.github.io/soudayo.wav');
 }
 
 function setup(){
@@ -302,25 +305,46 @@ function setup(){
 }
 
 function draw(){
+	background("rgba(0,0,0,1)");
+	textAlign(LEFT);
 	textSize(32);
 	fill(255, 255, 255);
 	text('SCORE: ' + score, 10, 30);
 	
 	text('TIME: ' + time, 10, 80);
 
-	if(time < 0){
-		acceptinput = false;
-		
+	
+	if(waitforinput){
+		textSize(32);
+		fill(255, 255, 255);
+		textAlign(CENTER);
+		text('PRESS ANY KEY TO CONTINUE', document.body.clientWidth/2, document.body.clientHeight/2);
+	}
+	if (keyIsPressed === true) {
+		waitforinput = false;
+	}
+
+	if(time < 0 || waitforinput){
+		if(time < 0){
+			darktime += 1;
+			if(darktime >= 50){
+				text('PRESS ANY KEY TO RESTART', document.body.clientWidth/2, document.body.clientHeight/2);
+				if(keyIsPressed === true){
+					window.location.reload()
+				}
+			}
+
+		}
 	}
 	else{
 		
 
 		time -= 1;
-		background("rgba(0,0,0,0.5)");
+
 		yjs.findpath();
 		yjs.update();
 			
-		yjs.show();
+
 		for(var i = 0; i < kmrz.length; i++){
 			kmrz[i].update();
 			kmrz[i].show();
@@ -367,15 +391,13 @@ function draw(){
 			}
 		}
 
-	}
+		
 
+		
+		senpai.update();
+
+	}
+	yjs.show();
 	sdy.show();
-	
-	//update mouseX and mouseY;
-	
-	mx = mouseX;
-	my = mouseY;
-	
-	senpai.update();
 	senpai.show();
 }
