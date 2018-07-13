@@ -26,13 +26,15 @@ var spawnchance = 0.3;
 var display = 15;
 
 
-var time = 2000;
+var time = 2050;
 var score = 0;
 
 var darktime = 0;
 var waitforinput = true;
 
 var bjoe;
+
+var alerttime = 0;
 
 class Sprite{
 	
@@ -204,11 +206,6 @@ class YJSNPI extends Sprite{
 		var xdiff = this.x - senpai.x;
 		var ydiff = this.y - senpai.y;
 		
-		if(!keyIsDown(87) && !keyIsDown(65) && !keyIsDown(83) && !keyIsDown(68)){
-			this.xvel = 0;
-			this.yvel = 0;
-		}
-		else{
 			if(xdiff == 0){
 				this.xvel = 0;
 				this.yvel = ydiff>0?-4:4;
@@ -232,7 +229,6 @@ class YJSNPI extends Sprite{
 					this.xvel = xdiff>0?-4*percentage:4*percentage;				
 				}
 			}
-		}
 
 		
 	}
@@ -279,8 +275,8 @@ function setup(){
 	//Learned!
 	
 	imageer = loadImage("https://Alligrater.github.io/MUR.png");
-	tdkr = loadImage("https://Alligrater.github.io/SUZUKI.png");
-	kmkmr = loadImage("https://Alligrater.github.io/KMR.png");
+	tdkr = loadImage("https://Alligrater.github.io/KMR.png");
+	kmkmr = loadImage("https://Alligrater.github.io/SUZUKI.png");
 	soudayo = loadImage("https://Alligrater.github.io/SDY.png");
 	for(var i = 0; i < 3; i++){
 		var x = Math.random()*document.body.clientWidth;
@@ -308,19 +304,29 @@ function draw(){
 	background("rgba(0,0,0,1)");
 	textAlign(LEFT);
 	textSize(32);
+	alerttime -= 1;
+	
 	fill(255, 255, 255);
 	text('SCORE: ' + score, 10, 30);
 	
-	text('TIME: ' + time, 10, 80);
+	if(alerttime >= 0){
+		fill(255, 0, 0);
+		text('TIME: ' + time, 10 + Math.random()*8-4, 80 + Math.random()*8-4);
+	}
+	else{
+		fill(255, 255, 255);
+		text('TIME: ' + time, 10, 80);
+	}
+
 
 	
 	if(waitforinput){
 		textSize(32);
 		fill(255, 255, 255);
 		textAlign(CENTER);
-		text('PRESS ANY KEY TO CONTINUE', document.body.clientWidth/2, document.body.clientHeight/2);
+		text('PRESS ENTER TO CONTINUE', document.body.clientWidth/2, document.body.clientHeight/2);
 	}
-	if (keyIsPressed === true) {
+	if (keyIsDown(13)) {
 		waitforinput = false;
 	}
 
@@ -329,8 +335,8 @@ function draw(){
 			darktime += 1;
 			if(darktime >= 50){
 				textAlign(CENTER);
-				text('PRESS ANY KEY TO RESTART', document.body.clientWidth/2, document.body.clientHeight/2);
-				if(keyIsPressed === true){
+				text('PRESS ENTER TO RESTART', document.body.clientWidth/2, document.body.clientHeight/2);
+				if(keyIsDown(13)){
 					window.location.reload()
 				}
 			}
@@ -349,7 +355,7 @@ function draw(){
 		for(var i = 0; i < kmrz.length; i++){
 			kmrz[i].update();
 			kmrz[i].show();
-			if(yjs.collides(kmrz[i])){
+			if(senpai.collides(kmrz[i])){
 				
 				//give it a vfx first
 				sdy.ready();
@@ -389,6 +395,13 @@ function draw(){
 				difficulty+=0.05;
 				score += 1;
 	
+			}
+			
+			if(yjs.collides(senpai)){
+				time -=50;
+				yjs.x = Math.random()*document.body.clientWidth;
+				yjs.y = Math.random()*document.body.clientHeight;
+				alerttime = 50;
 			}
 		}
 
