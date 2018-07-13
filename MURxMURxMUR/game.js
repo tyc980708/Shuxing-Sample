@@ -11,6 +11,7 @@ var imageer;
 var tdkr;
 var kmkmr;
 var soudayo;
+var guide;
 
 var difficulty = 1.0; //Difficulty Multiplier
 
@@ -195,6 +196,15 @@ class YJSNPI extends Sprite{
 		
 	}
 	
+	collides(spr){
+		if(this.x < (spr.x+spr.sizex-15) && this.x > (spr.x-spr.sizex+15) && this.y > (spr.y-spr.sizey+15) && this.y < (spr.y+spr.sizey-15)){
+			//Collides.	
+			//return something....?
+			return true;
+		}
+		return false;
+	}
+	
 	findpath(){
 		//KMR always charges at the player. with top speed (5px/sec)
 		//shooting them puts them into a cooldown.
@@ -278,6 +288,7 @@ function setup(){
 	tdkr = loadImage("https://Alligrater.github.io/KMR.png");
 	kmkmr = loadImage("https://Alligrater.github.io/SUZUKI.png");
 	soudayo = loadImage("https://Alligrater.github.io/SDY.png");
+	guide = loadImage("https://Alligrater.github.io/Guide.jpg");
 	for(var i = 0; i < 3; i++){
 		var x = Math.random()*document.body.clientWidth;
 		var y = Math.random()*document.body.clientHeight;
@@ -318,14 +329,6 @@ function draw(){
 		text('TIME: ' + time, 10, 80);
 	}
 
-
-	
-	if(waitforinput){
-		textSize(32);
-		fill(255, 255, 255);
-		textAlign(CENTER);
-		text('PRESS ENTER TO CONTINUE', document.body.clientWidth/2, document.body.clientHeight/2);
-	}
 	if (keyIsDown(13)) {
 		waitforinput = false;
 	}
@@ -414,4 +417,7 @@ function draw(){
 	yjs.show();
 	sdy.show();
 	senpai.show();
+	if(waitforinput){
+		image(guide, document.body.clientWidth/2,document.body.clientHeight/2);
+	}
 }
