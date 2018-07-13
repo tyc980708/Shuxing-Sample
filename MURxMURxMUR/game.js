@@ -291,8 +291,8 @@ function setup(){
 		var km = new KMR(x,y,size,size,yv,xv,kmkmr);
 		kmrz.push(km);
 	}
-	var x = Math.random()*document.body.clientWidth;
-	var y = Math.random()*document.body.clientHeight;
+	var x = 0.5*document.body.clientWidth;
+	var y = 0.5*document.body.clientHeight;
 	var size = 64;
 	yjs = new YJSNPI(x,y,size,size,tdkr);
 	
@@ -301,7 +301,7 @@ function setup(){
 	size=128;
 	sdy = new popout(x,y,size,size,soudayo);
 	
-	senpai = new MUR(600,800,64,64,imageer)
+	senpai = new MUR(document.body.clientWidth/2,document.body.clientHeight/2,64,64,imageer)
 }
 
 function draw(){
@@ -328,6 +328,7 @@ function draw(){
 		if(time < 0){
 			darktime += 1;
 			if(darktime >= 50){
+				textAlign(CENTER);
 				text('PRESS ANY KEY TO RESTART', document.body.clientWidth/2, document.body.clientHeight/2);
 				if(keyIsPressed === true){
 					window.location.reload()
