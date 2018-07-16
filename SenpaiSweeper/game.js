@@ -30,6 +30,7 @@ class tile{
 		this.isflagged = false;
 		this.ismine = ismine;
 		this.isshown = false;
+		this.wasflagged = false;
 		this.nearby = 0;
 	}
 	
@@ -155,10 +156,12 @@ function draw(){
 				if(mouseX > painterx + curx*gridsize && mouseX < painterx + curx*gridsize + gridsize && mouseY > paintery + cury*gridsize && mouseY < paintery + cury*gridsize + gridsize){
 					if(!tilegrid[i].isshown){
 						tilegrid[i].isflagged = tilegrid[i].isflagged?false:true;
+						tilegrid[i].wasflagged = tilegrid[i].isflagged;
+						fcount += tilegrid[i].isflagged?-1:1;
 						if(tilegrid[i].ismine){
 							bcount += tilegrid[i].isflagged?-1:1;
-							fcount += tilegrid[i].isflagged?-1:1;
-							if(bcount == 0 && bcount == fcount){
+							console.log(fcount + ":" + bcount);
+							if(fcount == 0 && bcount == fcount){
 								win();
 							}
 						}
@@ -193,14 +196,24 @@ function draw(){
 			}
 			
 			if(tilegrid[i].ismine){
-				if(i%2 == 0){
-					fill("rgb(215,0,120)");
+				if(tilegrid[i].wasflagged){
+					if(i%2 == 0){
+						fill("rgb(80,215,40)");
+					}
+					else{
+						fill("rgb(120,255,80)");				
+					}
 				}
 				else{
-					fill("rgb(255,40,160)");				
+					if(i%2 == 0){
+						fill("rgb(215,0,120)");
+					}
+					else{
+						fill("rgb(255,40,160)");				
+					}
 				}
+
 			}
-			
 
 
 		}
