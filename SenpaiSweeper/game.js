@@ -1,9 +1,9 @@
 
 
-var xsize = 13;
-var ysize = 13;
+var xsize = 9;
+var ysize = 9;
 
-var bcount = 20;
+var bcount = 10;
 var fcount = bcount;
 
 var gridsize = 50;
@@ -56,6 +56,9 @@ class tile{
 	
 	flip(){
 		this.isshown = true;
+		if(this.isflagged){
+			fcount += 1;
+		}
 		this.isflagged = false;
 		if(this.nearby == 0){
 			for(var x = -1; x <= 1; x++){
@@ -126,7 +129,24 @@ function draw(){
 
 	background(0,0,0,255);
 	
-
+	var curx = 0;
+	var cury = 0;
+	for(var i = 0; i < tilegrid.length; i++){
+			
+		if(mouseX > painterx + curx*gridsize && mouseX < painterx + curx*gridsize + gridsize && mouseY > paintery + cury*gridsize && mouseY < paintery + cury*gridsize + gridsize){
+			if(tilegrid[i].ismine){
+				fill(255,0,0);
+				rect(0, 0, 2, 2);
+			}
+		}
+				
+		curx += 1;
+		if(curx >= xsize){
+			curx = 0;
+			cury += 1;
+		}
+	
+	}
 	
 	
 	if (mouseIsPressed) {
