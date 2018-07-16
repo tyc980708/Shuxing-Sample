@@ -1,9 +1,9 @@
 
 
-var xsize = 9;
-var ysize = 9;
+var xsize = 13;
+var ysize = 13;
 
-var bcount = 10;
+var bcount = 20;
 var fcount = bcount;
 
 var gridsize = 50;
@@ -128,7 +128,7 @@ function draw(){
 	}
 
 	background(0,0,0,255);
-	
+	/*
 	var curx = 0;
 	var cury = 0;
 	for(var i = 0; i < tilegrid.length; i++){
@@ -146,7 +146,7 @@ function draw(){
 			cury += 1;
 		}
 	
-	}
+	}*/
 	
 	
 	if (mouseIsPressed) {
