@@ -284,7 +284,7 @@ function draw(){
 	if(plose == true){
 		for(var i = pacemaker; i < tilegrid.length; i++){
 			if(tilegrid[i].ismine){
-				image(bakudan, painterx + curx*gridsize-37, paintery + cury*gridsize-35, 64, 64);
+				image(bakudan, painterx + curx*gridsize-37, paintery + cury*gridsize-35, 128, 128);
 			}
 			curx += 1;
 			if(curx >= xsize){
