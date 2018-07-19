@@ -101,10 +101,10 @@ class Beer {
 	//原作水管
 	constructor(x){
 		this.x = x;
-		this.holey = 320 + Math.random()* (document.body.clientHeight-640);
+		this.holey = 256 + Math.random()* (document.body.clientHeight-512);
 		//水管高度, 宽度用硬代码写进去
 		//缝隙宽度256px
-		this.holesize = 192;
+		this.holesize = 150;
 		this.width = 64;
 		this.height = iheight;
 		this.ispassed = false;
@@ -120,7 +120,7 @@ class Beer {
 	}
 	
 	respawn(){
-		this.holey = 320 + Math.random()* (document.body.clientHeight-640);
+		this.holey = 256 + Math.random()* (document.body.clientHeight-512);
 		this.x += iwidth+ this.width;
 		this.ispassed = false;
 	}
@@ -163,8 +163,8 @@ function regenerate(){
 	bin.yvel = 0;
 	bin.yacc = 0;
 	beerz = [];
-	for(var i = 0; i < 4; i++){
-		var dist = (iwidth+64) / 4;
+	for(var i = 0; i < 5; i++){
+		var dist = (iwidth+64) / 5;
 		var beer = new Beer(dist*(i+1) + 64);
 		beerz.push(beer);
 	}
@@ -176,8 +176,8 @@ function setup(){
 	createCanvas(document.body.clientWidth, document.body.clientHeight);
 	bin = new BB(250, 450);
 	
-	for(var i = 0; i < 4; i++){
-		var dist = (iwidth+64) / 4;
+	for(var i = 0; i < 5; i++){
+		var dist = (iwidth+64) / 5;
 		var beer = new Beer(dist*(i+1) + 64);
 		beerz.push(beer);
 	}
@@ -189,7 +189,7 @@ function draw(){
 	background(40,128,200,255);
 	bin.draw();
 	
-	for(var i = 0; i < 4; i++){
+	for(var i = 0; i < beerz.length; i++){
 		beerz[i].draw();
 	}
 	
@@ -209,7 +209,7 @@ function draw(){
 	bin.update();
 
 	
-	for(var i = 0; i < 4; i++){
+	for(var i = 0; i < beerz.length; i++){
 		beerz[i].update();
 	}
 	
