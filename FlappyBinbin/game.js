@@ -9,7 +9,7 @@ var beerz = [];
 
 var beer_img;
 
-var fb;
+var fb = [];
 
 var input = false;
 
@@ -42,9 +42,23 @@ class BB {
 		this.size = 128;
 		this.yvel = 0;
 		this.yacc = 0;
+		this.curframe = 0;
+		this.inc = 1;
 	}
 	
 	update(){
+		this.curframe += this.inc;
+		
+		//Ping Pong Animation
+		if(this.curframe >= 9){
+			this.curframe = 9;
+			this.inc = -1;
+		}
+		else if(this.curframe <= 0){
+			this.curframe = 0;
+			this.inc = 1;
+		}
+		
 		this.yvel += this.yacc + g;
 		if(this.yvel > 8.8){
 			this.yvel = 8.8;
@@ -85,7 +99,7 @@ class BB {
 		//image("https://Alligrater.github.io/binbin.gif", this.x, this.y);
 		imageMode(CENTER);
 		
-		image(fb, this.x, this.y, this.size, this.size);
+		image(fb[this.curframe], this.x, this.y, this.size, this.size);
 	}
 
 }
@@ -136,11 +150,13 @@ function preload() {
 	mg = loadImage('https://Alligrater.github.io/MEDAL_GOLD.png');
 	ms = loadImage('https://Alligrater.github.io/Medal_SILVER.png');
 	mb = loadImage('https://Alligrater.github.io/Medal_BRONZE.png');
-	fb = loadGif("https://Alligrater.github.io/FB_ALT.gif");
 	soundFormats('mp3', 'ogg');
 	flap = loadSound('https://Alligrater.github.io/flap.mp3');
 	death = loadSound('https://Alligrater.github.io/death_alt.mp3');
-
+	for(var i = 0; i < 10; i++){
+		var fbi = loadImage("https://Alligrater.github.io/FBGIF/FB_"+ (i + 1) +  ".png");
+		fb.push(fbi);
+	}
 }
 
 function regenerate(){
