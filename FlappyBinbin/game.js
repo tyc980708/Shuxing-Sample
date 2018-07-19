@@ -59,17 +59,10 @@ class BB {
 			this.inc = 1;
 		}
 		
-		this.yvel += this.yacc + g;
-		if(this.yvel > 8.8){
-			this.yvel = 8.8;
-		}
-		else if(this.yvel < -40){
-			this.yvel = -40;
-		}
-		this.y += this.yvel;
+		this.y += this.yacc + g;
 		
-		this.yacc = 0;
-		
+		this.yacc += 0.5;
+		g = 9.8
 		//collision detection
 		
 		for(var i = 0; i < 4; i++){
@@ -229,8 +222,14 @@ function mouseClicked() {
 
 	if(!plose){
 		input = true;
-		bin.yacc = -902;
+
+		bin.yacc = -18;
+		if(bin.yacc >= 0){
+			bin.yacc = 0;
+		}
+		g = 0;
 		flap.play();
+		
 	}
 	else if(plose && waitforinput >= 60){
 		if(mouseX > document.body.clientWidth*0.5 - 256
