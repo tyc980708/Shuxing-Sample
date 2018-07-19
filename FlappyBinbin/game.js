@@ -1,5 +1,5 @@
 //Gravity
-var g = 0.049;
+var g = 9.8;
 
 var globalv = 5;
 
@@ -60,10 +60,15 @@ class BB {
 		}
 		
 		this.yvel += this.yacc + g;
+		if(this.yvel > 8.8){
+			this.yvel = 8.8;
+		}
+		else if(this.yvel < -40){
+			this.yvel = -40;
+		}
 		this.y += this.yvel;
-		g = 0.049;
-		this.yacc += g;
-
+		
+		this.yacc = 0;
 		
 		//collision detection
 		
@@ -224,8 +229,7 @@ function mouseClicked() {
 
 	if(!plose){
 		input = true;
-		bin.yacc = -0.5;
-		g = 0;
+		bin.yacc = -902;
 		flap.play();
 	}
 	else if(plose && waitforinput >= 60){
