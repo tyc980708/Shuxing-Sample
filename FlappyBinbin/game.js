@@ -157,6 +157,7 @@ function regenerate(){
 	dqplayed = false;
 	score = 0;
 	waitforinput = 0;
+	input = false;
 	bin.x = 250;
 	bin.y = 450;
 	bin.yvel = 0;
