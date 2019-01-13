@@ -7,52 +7,64 @@ var mousexp = 0;
 var mouseyp = 0;
 var img; 
 
+var progress = 1.0;
 
-class raindrop {
+class starz {
 	constructor(x,y,z, rshift,bshift){
 		this.x = x;
 		this.y = y;
 		this.z = z;
-		this.size = 2 + rnd(0,2);
+		this.xmult = Math.random()-0.5;
+		this.ymult = Math.random()-0.5;
+		this.size = 1.5*(2 + rnd(0,2));
 		this.rshift = rshift;
 		this.bshift = bshift;
+
 	}
 	
 	
-	//draw a raindrop on the background.
+	//draw a starz on the background.
 	draw(){
-		var opac = 0.95*(Math.pow(this.z,3) + 0.1)
+		var opac = 0.7*(Math.pow(this.z,3) + 0.1)
 		
 		var r = 189+this.rshift;
 		var b = 189+this.bshift
 		noStroke();
 		fill("rgba(" + r + ",189," + b + "," + opac + ")");
-		var xmod = 0.2*mousexp/(1.1-Math.pow(this.z,3))/5 + this.x;
+		var xmod = 0.2*mousexp/(1.1-Math.pow(this.z,3))/5 + this.x + this.xmult*Math.cos(progress/10)*30/(1.1-Math.pow(this.z,2));
 		if(xmod > document.body.clientWidth){
 			xmod -= document.body.clientWidth;
 		}
 		
-		var ymod = 0.2*mouseyp/(1.1-Math.pow(this.z,3))/5 + this.y;
+		var ymod = 0.2*mouseyp/(1.1-Math.pow(this.z,3))/5 + this.y + this.ymult*Math.sin(progress/10)*30/(1.1-Math.pow(this.z,2));
 		if(ymod > document.body.clientHeight*1.1){
 			ymod -= document.body.clientHeight*1.2;
 		}
 		
-		ellipse(xmod , ymod, this.size*(Math.pow(this.z, 2)+0.5), this.size*(Math.pow(this.z, 2)+0.5));
+		
+		//rect(xmod , ymod, this.size*(Math.pow(this.z, 2)+0.5), this.size*(Math.pow(this.z, 2)+0.5));
+		quad(xmod - this.size*(Math.pow(this.z, 2)+0.5)/2, 
+			ymod,xmod,  ymod - this.size*(Math.pow(this.z, 2)+0.5)/2,
+			xmod + this.size*(Math.pow(this.z, 2)+0.5)/2,
+			ymod, xmod, ymod + this.size*(Math.pow(this.z, 2)+0.5)/2
+		)
 		
 	}
 }
 
 function setup() {
 	createCanvas(document.body.clientWidth, document.body.clientHeight);
+	frameRate(60);
+	
 	for(var i = 0; i < starcount; i++){
 		var x = noise(i) * document.body.clientWidth;
 		var y = noise(x) * document.body.clientHeight;
 		
 		var z = Math.random();
-		var rshift = rnd(-30, 30);
-		var bshift = rnd(-30, 30);
+		var rshift = rnd(-60, 60);
+		var bshift = rnd(-60, 60);
 		var conn = -1;
-		var rd = new raindrop(x,y,z,rshift,bshift);	
+		var rd = new starz(x,y,z,rshift,bshift);	
 		
 		starpool.push(rd);
 		
@@ -80,6 +92,7 @@ function setup() {
 }
 
 function draw() {
+	progress += 0.01;
 	background('rgb(26,33,37)');
 	image(img, 0,0);
 	image(glow, 0,document.body.clientHeight*0.7);
