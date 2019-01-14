@@ -1,204 +1,67 @@
-<!DOCTYPE HTML>
 <html>
-<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript">
-
-$(document).ready(function(){
-	$(".doc_text").stop();
-    $(".doc_text").hide();
-});
-
-$(document).ready(function(){
-  $("blockquote").mouseover(function(){
-    $(this).css("color","#C9C9C9");
-  });
-
-  $("blockquote").mouseout(function(){
-    $(this).css("color","#BBBBBB");
-  });
-});
-
-var X;
-var size;
-
-$(document).ready(function(){
-  $(".heading").click(function(){
-  	size = $(window).height();
-	X = $(this).position().top;
-    $(this).parent().find(".doc_text").stop();
-	if ($(this).parent().find(".doc_text").is(':hidden')) {
-		$("html,body").animate({scrollTop:X-size/4*1}, 500);
-	}
-	else{
+  <head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+	  $("button").mouseover(function(){
+		$(this).css("background-color","#FFFFFF");
+		$(this).css("color","#000000");
+	  });
+	  $("button").mouseout(function(){
+		$(this).css("background-color","transparent");
+		$(this).css("color","#FFFFFF");
+	  });
+	});
 	
+	function redirect(){
+		window.location='content/homepage.html';
 	}
-	$(this).parent().find(".doc_text").slideToggle("fast");
-  });
-});
-
-$(document).ready(function(){
-  $("#wrap").click(function(){
-	$('html, body').animate({scrollTop : 0}, 500);
-  });
-});
-
-$(document).ready(function(){
-  $("img").mouseover(function(){
-    $(this).css("opacity","1.0");
-  });
-
-  $("img").mouseout(function(){
-    $(this).css("opacity","0.7");
-  });
-});
-
-</script>
-
-<link rel="stylesheet" type="text/css" href="style.css">
-
-<style>
-.doc_text {
-	align:center;
-	text-align:justify;
-    background-color:#404851;
-    margin:10px auto;
-	padding-bottom:10px;
-	padding-top:10px;
-	padding-left:10px;
-	padding-right:10px;
-	max-width:800px;
-	min-width:500px;
-}
-
-.doc_frame {
-	align:center;
-	text-align:center;
-    background-color:#404851;
-    margin:3px auto;
-	padding-bottom:10px;
-	padding-top:10px;
-	padding-left:20px;
-	padding-right:20px;
-	max-width:800px;
-	min-width:500px;
-}
-
-.heading {
-	align:center;
-	text-align:center;
-	margin:3px auto;
-	max-width:800px;
-	min-width:500px;
-}
-</style>
-
-<body> 
-
-<h1 align="center">基于HTML的(反人类)博客</h1>
-<h2 align="center">By Alligrater</h2>
-<br/>
-<br/>
-
-<div class = "doc_frame">
-<div class = "heading">
-<h2>[伪·置顶]点击相应标题即可浏览文章内容</h2>
-<center>
-<small>By Alligrater</small>
-</center>
-</div>
-
-<div class = "doc_text">
-<blockquote>没错，就是要这么反人类。是不是很6666（雾）？
-<br/>
-</blockquote>	
-</div></div>
-
-<div class = "doc_frame">
-<div class = "heading">
-<h2>jQuery实现选中标题后展示文字</h2>
-<center>
-<small>By Alligrater</small>
-</center>
-</div>
-
-<div class = "doc_text">
-<blockquote>嘛，反正成功了，就是现在页面上的这个效果。
-<br/>
-利用slideUp()和slideDown()可以实现这个效果
-<br/>
-然而，还需要增加stop()函数来阻止展示和消失动画鬼畜。
-<br/>
-最开始的时候，当你选中一个标题时，所有标题下面的文字都会出现。这并不是我想要的效果。
-<br/>
-但是，后来找到了这样的办法：$(this).find(".doc_text")，于是现在只有选中标题下面的文字才会出现。
-<br/>
-综上所述，大体还是比较容易的。不过，好像性能上有问题？
-</blockquote>
-</div></div>
-
-<div class = "doc_frame">
-<div class = "heading">
-<h2>CSS是个好东西</h2>
-<center>
-<small>By Alligrater</small>
-</center>
-</div>
-
-<div class = "doc_text">
-<blockquote>改模板真方便，而且效果惊人。
-<br/>
-不知道高到哪里去了。
-<br/>
-</blockquote>
-</div></div>
-
-<div class = "doc_frame">
-<div class = "heading">
-<h2>点击标题展开的改进</h2>
-<center>
-<small>By Alligrater</small>
-</center>
-</div>
-
-<div class = "doc_text">
-<blockquote>每次点击标题展开时，都会调用.animate()函数来自动滚动至距页面顶部1/4的位置。
-<br/>
-在阅读的时候相当方便。同时，通过.is(':hidden')检测，关闭内容时页面不会调用.animate()。
-<center>
-<br/>
-<img src="2.jpg"/>
-</center>
-</blockquote>
-</div></div>
-
-<div class = "doc_frame">
-<div class = "heading">
-<h2>不存在的第五篇文章</h2>
-<center>
-<small>By Alligrater</small>
-</center>
-</div>
-
-<div class = "doc_text">
-<blockquote>这就是第五篇文章？
-<br/>
-<br/>
-<img src="128Creeper.png"/>
-</blockquote>	
-</div></div>
-
-<aside id="wrap" style="position:fixed; bottom:100px; right:80px; opacity:0.5;">
-  <img src="top.png"; width="50px";height="50px";></section>
-</aside>
-
-
- 
-<center>
-<br/>
-<br/>
-<i><small id="scb">没有更多文章</small>
-<br/>
-<small>(真可惜)</small></i>
-</center>
-</body>
+	</script>
+	<style>
+	div{
+		position: abosolute;
+		padding-top:15%;
+	}
+	.heading {
+		align:center;
+		text-align:center;
+		color: #FFFFFF; 
+		position: abosolute;
+		//padding-top:50%;
+		margin:1px auto;
+		max-width:800px;
+		min-width:500px;
+		font-size: 58px;
+		font-family: "Source Han Serif";
+	}
+	button {
+		background-color: transparent;
+		border: 3px solid #FFFFFF;
+		border-radius: 30px;
+		color: #FFFFFF; 
+		padding: 8px 20px;
+		text-align: center;
+		align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		font-family: "Source Han Serif";
+		font-weight: bold;
+		margin: -50px auto;
+	}
+	body {
+		background: url(img/noise.jpg) ;
+		
+	}
+	</style>
+  </head>
+  <body style="padding:0px;margin:0px;">
+	<div class = "heading">
+	<h2>Alligrater 2.0</h2>
+	<center>
+	<button onclick="redirect()">新たなるホームページへ</button>
+	</center>
+	</div>
+  </body>
 </html>
