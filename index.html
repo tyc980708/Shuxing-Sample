@@ -1,39 +1,83 @@
 <html>
   <head>
 	<meta charset="UTF-8">
+	<title>Alligrater ~アリグレイター~</title>
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script
+  src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"
+  integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE="
+  crossorigin="anonymous"></script>
 	<script type="text/javascript">
+	
 	$(document).ready(function(){
 	  $("button").mouseover(function(){
-		$(this).css("background-color","#FFFFFF");
-		$(this).css("color","#000000");
+		$(this).animate({backgroundColor:'#FFFFFF'},150);
+		$(this).css({color:'#000000'});
 	  });
 	  $("button").mouseout(function(){
-		$(this).css("background-color","transparent");
-		$(this).css("color","#FFFFFF");
+		$(this).animate({backgroundColor:'transparent'},150);
+		$(this).css({color:'#FFFFFF'});
 	  });
 	});
+
+	var divTyping;
+	let i = 0,
+	timer = 0,
+	str = '新たなる世界へ'
 	
-	function redirect(){
-		window.location='content/homepage.html';
+	function typing(){
+		if (i <= str.length) {
+			var append = ' ';
+			if(i%2==0){
+				append = '_';
+			}
+			else{
+				append = ' ';
+			}
+			divTyping.innerHTML = str.slice(0, i++) + append;
+			timer = setTimeout('typing()', 100);
+		}
+		else {
+			divTyping.innerHTML = str;//结束打字,移除 _ 光标
+			clearTimeout(timer);
+		}
 	}
+
+	//现有的代码为什么不拿来用呢
+	window.onload = function() {
+		divTyping = document.getElementById("typebox");
+		typing();
+	}
+	
 	</script>
 	<style>
 	div{
-		position: abosolute;
-		padding-top:15%;
+		position: relative;
+		padding-top:20%;
 	}
-	.heading {
+	h2.tm {
 		align:center;
 		text-align:center;
-		color: #FFFFFF; 
+		color:rgba(255,255,255,0.1);
 		position: abosolute;
 		//padding-top:50%;
 		margin:1px auto;
 		max-width:800px;
 		min-width:500px;
-		font-size: 58px;
+		font-size: 100px;
 		font-family: "Source Han Serif";
+	}
+	h2.overlay {
+		align:center;
+		text-align:center;
+		color: #FFFFFF; 
+		position: abosolute;
+		margin:-90px auto;
+		max-width:800px;
+		min-width:500px;
+		font-size: 38px;
+		font-family: "Source Han Serif";
+		letter-spacing: 40px;
 	}
 	button {
 		background-color: transparent;
@@ -48,7 +92,7 @@
 		font-size: 16px;
 		font-family: "Source Han Serif";
 		font-weight: bold;
-		margin: -50px auto;
+		margin: 120px auto;
 	}
 	body {
 		background: url(img/noise.jpg) ;
@@ -58,9 +102,10 @@
   </head>
   <body style="padding:0px;margin:0px;">
 	<div class = "heading">
-	<h2>Alligrater 2.0</h2>
+	<h2 class="tm">Alligrater 2.0</h2>
+	<h2 class="overlay">アリグレイター</h2>
 	<center>
-	<button onclick="redirect()">新たなるホームページへ</button>
+	<button class="btn" id="typebox" onclick="redirect()">_</button>
 	</center>
 	</div>
   </body>
