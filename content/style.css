@@ -84,6 +84,11 @@
 		width:30%;
 		height:auto;
 		display: inline-block;
+		transition: box-shadow 0.2s, transform 0.2s;
+	}
+	div.article:hover{
+		box-shadow: 0px 4px 10px #AAAAAA;
+		transform: scale(1.1, 1.1);
 	}
 	img {
 		object-fit: cover;
