@@ -110,3 +110,11 @@
 		word-break: normal;
 	}
 	
+	@font-face
+	{
+		font-family: Source Han Serif;
+		src: url('../font/SourceHanSerifSC-Light.otf'),
+		url('../font/SourceHanSerifSC-Light.otf');
+		font-style:"normal";
+	}
+	
