@@ -284,7 +284,9 @@ function draw(){
 	if(plose == true){
 		for(var i = pacemaker; i < tilegrid.length; i++){
 			if(tilegrid[i].ismine && !tilegrid[i].wasflagged){
-				image(bakudan, painterx + curx*gridsize-37, paintery + cury*gridsize-35, 128, 128);
+				var img1 = createImg('https://Alligrater.github.io/YajuBakudan.gif');
+				img1.possition(painterx + curx*gridsize-37, paintery + cury*gridsize-35, 128, 128);
+				//image(bakudan, painterx + curx*gridsize-37, paintery + cury*gridsize-35, 128, 128);
 			}
 			curx += 1;
 			if(curx >= xsize){
