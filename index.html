@@ -1,5 +1,15 @@
 <html>
   <head>
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'pgj7ufp',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
 	<meta charset="UTF-8">
 	<title>Alligrater ~アリグレイター~</title>
 	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
@@ -56,7 +66,9 @@
 		max-width:800px;
 		min-width:500px;
 		font-size: 100px;
-		font-family: "Source Han Serif";
+				font-family: source-han-serif-sc,serif;
+		font-weight: 400;
+		font-style: normal;
 	}
 	h2.overlay {
 		align:center;
@@ -67,8 +79,11 @@
 		max-width:800px;
 		min-width:500px;
 		font-size: 38px;
-		font-family: "Source Han Serif";
+		
 		letter-spacing: 40px;
+			font-family: source-han-serif-sc,serif;
+		font-weight: 400;
+		font-style: normal;
 	}
 	button {
 		background-color: transparent;
@@ -81,10 +96,12 @@
 		text-decoration: none;
 		display: inline-block;
 		font-size: 16px;
-		font-family: "Source Han Serif";
-		font-weight: bold;
+		
 		margin: 120px auto;
 		transition: color 0.2s, background-color 0.2s;
+		font-family: source-han-serif-sc,serif;
+		font-weight: 400;
+		font-style: normal;
 	}
 	button:hover{
 		color: #000000;
@@ -94,13 +111,8 @@
 		background: url(img/noise.jpg) ;
 		
 	}
-	@font-face
-	{
-		font-family: Source Han Serif;
-		src: url('font/SourceHanSerifSC-Light.otf'),
-		url('font/SourceHanSerifSC-Light.otf');
-		font-style:"normal";
-	}
+	
+
 	</style>
   </head>
   <body style="padding:0px;margin:0px;">

@@ -6,7 +6,7 @@
 		margin:0px 0px;
 		padding: 50px;
 		font-size: 58px;
-		font-family: "Source Han Serif";
+		font-family: source-han-serif-sc,serif;
 		background-color:#FFFFFF;
 	}
 	h2.subtitle {
@@ -17,7 +17,7 @@
 		margin:-45px 0px;
 		padding:0px;
 		font-size: 18px;
-		font-family: "Source Han Serif";
+		font-family: source-han-serif-sc,serif;
 		font-weight: bold;
 	}
 	button {
@@ -31,7 +31,7 @@
 		text-decoration: none;
 		display: inline-block;
 		font-size: 20px;
-		font-family: "Source Han Serif";
+		font-family: source-han-serif-sc,serif;
 		font-weight: bold;
 	}
 	body {
@@ -50,20 +50,20 @@
 		color: #111111; 
 		padding: 20px;
 		font-size: 20px;
-		font-family: "Source Han Serif";
+		font-family: source-han-serif-sc,serif;
 		text-decoration:none;
 		
 	}
 	a.textlink {
 		font-size: 18px;
-		font-family: "Source Han Serif";
+		font-family: source-han-serif-sc,serif;
 		padding: 0px 30px;
 		word-break: normal;
 		color: #111111;
 	}
 	a.title {
 		font-size: 22px;
-		font-family: "Source Han Serif";
+		font-family: source-han-serif-sc,serif;
 		color: #111111;
 	}
 	div.container{
@@ -122,20 +122,12 @@
 	}
 	h3.title {
 		font-size: 22px;
-		font-family: "Source Han Serif";
+		font-family: source-han-serif-sc,serif;
 	}
 	p {
 		font-size: 18px;
-		font-family: "Source Han Serif";
+		font-family: source-han-serif-sc,serif;
 		padding: 0px 30px;
 		word-break: normal;
-	}
-	
-	@font-face
-	{
-		font-family: Source Han Serif;
-		src: url('../font/SourceHanSerifSC-Light.otf'),
-		url('../font/SourceHanSerifSC-Light.otf');
-		font-style:"normal";
 	}
 	
