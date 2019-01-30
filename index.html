@@ -20,7 +20,7 @@
 	var divTyping;
 	let i = 0,
 	timer = 0,
-	str = '新世界へ'
+	str = 'Enter the New Dimension'
 	
 	function typing(){
 		if (i <= str.length) {
@@ -32,7 +32,7 @@
 				append = ' ';
 			}
 			divTyping.innerHTML = str.slice(0, i++) + append;
-			timer = setTimeout('typing()', 100);
+			timer = setTimeout('typing()', 20);
 		}
 		else {
 			divTyping.innerHTML = str;//结束打字,移除 _ 光标
