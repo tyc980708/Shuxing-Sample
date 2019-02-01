@@ -1,3 +1,4 @@
+	/*Titles*/
 	h2.title {
 		align:center;
 		text-align:center;
@@ -20,6 +21,7 @@
 		font-family: source-han-serif-sc,serif;
 		font-weight: bold;
 	}
+	/*Button Formations - Not Currently in use*/
 	button {
 		background-color: transparent;
 		border: 3px solid #111111;
@@ -34,9 +36,11 @@
 		font-family: source-han-serif-sc,serif;
 		font-weight: bold;
 	}
+	/*Background Coloring*/
 	body {
 		background-color: #EEEEEE;
 	}
+	/*Navigation Bar on Top*/
 	nav {
 		margin:60px 0px;
 		align:center;
@@ -46,6 +50,7 @@
 		background-color:#FFFFFF;
 		box-shadow: 0px 4px 5px #AAAAAA;
 	}
+	/*Navigation Bar on Top*/
 	a.nav {
 		color: #111111; 
 		padding: 20px;
@@ -54,18 +59,35 @@
 		text-decoration:none;
 		
 	}
+	/*Link inside divs*/
 	a.textlink {
-		font-size: 18px;
+		
+		background-color: transparent;
+		border: 2px solid #111111;
+		border-radius: 30px;
+		color: #111111; 
+		padding: 6px 16px;
+		margin-top: 5px;
+		text-align: center;
+		align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
 		font-family: source-han-serif-sc,serif;
-		padding: 0px 30px;
-		word-break: normal;
-		color: #111111;
+		transition: color 0.2s, background-color 0.2s;
+		position:relative;
+		bottom: 0px;
 	}
-	a.title {
-		font-size: 22px;
-		font-family: source-han-serif-sc,serif;
-		color: #111111;
+	a.textlink:hover {
+		background-color: #111111;
+		color: #FFFFFF; 
 	}
+	/*Ultimate Container that contains all contents*/
+	/*
+	container
+	|_article
+	  |_p, div, a, etc.	
+	*/
 	div.container{
 		display:flex;
 		width: 100%;
@@ -75,6 +97,7 @@
 		flex-wrap: wrap;
 		justify-content: center;
 	}
+	/*Content Container Boxes*/
 	div.article{
 		margin:10px;
 		padding-bottom:50px;
@@ -87,8 +110,32 @@
 	}
 	div.article:hover{
 		box-shadow: 0px 4px 10px #AAAAAA;
-		transform: scale(1.01, 1.01) translate(0px, -10px);
+		transform: scale(1.01, 1.01);
 	}
+	/*Content Box Variation: Link only & full picture*/
+	a.link{
+		margin:10px;
+		background-color:#FFFFFF;
+		width:20%;
+		height:auto;
+		display: inline-block;
+		box-shadow: 0px 2px 3px #AAAAAA;
+		transition: box-shadow 0.2s, transform 0.2s;
+		text-decoration:none;
+		color:#111111;
+	}
+	a.link:hover{
+		box-shadow: 0px 4px 10px #AAAAAA;
+		transform: scale(1.01, 1.01);
+	}
+	p.linkdesc {
+		color: #111111; 
+		font-size: 18px;
+		font-family: source-han-serif-sc,serif;
+		text-decoration:none;
+		margin-top:-50px;
+	}
+	/*Content Box Variation: Only show picture, size limited*/
 	div.pictureonly{
 		margin:10px;
 		background-color:#FFFFFF;
@@ -100,20 +147,17 @@
 	}
 	div.pictureonly:hover{
 		box-shadow: 0px 4px 10px #AAAAAA;
-		transform: scale(1.01, 1.01) translate(0px, -10px);
-	}
-	video{
-		object-fit: cover;
-		width: auto;
-		height: 300px;
+		transform: scale(1.01, 1.01);
 	}
 	img.pictureonly{
+		background-color: #EFEFEF;
 		object-fit: cover;
 		min-height:500px;
 		width: 100%;
 		height: 100%;
 	}
 	img {
+		background-color: #EFEFEF;
 		object-fit: cover;
 		max-height:300px;
 		width: 100%;
