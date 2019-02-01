@@ -116,8 +116,8 @@
 	a.link{
 		margin:10px;
 		background-color:#FFFFFF;
-		width:20%;
-		height:auto;
+		width:400px;
+		height:300px;
 		display: inline-block;
 		box-shadow: 0px 2px 3px #AAAAAA;
 		transition: box-shadow 0.2s, transform 0.2s;
@@ -129,12 +129,50 @@
 		transform: scale(1.01, 1.01);
 	}
 	p.linkdesc {
-		color: #111111; 
-		font-size: 18px;
+		z-index:5;
+		color:rgba(255,255,255,0.0);
+		font-size: 50px;
 		font-family: source-han-serif-sc,serif;
 		text-decoration:none;
-		margin-top:-50px;
+		margin-top:-180px;
+		white-space: nowrap;
 	}
+	a.link:hover .linkdesc{
+		color:rgba(255,255,255,1);
+	}
+	img.full{
+		background-color: #EFEFEF;
+		width: 400px;
+		height: auto;
+		filter:brightness(95%);
+		transition:filter 0.2s;
+		
+	}
+	a.link:hover .full{
+		filter:brightness(105%);
+	}
+	/*现有的东西为什么不拿来用呢*/
+	a.link .tooltiptext {
+		visibility: hidden;
+		width: 340px;
+		background-color: rgba(0,0,0,0.8);
+		color: #fff;
+		text-align: center;
+		border-radius: 6px;
+		padding: 10px 0;
+		margin-top:-180px;
+		margin-left: -170px;
+		font-family: source-han-serif-sc,serif;
+		font-size: 20px;
+		/* 定位 */
+		position: absolute;
+		z-index: 1;
+	}
+	
+	a.link:hover .tooltiptext {
+    visibility: visible;
+	}
+
 	/*Content Box Variation: Only show picture, size limited*/
 	div.pictureonly{
 		margin:10px;
