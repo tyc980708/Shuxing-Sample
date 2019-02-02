@@ -184,7 +184,7 @@
 		max-width: 450px;
 		background-color: #111111;
 		color: #FFFFFF;
-		text-align: left;
+		text-align: right;
 		border-radius: 6px;
 		padding: 10px 20px;
 		font-family: source-han-serif-sc,serif;
@@ -199,4 +199,28 @@
 	p.aite:hover, p.mikata:hover{
 				box-shadow: 0px 4px 10px #AAAAAA;
 		transform: scale(1.01, 1.01);
+	}
+	
+		/*Link inside divs*/
+	a.textlink {
+		width:200px;
+		background-color: transparent;
+		border: 2px solid #111111;
+		border-radius: 30px;
+		color: #111111; 
+		padding: 6px 16px;
+		margin-top: 5px;
+		text-align: center;
+		align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		font-family: source-han-serif-sc,serif;
+		transition: color 0.2s, background-color 0.2s;
+		position:relative;
+		bottom: 0px;
+	}
+	a.textlink:hover {
+		background-color: #111111;
+		color: #FFFFFF; 
 	}
