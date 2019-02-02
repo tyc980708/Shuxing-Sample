@@ -59,6 +59,9 @@
 		text-decoration:none;
 		
 	}
+	a.nav:hover{
+		color: #999999; 
+	}
 	/*Link inside divs*/
 	a.textlink {
 		width:200px;
