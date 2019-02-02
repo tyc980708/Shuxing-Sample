@@ -33,10 +33,17 @@
 	var chatMap = new Map();
 	chatMap.set("关于", "HaNA(SH1)41-Bot<br/>Generation:Genesis0:01<br/>Created by Alligrater, Serve for Alligrater.<br/>The world ends when the world ends when the world ends...");
 	chatMap.set("你是谁", "我是Alligrater创造出的第一代聊天机器人Hanashiai-Bot. 正式一点的名字叫HaNA(SH1)41-Bot[Genesis0:01]。这个页面现在由我来负责管理哟~★");
-	chatMap.set("推荐", "今日的推荐是……<br/>作品页！非常有意思哟！");
-	chatMap.set("Alligrater", "啊，是我的主人←_←!");
-	chatMap.set("bilibili", "不来看一发吗（诱惑）<br/><a href=\"http://space.bilibili.com/2936578\" class=\"textlink\">前往哔哩哔哩动画</a>");
-	chatMap.set("哔哩哔哩", "不来看一发吗（诱惑）<br/><a href=\"http://space.bilibili.com/2936578\" class=\"textlink\">前往哔哩哔哩动画</a>");
+	chatMap.set("推荐", "<center>今日的推荐是……<br/><a href=\"./creations.html\" class=\"textlink\">作品页！</a><br/>非常有意思哟！<center/>");
+	chatMap.set("alligrater", "啊，是我的主人←_←!");
+	chatMap.set("bilibili", "<center>不来看一发吗（诱惑）<br/><a href=\"http://space.bilibili.com/2936578\" class=\"textlink\">前往哔哩哔哩动画</a></center>");
+	chatMap.set("哔哩哔哩", "<center>不来看一发吗（诱惑）<br/><a href=\"http://space.bilibili.com/2936578\" class=\"textlink\">前往哔哩哔哩动画</a></center>");
+	chatMap.set("喜欢", "←U←");
+	chatMap.set("讨厌", "→U→");
+	chatMap.set("siri", "谁啊，不认识……");
+	chatMap.set("alexa", "谁啊，不认识……");
+	chatMap.set("谷歌娘", "谁啊，不认识……");
+	chatMap.set("认识", "不认识，下一个");
+
 	function hanashiai(){
 		if(usermessage != ""){
 			console.log(usermessage);
@@ -51,7 +58,22 @@
 				}
 			}
 			if(canfind == false){
-				botmessage = "よくわからんな...（困惑）"
+				if(Math.random() > 0.8){
+					botmessage = "(D20+1>25)你没有收获任何相关的信息……（绝望）"
+				}
+				else if(Math.random() > 0.6){
+					botmessage = "这种东西我怎么会知道呢（心虚）"
+				}
+				else if(Math.random() > 0.4){
+					botmessage = "你再问一句这样的话我就……好像也不能把你怎么样（悲）"
+				}
+				else if(Math.random() > 0.2){
+					botmessage = "听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂"
+				}
+				else{
+					botmessage = "よくわからんな...（困惑）"
+				}
+
 			}
 			
 			//Hanashiai-BOT now recognize your word and is waiting to input soon.
