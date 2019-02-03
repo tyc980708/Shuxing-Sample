@@ -48,7 +48,10 @@
 	chatMap.set("认识", "不认识，下一个");
 	chatMap.set("联络", "QQ:201258779<br/>邮箱:Alligrater@outlook.com");
 	chatMap.set("上古野良缝合怪", "借代码一时爽，一直借一直爽");
-
+	chatMap.set("♂", "Boy♂Next♂Door");
+	chatMap.set("嘤嘤", "一拳一个嘤嘤怪！");
+	chatMap.set("brain power", "O-oooooooooo AAAAE-A-A-I-A-U- JO-oooooooooooo AAE-O-A-A-U-U-A- E-eee-ee-eee AAAAE-A-E-I-E-A- JO-ooo-oo-oo-oo EEEEO-A-AAA-AAAA");
+	chatMap.set("大碗宽面", "O-oooooooooo AAAAE-A-A-I-A-U- JO-oooooooooooo AAE-O-A-A-U-U-A- E-eee-ee-eee AAAAE-A-E-I-E-A- JO-ooo-oo-oo-oo EEEEO-A-AAA-AAAA");
 	function hanashiai(){
 		if(usermessage != ""){
 			console.log(usermessage);
@@ -107,9 +110,9 @@
 			usermessage = "";
 		}
 		//Completes all chat and once again allow chat
-		botsend();
-		botmessage = "";
-		document.getElementById('sendbutton').disabled = false;
+		timer = setTimeout('botsend()', 10*botmessage.length + Math.random()*200);//botsend();
+		
+		
 		timer = setTimeout('hanashiai()', 400);//Simple infinite loop, tuned down for lower grade pcs.
 	}
 	
@@ -132,6 +135,8 @@
 		//Always scroll to bottom, witchery.
 		window.scrollTo(0,document.body.scrollHeight);
 		document.getElementById('chatbox').value = "";
+		document.getElementById('chatbox').placeholder = "ロボットが入力しています..."
+		
 	}
 	
 	/*Bot Side Message Sending*/
@@ -148,6 +153,9 @@
 		
 		//Always scroll to bottom, witchery.
 		window.scrollTo(0,document.body.scrollHeight);
+		botmessage = "";
+		document.getElementById('chatbox').placeholder = "言いたいことを書いてください..."
+		document.getElementById('sendbutton').disabled = false;
 	}
 	
 	/*Sends his greetings*/
