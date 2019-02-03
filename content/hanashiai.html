@@ -54,7 +54,7 @@
 	chatMap.set("嘤嘤", ["一拳一个嘤嘤怪！"]);
 	chatMap.set("brain power", ["O-oooooooooo","AAAAE-A-A-I-A-U-","JO-oooooooooooo","AAE-O-A-A-U-U-A-","E-eee-ee-eee","AAAAE-A-E-I-E-A-","JO-ooo-oo-oo-oo","EEEEO-A-AAA-AAAA"]);
 	chatMap.set("大碗宽面", ["哎","哎","准备好了没有","你看这个面它又长又宽","就像这个碗它又大又圆","你们","来这里","吃饭","觉得","饭很","好","吃","我看行","你们","来这里","吃饭","就像","我给你们拉面一样很开心，哎"]);
-	chatMap.set("孙悟空有几个女朋友", ["戏说不是胡说,改编不是乱编<br/>孙悟空叫白骨精叫晶晶，白骨精叫孙悟空叫空空<br/>人妖不分，是非颠倒<br/>这样的编剧是要向全国人民谢罪的"]);
+	chatMap.set("孙悟空有几个女朋友", ["戏说不是胡说,改编不是乱编","孙悟空叫白骨精叫晶晶，白骨精叫孙悟空叫空空","人妖不分，是非颠倒","这样的编剧是要向全国人民谢罪的"]);
 	chatMap.set("身份证", ["我有两张分身证，一张叫Alligrater，一张叫大葱坷垃"]);
 	function hanashiai(){
 		if(usermessage != ""){
@@ -122,7 +122,7 @@
 		}
 		//Completes all chat and once again allow chat
 		if(messagequeue[0] != null){
-			timer = setTimeout('botsend()', 10*botmessage.length + Math.random()*200+500);//botsend();
+			timer = setTimeout('botsend()', 10*botmessage.length + Math.random()*200+800);//botsend();
 		}
 		
 		//Simple infinite loop, tuned down for lower grade pcs.
@@ -169,7 +169,7 @@
 		queueindex += 1;
 		if(messagequeue[queueindex] != null){
 		//Calls botsend if the bot have something to say
-			timer = setTimeout('botsend()', 10*messagequeue[queueindex].length + Math.random()*200+500);//botsend();
+			timer = setTimeout('botsend()', 10*messagequeue[queueindex].length + Math.random()*200+800);//botsend();
 		
 		}
 		else{
