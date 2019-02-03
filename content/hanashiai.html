@@ -28,30 +28,34 @@
 	let usermessage = "";
 	let botmessage = "";
 	let messagebackup = "";
+	let messagequeue = [];
+	queueindex = 0;
 		
 	
 	/*HanashiaiBot Retrieves Message from here*/
 	var chatMap = new Map();
-	chatMap.set("关于", "HaNA(SH1)41-Bot<br/>Generation:Genesis0:01<br/>Created by Alligrater, Serve for Alligrater.<br/>The world ends when the world ends when the world ends...");
-	chatMap.set("你是谁", "我是Alligrater创造出的第一代聊天机器人Hanashiai-Bot. 正式一点的名字叫HaNA(SH1)41-Bot[Genesis0:01]。这个页面现在由我来负责管理哟~★");
-	chatMap.set("推荐", "<center>今日的推荐是……<br/><a href=\"./creations.html\" class=\"textlink\">作品页！</a><br/>非常有意思哟！<center/>");
-	chatMap.set("alligrater", "啊，巨佬！");
-	chatMap.set("bilibili", "<center>不来看一发吗（诱惑）<br/><a href=\"http://space.bilibili.com/2936578\" class=\"textlink\">前往哔哩哔哩动画</a></center>");
-	chatMap.set("哔哩哔哩", "<center>不来看一发吗（诱惑）<br/><a href=\"http://space.bilibili.com/2936578\" class=\"textlink\">前往哔哩哔哩动画</a></center>");
-	chatMap.set("github", "<center>不来掉头发吗（谢顶）<br/><a href=\"https://www.github.com/Alligrater\" class=\"textlink\">Github</a></center>");
-	chatMap.set("gayhub", "<center>不来掉头发吗（谢顶）<br/><a href=\"https://www.github.com/Alligrater\" class=\"textlink\">Gayhub</a></center>");
-	chatMap.set("喜欢", "←U←");
-	chatMap.set("讨厌", "→U→");
-	chatMap.set("siri", "谁啊，不认识……");
-	chatMap.set("alexa", "谁啊，不认识……");
-	chatMap.set("谷歌娘", "谁啊，不认识……");
-	chatMap.set("认识", "不认识，下一个");
-	chatMap.set("联络", "QQ:201258779<br/>邮箱:Alligrater@outlook.com");
-	chatMap.set("上古野良缝合怪", "借代码一时爽，一直借一直爽");
-	chatMap.set("♂", "Boy♂Next♂Door");
-	chatMap.set("嘤嘤", "一拳一个嘤嘤怪！");
-	chatMap.set("brain power", "O-oooooooooo AAAAE-A-A-I-A-U- JO-oooooooooooo AAE-O-A-A-U-U-A- E-eee-ee-eee AAAAE-A-E-I-E-A- JO-ooo-oo-oo-oo EEEEO-A-AAA-AAAA");
-	chatMap.set("大碗宽面", "O-oooooooooo AAAAE-A-A-I-A-U- JO-oooooooooooo AAE-O-A-A-U-U-A- E-eee-ee-eee AAAAE-A-E-I-E-A- JO-ooo-oo-oo-oo EEEEO-A-AAA-AAAA");
+	chatMap.set("关于", ["HaNA(SH1)41-Bot<br/>Generation:Genesis0:01<br/>Created by Alligrater, Serve for Alligrater.<br/>The world ends when the world ends when the world ends..."]);
+	chatMap.set("你是谁", ["我是Alligrater创造出的第一代聊天机器人Hanashiai-Bot. 正式一点的名字叫HaNA(SH1)41-Bot[Genesis0:01]。这个页面现在由我来负责管理哟~★"]);
+	chatMap.set("推荐", ["<center>今日的推荐是……<br/><a href=\"./creations.html\" class=\"textlink\">作品页！</a><br/>非常有意思哟！<center/>"]);
+	chatMap.set("alligrater", ["啊，巨佬！"]);
+	chatMap.set("bilibili", ["<center>不来看一发吗（诱惑）<br/><a href=\"http://space.bilibili.com/2936578\" class=\"textlink\">前往哔哩哔哩动画</a></center>"]);
+	chatMap.set("哔哩哔哩", ["<center>不来看一发吗（诱惑）<br/><a href=\"http://space.bilibili.com/2936578\" class=\"textlink\">前往哔哩哔哩动画</a></center>"]);
+	chatMap.set("github", ["<center>不来掉头发吗（谢顶）<br/><a href=\"https://www.github.com/Alligrater\" class=\"textlink\">Github</a></center>"]);
+	chatMap.set("gayhub", ["<center>不来掉头发吗（谢顶）<br/><a href=\"https://www.github.com/Alligrater\" class=\"textlink\">Gayhub</a></center>"]);
+	chatMap.set("喜欢", ["←U←"]);
+	chatMap.set("讨厌", ["→U→"]);
+	chatMap.set("siri", ["谁啊，不认识……"]);
+	chatMap.set("alexa", ["谁啊，不认识……"]);
+	chatMap.set("谷歌娘", ["谁啊，不认识……"]);
+	chatMap.set("认识", ["不认识，下一个"]);
+	chatMap.set("联络", ["QQ:201258779<br/>邮箱:Alligrater@outlook.com"]);
+	chatMap.set("上古野良缝合怪", ["借代码一时爽，一直借一直爽"]);
+	chatMap.set("♂", ["Boy♂Next♂Door"]);
+	chatMap.set("嘤嘤", ["一拳一个嘤嘤怪！"]);
+	chatMap.set("brain power", ["O-oooooooooo","AAAAE-A-A-I-A-U-","JO-oooooooooooo","AAE-O-A-A-U-U-A-","E-eee-ee-eee","AAAAE-A-E-I-E-A-","JO-ooo-oo-oo-oo","EEEEO-A-AAA-AAAA"]);
+	chatMap.set("大碗宽面", ["哎","哎","准备好了没有","你看这个面它又长又宽","就像这个碗它又大又圆","你们","来这里","吃饭","觉得","饭很","好","吃","我看行","你们","来这里","吃饭","就像","我给你们拉面一样很开心，哎"]);
+	chatMap.set("孙悟空有几个女朋友", ["戏说不是胡说,改编不是乱编<br/>孙悟空叫白骨精叫晶晶，白骨精叫孙悟空叫空空<br/>人妖不分，是非颠倒<br/>这样的编剧是要向全国人民谢罪的"]);
+	chatMap.set("身份证", ["我有两张分身证，一张叫Alligrater，一张叫大葱坷垃"]);
 	function hanashiai(){
 		if(usermessage != ""){
 			console.log(usermessage);
@@ -72,7 +76,8 @@
 					var key = entry[0],
 					value = entry[1];
 					if(usermessage.toLowerCase().indexOf(key) > -1){
-						botmessage = value;
+						messagequeue = value;
+						botmessage = messagequeue[0];
 						canfind = true;
 					}
 				}
@@ -84,24 +89,30 @@
 				for (var entry of chatMap.entries()) {
 					botmessage += entry[0] + " | ";
 				}
+				messagequeue = [botmessage];
 				canfind = true;
 			}
 
 			if(canfind == false){
 				if(Math.random() > 0.8){
 					botmessage = "(D20+1>25)你没有收获任何相关的信息……（绝望）"
+					messagequeue = [botmessage];
 				}
 				else if(Math.random() > 0.6){
 					botmessage = "这种东西我怎么会知道呢（心虚）"
+					messagequeue = [botmessage];
 				}
 				else if(Math.random() > 0.4){
 					botmessage = "你再问一句这样的话我就……好像也不能把你怎么样（悲）"
+					messagequeue = [botmessage];
 				}
 				else if(Math.random() > 0.2){
 					botmessage = "听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂"
+					messagequeue = [botmessage];
 				}
 				else{
 					botmessage = "よくわからんな...（困惑）"
+					messagequeue = [botmessage];
 				}
 
 			}
@@ -110,10 +121,11 @@
 			usermessage = "";
 		}
 		//Completes all chat and once again allow chat
-		timer = setTimeout('botsend()', 10*botmessage.length + Math.random()*200);//botsend();
+		if(messagequeue[0] != null){
+			timer = setTimeout('botsend()', 10*botmessage.length + Math.random()*200+500);//botsend();
+		}
 		
-		
-		timer = setTimeout('hanashiai()', 400);//Simple infinite loop, tuned down for lower grade pcs.
+		//Simple infinite loop, tuned down for lower grade pcs.
 	}
 	
 	/*Client Side Message Sending*/
@@ -136,26 +148,39 @@
 		window.scrollTo(0,document.body.scrollHeight);
 		document.getElementById('chatbox').value = "";
 		document.getElementById('chatbox').placeholder = "ロボットが入力しています..."
-		
+		timer = setTimeout('hanashiai()', 400);
 	}
 	
 	/*Bot Side Message Sending*/
 	function botsend(){
-		if(botmessage == ""){
+		if(messagequeue[queueindex] == null){
+			timer = setTimeout('hanashiai()', 400);
 			return;
 		}
 		var div = document.getElementById('chatarea');
 		greetingmessage = document.createElement("p");
-		greetingmessage.innerHTML = botmessage;
+		greetingmessage.innerHTML = messagequeue[queueindex];
 		greetingmessage.className = "aite";
 		
 		div.insertBefore(greetingmessage, div.lastChild.nextSibling);
 		
 		//Always scroll to bottom, witchery.
 		window.scrollTo(0,document.body.scrollHeight);
-		botmessage = "";
-		document.getElementById('chatbox').placeholder = "言いたいことを書いてください..."
-		document.getElementById('sendbutton').disabled = false;
+		queueindex += 1;
+		if(messagequeue[queueindex] != null){
+		//Calls botsend if the bot have something to say
+			timer = setTimeout('botsend()', 10*messagequeue[queueindex].length + Math.random()*200+500);//botsend();
+		
+		}
+		else{
+			queueindex = 0;
+			messagequeue = []; //Finished sending all messages in the queue
+			document.getElementById('chatbox').placeholder = "言いたいことを書いてください..."
+			document.getElementById('sendbutton').disabled = false;
+			return;
+		}
+
+
 	}
 	
 	/*Sends his greetings*/
