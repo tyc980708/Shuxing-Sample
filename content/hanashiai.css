@@ -163,7 +163,7 @@
 		margin-right: auto;
 		left: 0;
 		right: 0;
-		top: 260;
+		top: 80%;
 		margin-bottom:80px;
 	}
 	
@@ -174,7 +174,7 @@
 		background-color: #FFFFFF;
 		color: #111111;
 		text-align: left;
-		border-radius: 6px;
+		border-radius: 10px;
 		padding: 10px 20px;
 		font-family: source-han-serif-sc,serif;
 		font-size: 20px;
@@ -191,7 +191,7 @@
 		background-color: #111111;
 		color: #FFFFFF;
 		text-align: right;
-		border-radius: 6px;
+		border-radius: 10px;
 		padding: 10px 20px;
 		font-family: source-han-serif-sc,serif;
 		font-size: 20px;
