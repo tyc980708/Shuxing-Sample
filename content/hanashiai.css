@@ -168,8 +168,7 @@
 	}
 	
 	p.aite {
-		margin-left:-300px;
-		width:auto;
+		margin-top: 15px;
 		max-width: 450px;
 		background-color: #FFFFFF;
 		color: #111111;
@@ -182,11 +181,15 @@
 		/* 定位 */
 		z-index: 1;
 		box-shadow: 0px 2px 3px #AAAAAA;
+		margin-right:auto;
+		margin-left:550px;
+		width:max-content;
 		transition: box-shadow 0.2s, transform 0.2s;
+		
 	}
 	p.mikata {
-		margin-right:-300px;
-		width:auto;
+		margin-top: 15px;
+		transform-origin: right;
 		max-width: 450px;
 		background-color: #111111;
 		color: #FFFFFF;
@@ -200,6 +203,10 @@
 		z-index: 1;
 		box-shadow: 0px 2px 3px #AAAAAA;
 		transition: box-shadow 0.2s, transform 0.2s;
+		margin-left:auto;
+		margin-right:550px;
+		
+		width:max-content;
 	}
 	
 	p.aite:hover, p.mikata:hover{
