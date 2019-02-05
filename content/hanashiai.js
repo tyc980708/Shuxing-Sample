@@ -14,6 +14,7 @@
 	let messagequeue = [];
 	queueindex = 0;
 	var audio = new Audio('../audio/notification_sound.mp3');
+	var buttonclicked;
 	
 	audio.play();
 	
@@ -116,7 +117,7 @@
 					messagequeue = ["不懂的东西问100遍我也不会懂的，不过问1000遍可能就不一样了"];
 				}
 				else if(Math.random() > 0.5){
-					messagequeue = ["<center><font color=\"red\">ERROR: SYS_CONNECTION_FAILURE<br/>LEVEL: SEVERE<br/>ACTION REQUIRED<br/><a background-color='#FF0000' color='#111111' class='textlink' onclick='override()'>OVERRIDE</a></font><center>"];
+					messagequeue = ["<center><font color=\"red\">ERROR: SYS_CONNECTION_FAILURE<br/>LEVEL: SEVERE<br/>ACTION REQUIRED<br/><a background-color='#FF0000' color='#111111' id='override' class='textlink' onclick='override()'>OVERRIDE</a></font><center>"];
 				}
 				else if(Math.random() > 0.4){
 					botmessage = "你再问一句这样的话我就……好像也不能把你怎么样（悲）"
@@ -218,34 +219,16 @@
 	}
 	
 	function override(){
-		var aite = document.getElementsByClassName("aite");
-		var i;
-		for (i = 0; i < aite.length; i++) {
-			aite[i].innerHTML = "<img src='./botemoji/boom.gif'></img>";
-		}
+		//Game Over!
+		document.getElementById('override').parentNode.innerHTML = "<img src='./botemoji/boom.gif'></img>";
 		var nuke = new Audio('./botemoji/nuke.mp3');
 		nuke.play();
 		window.scrollTo(0,document.body.scrollHeight);
+		messagequeue = ["GAME OVER<br/><a background-color='#FF0000' color='#111111' class='textlink' onclick='location.reload()'>やりなおす</a>",""];
+		timer = setTimeout('botsend()', 10*messagequeue[queueindex].length + Math.random()*200+800);//botsend();
+		
 	}
 	
-	/*function incompletesend(){
-		kaken += 1;
-		if(kaken > 30){
-			var content = document.getElementById('incomplete');
-			content.innerHTML += "好";
-		}
-		window.scrollTo(0,document.body.scrollHeight);
-		var content = document.getElementById('incomplete');
-		if(Math.random() > 0.5){
-			content.innerHTML += "锟斤拷";
-		}
-		else{
-			content.innerHTML += "烫";
-		}
-		
-		timer = setTimeout('incompletesend()', 80);
-		
-	}*/
 	
 	/*Sends his greetings*/
 	function greetings(){
