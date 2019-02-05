@@ -104,7 +104,7 @@
 				if(Math.random() > 0.9){
 					botmessage = "(D20+1>25)你没有收获任何相关的信息……（绝望）"
 					messagequeue = [botmessage];
-				}/*
+				}
 				else if(Math.random() > 0.8){
 					messagequeue = ["<img src='./botemoji/nayan.gif'></img>","怎么搞得像我听得懂一样"];
 				}
@@ -114,7 +114,7 @@
 				}
 				else if(Math.random() > 0.6){
 					messagequeue = ["不懂的东西问100遍我也不会懂的，不过问1000遍可能就不一样了"];
-				}*/
+				}
 				else if(Math.random() > 0.5){
 					messagequeue = ["<center><font color=\"red\">ERROR: SYS_CONNECTION_FAILURE<br/>LEVEL: SEVERE<br/>ACTION REQUIRED<br/><a background-color='#FF0000' color='#111111' class='textlink' onclick='override()'>OVERRIDE</a></font><center>"];
 				}
