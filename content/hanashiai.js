@@ -19,8 +19,12 @@
 	var kaken = 0;
 		
 		var chatMap = new Map();
-	chatMap.set("你好", ["<img src='./botemoji/greetings.jpg'></img>","你好"]);
-	//chatMap.set("再见", ["再见←A←"]);
+	chatMap.set("你好", ["<img src='./botemoji/greetings.jpg'></img>",""]);
+	chatMap.set("早上好", ["<img src='./botemoji/gm.gif'></img>",""]);
+	chatMap.set("早安", ["<img src='./botemoji/gm.gif'></img>",""]);
+	chatMap.set("早", ["<img src='./botemoji/gm.gif'></img>",""]);
+	chatMap.set("晚上好", ["<img src='./botemoji/gn.gif'></img>",""]);
+	chatMap.set("再见", ["再见←A←"]);
 	//chatMap.set("再见", ["再见←A←"]);
 	chatMap.set("关于", ["HaNA(SH1)41-Bot<br/>Generation:Genesis0:01<br/>Created by Alligrater, Serve for Alligrater.<br/>The world ends when the world ends when the world ends..."]);
 	chatMap.set("你是谁", ["我是Alligrater创造出的第一代聊天机器人Hanashiai-Bot. 正式一点的名字叫HaNA(SH1)41-Bot[Genesis0:01]。这个页面现在由我来负责管理哟~★"]);
@@ -41,9 +45,10 @@
 	chatMap.set("♂", ["Boy♂Next♂Door"]);
 	chatMap.set("嘤嘤", ["一拳一个嘤嘤怪！"]);
 	chatMap.set("brain power", ["O-oooooooooo","AAAAE-A-A-I-A-U-","JO-oooooooooooo","AAE-O-A-A-U-U-A-","E-eee-ee-eee","AAAAE-A-E-I-E-A-","JO-ooo-oo-oo-oo","EEEEO-A-AAA-AAAA"]);
-	chatMap.set("大碗宽面", ["哎","哎","准备好了没有","你看这个面它又长又宽","就像这个碗它又大又圆","你们","来这里","吃饭","觉得","饭很","好","吃","我看行","你们","来这里","吃饭","就像","我给你们拉面一样很开心，哎"]);
+	chatMap.set("有没有freestyle", ["<audio autoplay><source src=\"./botemoji/skr.mp3\" type=\"audio/mpeg\"></audio>哎","哎","哎","准备好了没有","你看这个面它又长又宽","就像这个碗它又大又圆","你们","来这里","吃饭","觉得","饭很","好","吃","我看行","你们","来这里","吃饭","就像","我给你们拉面一样很开心，哎"]);
 	chatMap.set("孙悟空有几个女朋友", ["戏说不是胡说,改编不是乱编","孙悟空叫白骨精叫晶晶，白骨精叫孙悟空叫空空","人妖不分，是非颠倒","这样的编剧是要向全国人民谢罪的"]);
 	chatMap.set("身份证", ["我有两张分身证，一张叫Alligrater，一张叫大葱坷垃"]);
+	chatMap.set("音乐", ["<audio autoplay><source src=\"./botemoji/6234.mp3\" type=\"audio/mpeg\"></audio>💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃"]);
 	function hanashiai(){
 		if(usermessage != ""){
 			console.log(usermessage);
@@ -52,7 +57,7 @@
 			if(usermessage.toLowerCase().indexOf("我") > -1 && usermessage.toLowerCase().indexOf("是谁") > -1 ){
 				usermessage = document.getElementById('chatbox').value;
 				var div = document.getElementById('chatarea');
-				greetingmessage = document.createElement("p");
+				greetingmessage = document.createElement("div")
 				greetingmessage.innerHTML = "<center>当你在读到这段话的时候<br/>你已经昏迷10年了<br/>我们正在尝试新的治疗方案<br/>我不知道这段信息会出现在你梦境的哪里<br/>但我们希望你能够看到<br/>请赶快醒来</center>";
 				greetingmessage.className = "mikata";
 				div.insertBefore(greetingmessage, div.lastChild.nextSibling);
@@ -62,7 +67,7 @@
 			}/*
 			else if(usermessage.toLowerCase().indexOf("你好") > -1){
 				var div = document.getElementById('chatarea');
-				greetingmessage = document.createElement("p");
+				greetingmessage = document.createElement("div")
 				greetingmessage.innerHTML = "你";
 				greetingmessage.className = "aite";
 				greetingmessage.id = "incomplete";
@@ -138,7 +143,7 @@
 		usermessage = document.getElementById('chatbox').value;
 		messagebackup = usermessage;
 		var div = document.getElementById('chatarea');
-		greetingmessage = document.createElement("p");
+		greetingmessage = document.createElement("div")
 		greetingmessage.innerHTML = usermessage;
 		greetingmessage.className = "mikata";
 		
@@ -155,11 +160,20 @@
 	/*Bot Side Message Sending*/
 	function botsend(){
 		if(messagequeue[queueindex] == null){
-			timer = setTimeout('hanashiai()', 400);
+			//timer = setTimeout('hanashiai()', 400);
+			window.scrollTo(0,document.body.scrollHeight);
+			return;
+		}
+		if(messagequeue[queueindex] == ""){
+			window.scrollTo(0,document.body.scrollHeight);
+			queueindex = 0;
+			messagequeue = []; //Finished sending all messages in the queue
+			document.getElementById('chatbox').placeholder = "言いたいことを書いてください..."
+			document.getElementById('sendbutton').disabled = false;
 			return;
 		}
 		var div = document.getElementById('chatarea');
-		greetingmessage = document.createElement("p");
+		greetingmessage = document.createElement("div")
 		greetingmessage.innerHTML = messagequeue[queueindex];
 		greetingmessage.className = "aite";
 		
@@ -170,8 +184,9 @@
 		queueindex += 1;
 		if(messagequeue[queueindex] != null){
 		//Calls botsend if the bot have something to say
+			window.scrollTo(0,document.body.scrollHeight);
 			timer = setTimeout('botsend()', 10*messagequeue[queueindex].length + Math.random()*200+800);//botsend();
-				
+			
 		}
 		else{
 			queueindex = 0;
