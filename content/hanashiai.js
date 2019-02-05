@@ -14,6 +14,7 @@
 	let messagequeue = [];
 	queueindex = 0;
 	var audio = new Audio('../audio/notification_sound.mp3');
+	
 	audio.play();
 	
 	var kaken = 0;
@@ -45,7 +46,7 @@
 	chatMap.set("♂", ["Boy♂Next♂Door"]);
 	chatMap.set("嘤嘤", ["一拳一个嘤嘤怪！"]);
 	chatMap.set("brain power", ["O-oooooooooo","AAAAE-A-A-I-A-U-","JO-oooooooooooo","AAE-O-A-A-U-U-A-","E-eee-ee-eee","AAAAE-A-E-I-E-A-","JO-ooo-oo-oo-oo","EEEEO-A-AAA-AAAA"]);
-	chatMap.set("有没有freestyle", ["<audio autoplay><source src=\"./botemoji/skr.mp3\" type=\"audio/mpeg\"></audio>哎","哎","哎","准备好了没有","你看这个面它又长又宽","就像这个碗它又大又圆","你们","来这里","吃饭","觉得","饭很","好","吃","我看行","你们","来这里","吃饭","就像","我给你们拉面一样很开心，哎"]);
+	chatMap.set("有freestyle", ["<audio autoplay><source src=\"./botemoji/skr.mp3\" type=\"audio/mpeg\"></audio>哎","哎","哎","准备好了没有","你看这个面它又长又宽","就像这个碗它又大又圆","你们","来这里","吃饭","觉得","饭很","好","吃","我看行","你们","来这里","吃饭","就像","我给你们拉面一样很开心，哎"]);
 	chatMap.set("孙悟空有几个女朋友", ["戏说不是胡说,改编不是乱编","孙悟空叫白骨精叫晶晶，白骨精叫孙悟空叫空空","人妖不分，是非颠倒","这样的编剧是要向全国人民谢罪的"]);
 	chatMap.set("身份证", ["我有两张分身证，一张叫Alligrater，一张叫大葱坷垃"]);
 	chatMap.set("音乐", ["<audio autoplay><source src=\"./botemoji/6234.mp3\" type=\"audio/mpeg\"></audio>💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃💃"]);
@@ -100,20 +101,37 @@
 			}
 
 			if(canfind == false){
-				if(Math.random() > 0.8){
+				if(Math.random() > 0.9){
 					botmessage = "(D20+1>25)你没有收获任何相关的信息……（绝望）"
+					messagequeue = [botmessage];
+				}/*
+				else if(Math.random() > 0.8){
+					messagequeue = ["<img src='./botemoji/nayan.gif'></img>","怎么搞得像我听得懂一样"];
+				}
+				else if(Math.random() > 0.7){
+					botmessage = "这种东西我怎么会知道呢（心虚）"
 					messagequeue = [botmessage];
 				}
 				else if(Math.random() > 0.6){
-					botmessage = "这种东西我怎么会知道呢（心虚）"
-					messagequeue = [botmessage];
+					messagequeue = ["不懂的东西问100遍我也不会懂的，不过问1000遍可能就不一样了"];
+				}*/
+				else if(Math.random() > 0.5){
+					messagequeue = ["<center><font color=\"red\">ERROR: SYS_CONNECTION_FAILURE<br/>LEVEL: SEVERE<br/>ACTION REQUIRED<br/><a background-color='#FF0000' color='#111111' class='textlink' onclick='override()'>OVERRIDE</a></font><center>"];
 				}
 				else if(Math.random() > 0.4){
 					botmessage = "你再问一句这样的话我就……好像也不能把你怎么样（悲）"
 					messagequeue = [botmessage];
 				}
+				else if(Math.random() > 0.3){
+					botmessage = "to SERVER: \"用户提出了不该问的问题，是否排除？\""
+					messagequeue = [botmessage];
+				}
 				else if(Math.random() > 0.2){
 					botmessage = "听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂"
+					messagequeue = [botmessage];
+				}
+				else if(Math.random() > 0.1){
+					botmessage = "好厉害好厉害（完全没在听）"
 					messagequeue = [botmessage];
 				}
 				else{
@@ -197,6 +215,17 @@
 		}
 
 
+	}
+	
+	function override(){
+		var aite = document.getElementsByClassName("aite");
+		var i;
+		for (i = 0; i < aite.length; i++) {
+			aite[i].innerHTML = "<img src='./botemoji/boom.gif'></img>";
+		}
+		var nuke = new Audio('./botemoji/nuke.mp3');
+		nuke.play();
+		window.scrollTo(0,document.body.scrollHeight);
 	}
 	
 	/*function incompletesend(){
