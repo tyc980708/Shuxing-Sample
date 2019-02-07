@@ -106,7 +106,7 @@
 					messagequeue = ["不懂的东西问100遍我也不会懂的，不过问1000遍可能就不一样了"];
 				}
 				else if(Math.random() > 0.5){
-					messagequeue = ["<center><font color=\"red\">ERROR: INTEL_NETWORK_FAILURE<br/>LEVEL: SEVERE<br/>MANUAL OVERRIDE REQUIRED<br/><a background-color='#FF0000' color='#111111' id='override' class='textlink' onclick='override()'><br/>OVERRIDE</a><br/>DO NOT OVERRIDE UNADVISED</font><center>"];
+					messagequeue = ["<center><font color=\"red\">ERROR: INTEL_NETWORK_FAILURE<br/>LEVEL: SEVERE<br/>MANUAL OVERRIDE REQUIRED<br/><a background-color='#FF0000' color='#111111' id='override' class='textlink' onclick='override()'>OVERRIDE</a><br/>DO NOT OVERRIDE UNADVISED</font><center>"];
 				}
 				else if(Math.random() > 0.4){
 					messagequeue = ["你再问一句这样的话我就……好像也不能把你怎么样（悲）"];
