@@ -29,7 +29,6 @@
 	chatMap.set("下午好", [["<img src='./botemoji/ga.gif'></img>",""]]);
 	chatMap.set("晚上好", [["<img src='./botemoji/gn.gif'></img>",""]]);
 	chatMap.set("再见", [["再见←A←"]]);
-	//chatMap.set("再见", [["再见←A←"]]);
 	chatMap.set("关于", [["HaNA(SH1)41-Bot<br/>Generation:Genesis2:01<br/>Created by Alligrater, Serve for Alligrater.<br/>The world ends when the world ends when the world ends..."]]);
 	chatMap.set("你是谁", [["我是Alligrater创造出的第一代聊天机器人Hanashiai-Bot. 正式一点的名字叫HaNA(SH1)41-Bot[[Genesis2:01]]。这个页面现在由我来负责管理哟~★"]]);
 	chatMap.set("推荐", [["<center>今日的推荐是……<br/><a href=\"./creations.html\" class=\"textlink\">作品页！</a><br/>非常有意思哟！<center/>"],["<center>今日的推荐是……<br/><a href=\"./hanashiai.html\" class=\"textlink\">我 推 荐 我 自 己</a><br/>非常有意思哟！<center/>"]]);
@@ -222,7 +221,7 @@
 		var nuke = new Audio('./botemoji/nuke.mp3');
 		nuke.play();
 		window.scrollTo(0,document.body.scrollHeight);
-		messagequeue = ["GAME OVER<br/><a background-color='#FF0000' color='#111111' class='textlink' onclick='location.reload()'>やりなおす</a>",""];
+		messagequeue = ["<center>GAME OVER<br/><a background-color='#FF0000' color='#111111' class='textlink' onclick='location.reload()'>やりなおす</a></center>",""];
 		timer = setTimeout('botsend()', 10*messagequeue[queueindex].length + Math.random()*200+800);//botsend();
 		
 	}

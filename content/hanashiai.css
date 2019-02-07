@@ -1,7 +1,15 @@
 	html {
   scroll-behavior: smooth;
 }
-	
+	div#preload{
+		position:fixed;
+		top:0;
+		left:0;
+		visibility:hidden;
+		width:1;
+		height:1;
+		overflow:hidden;
+	}
 	/*Titles*/
 	h2.title {
 		z-index:5;
