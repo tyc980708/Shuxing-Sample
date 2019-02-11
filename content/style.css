@@ -135,6 +135,25 @@
 		flex-wrap: wrap;
 		justify-content: center;
 	}
+	div.nisemasonry{
+				text-align: center;
+		padding: 0px;
+		margin: 0px 0px;
+		position:absolute;
+		margin-left: 3%;
+		margin-right: 3%;
+		left: 0;
+		right: 0;
+		top: 290;
+		margin-bottom:80px;
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		column-count: 3;
+		-moz-column-gap:10px;
+		-webkit-column-gap:10px;
+		column-gap:20px;
+		padding: 10px;
+	}
 	/*Content Container Boxes*/
 	div.article{
 		margin:10px;
@@ -145,6 +164,21 @@
 		display: inline-block;
 		box-shadow: 0px 2px 3px #AAAAAA;
 		transition: box-shadow 0.2s, transform 0.2s;
+	}
+	div.bvideo{
+		position:relative;
+		margin:5px;
+		padding-bottom:30px;
+		width:550px;
+		min-height:max-content;
+		display: inline-block;
+		background-color:#FFFFFF;
+		box-shadow: 0px 2px 3px #AAAAAA;
+		transition: box-shadow 0.2s, transform 0.2s;
+	}
+	div.bvideo:hover{
+		box-shadow: 0px 4px 10px #AAAAAA;
+		transform: scale(1.01, 1.01);
 	}
 	div.article:hover{
 		box-shadow: 0px 4px 10px #AAAAAA;
@@ -243,6 +277,16 @@
 	h3.title {
 		font-size: 22px;
 		font-family: source-han-serif-sc,serif;
+	}
+	h3.small {
+		font-size: 18px;
+		font-family: source-han-serif-sc,serif;
+	}
+	p.small {
+		font-size: 15px;
+		font-family: source-han-serif-sc,serif;
+		padding: 0px 15px;
+		word-break: normal;
 	}
 	p {
 		font-size: 18px;
