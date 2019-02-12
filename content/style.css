@@ -172,7 +172,7 @@
 		box-shadow: 0px 2px 3px #AAAAAA;
 		transition: box-shadow 0.2s, transform 0.2s;
 		margin-bottom: 10px;
-		animation: slide-up 0.4s ease;
+		animation: slide-up 0.4s ease;9
 	}
 	div.bvideo:hover{
 		box-shadow: 0px 4px 10px #AAAAAA;
