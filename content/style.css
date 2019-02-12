@@ -175,8 +175,7 @@
 		position:relative;
 		margin:5px;
 		padding-bottom:30px;
-		min-width:30%;
-		max-width:30%
+		width:100%;
 		min-height:max-content;
 		display: inline-block;
 		background-color:#FFFFFF;
@@ -303,3 +302,8 @@
 		word-break: normal;
 	}
 	
+	img.bvcover{
+		background-color: #EFEFEF;
+		width: 100%;
+		height: auto;
+	}
