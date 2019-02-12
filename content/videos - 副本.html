@@ -55,14 +55,12 @@
 			return;
 		}
 		else{
-			var container = document.getElementById('nm-' + pindex%3);
+			var container = document.getElementById('container');
 			bvdiv = document.createElement("div")
 			//这里放上图片 -> pcontent[pindex].pic
-			bvdiv.innerHTML = "<div><center>" + "<a href='https://www.bilibili.com/video/av" + pcontent[pindex].aid + "'>"
-			bvdiv.innerHTML += "<img class='bvcover' src='http:" + pcontent[pindex].pic + "'></img></a>";
-			//播放时长&播放按钮
-			bvdiv.innerHTML += "<p class='vlen'>" + pcontent[pindex].length + "</p></div>"
-			bvdiv.innerHTML += "<div><br/><a class='vtil' href='https://www.bilibili.com/video/av" + pcontent[pindex].aid +"'>" + pcontent[pindex].title + "</a></div>";
+			bvdiv.innerHTML = "<div><center><img class='bvcover' src='http:" + pcontent[pindex].pic + "'></img>";
+			bvdiv.innerHTML += "<br/><h3 class='small'>" + pcontent[pindex].title + "</h3><p class='small'>" + pcontent[pindex].description + "</p><center>";
+			bvdiv.innerHTML += "<a class='textlink' href='https://www.bilibili.com/video/av" + pcontent[pindex].aid + "'>让我康康！</a></div>";
 			//这里放上标题和简介
 			//标题用h3 -> pcontent[pindex].title
 			//简介用p -> pcontent[pindex].description
@@ -110,16 +108,8 @@
 	</nav>
 
 	<!-- Everything Goes Beyond Here Should Put in Container.-->
-	<div class="container" id="container">
-		<div class="nisemasonry" id="nm-0">
+	<div class="nisemasonry" id="container">
 		
-		</div>
-		<div class="nisemasonry" id="nm-1">
-		
-		</div>
-		<div class="nisemasonry" id="nm-2">
-		
-		</div>
 	</div>
   </body>
 </html>

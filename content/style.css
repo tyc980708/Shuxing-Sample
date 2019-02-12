@@ -86,10 +86,10 @@
 		font-family: source-han-serif-sc,serif;
 		text-decoration:none;
 		line-height:38px;
-		
+		transition:color 0.2s;
 	}
 	a.nav:hover{
-		color: #999999; 
+		color: #ef1f95; 
 	}
 	a.textlink {
 		width:200px;
@@ -138,26 +138,16 @@
 		justify-content: center;
 	}
 	div.nisemasonry{
-		
-		text-align: center;
-		padding: 0px;
-		margin: 0px 0px;
-		position:absolute;
-		margin-left: 3%;
-		margin-right: 3%;
-		left: 0;
-		right: 0;
-		top: 290;
-		margin-bottom:80px;
-		
+		/*
 		-webkit-column-count: 3;
 		-moz-column-count: 3;
 		column-count: 3;
 		-moz-column-gap:10px;
 		-webkit-column-gap:10px;
-		column-gap:10px;
+		column-gap:10px;*/
+		width:25%;
 		padding: 10px;
-		
+		display:inline-block;
 	}
 	/*Content Container Boxes*/
 	div.article{
@@ -165,8 +155,8 @@
 		padding-bottom:50px;
 		background-color:#FFFFFF;
 		width:30%;
-		height:auto;
-		min-height:max-content;
+		/*height:auto;*/
+		max-height:max-content;
 		display: inline-block;
 		box-shadow: 0px 2px 3px #AAAAAA;
 		transition: box-shadow 0.2s, transform 0.2s;
@@ -285,14 +275,36 @@
 		font-size: 22px;
 		font-family: source-han-serif-sc,serif;
 	}
-	h3.small {
+	a.vtil {
 		font-size: 18px;
 		font-family: source-han-serif-sc,serif;
+		color:#010101;
+		text-decoration: none;
+		font-style:bold;
+		transition:color 0.2s;
 	}
-	p.small {
+	a.vtil:visited{
+		color:#252525;
+	}
+	/*Alligrater Pink*/
+	a.vtil:hover{
+		color:#ef1f95;
+	}
+	p.vlen {
+		padding-top: 5px;
+		padding-bottom:5px;
+		padding-right:35px;
+		padding-left:35px;
+		position:absolute;
+		top:40%;
+		left:0px;
+		background-color:rgba(0,0,0,0.8);
+		color:#FFFFFF;
+		border-bottom-right-radius:10px;
+		
+		
 		font-size: 15px;
 		font-family: source-han-serif-sc,serif;
-		padding: 0px 15px;
 		word-break: normal;
 	}
 	p {
