@@ -83,10 +83,11 @@
 		margin:60px 0px;
 		align:center;
 		padding: 20px;
-
+		
 		text-align:center;
 		background-color:#FFFFFF;
 		box-shadow: 0px 4px 5px #AAAAAA;
+		line-height:38px;
 	}
 	/*Navigation Bar on Top*/
 	a.nav {
@@ -96,6 +97,7 @@
 		font-size: 20px;
 		font-family: source-han-serif-sc,serif;
 		text-decoration:none;
+		line-height:38px;
 		
 	}
 	a.nav:hover{
