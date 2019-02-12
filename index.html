@@ -12,11 +12,11 @@
 </script>
 	<meta charset="UTF-8">
 	<title>Alligrater ~アリグレイター~</title>
-	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.3/bowser.min.js"></script>
 	<link rel="icon" href="img/icon.png" />
-	<script src="https://cdn.staticfile.org/jquery-color/2.1.2/jquery.color.min.js"></script>
 	<script type="text/javascript">
 
+	var understand = false;
 	var divTyping;
 	let i = 0,
 	timer = 0,
@@ -44,9 +44,25 @@
 	window.onload = function() {
 		divTyping = document.getElementById("typebox");
 		typing();
+
 	}
 		
 	function redirect(){
+		if(bowser.name != "Chrome"){
+			if(!understand){
+				var bd = document.getElementById("backdrop");
+				bd.innerHTML = "USE CHROME"
+				bd.className = "wntm"
+				var ft = document.getElementById("fronttext");
+				ft.innerHTML = "Chrome is Recommended"
+				ft.className = "wnoverlay"
+				var tb = document.getElementById("typebox");
+				tb.innerHTML = "Proceed Regardless"
+				tb.className = "warning"
+				understand = true;
+				return;
+			}
+		}
 		window.location='content/homepage.html';
 	}
 	
@@ -74,6 +90,21 @@
 			letter-spacing: 10px;
 		font-style: black;
 	}
+	h2.wntm {
+		align:center;
+		text-align:center;
+		color:rgba(255,80,80,0.2);
+		position: abosolute;
+		/*padding-top:50%;*/
+		margin:1px auto;
+		max-width:800px;
+		min-width:500px;
+		font-size: 100px;
+				font-family: source-han-serif-sc,serif;
+		font-weight: 400;
+			letter-spacing: 0px;
+		font-style: black;
+	}
 	h2.overlay {
 		align:center;
 		text-align:center;
@@ -85,6 +116,21 @@
 		font-size: 38px;
 		
 		letter-spacing: 20px;
+			font-family: source-han-serif-sc,serif;
+		font-weight: 400;
+		font-style: black;
+	}
+	h2.wnoverlay {
+		align:center;
+		text-align:center;
+		color: rgba(255,20,20);
+		position: abosolute;
+		margin:-90px auto;
+		max-width:800px;
+		min-width:500px;
+		font-size: 38px;
+		
+		letter-spacing: 3px;
 			font-family: source-han-serif-sc,serif;
 		font-weight: 400;
 		font-style: black;
@@ -111,9 +157,30 @@
 		color: #000000;
 		background-color: #FFFFFF;
 	}
+	.warning{
+		animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	}
 	body {
 		background: url(img/noise.jpg) ;
 		
+	}
+	
+	@keyframes shake {
+		10%, 90% {
+			transform: translate3d(-1px, 0, 0);
+		}
+		
+		20%, 80% {
+			transform: translate3d(2px, 0, 0);
+		}
+		
+		30%, 50%, 70% {
+			transform: translate3d(-4px, 0, 0);
+		}
+		
+		40%, 60% {
+			transform: translate3d(4px, 0, 0);
+		}
 	}
 	
 
@@ -121,8 +188,8 @@
   </head>
   <body style="padding:0px;margin:0px;">
 	<div class = "heading">
-	<h2 class="tm">Alligrater</h2>
-	<h2 class="overlay">アリグレイター</h2>
+	<h2 class="tm" id="backdrop">Alligrater</h2>
+	<h2 class="overlay" id="fronttext">アリグレイター</h2>
 	<center>
 	<button class="btn" id="typebox" onclick="redirect()">_</button>
 	</center>
