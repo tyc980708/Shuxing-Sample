@@ -39,7 +39,7 @@
 				//然后加进container里面
 				var content = JSON.parse(xmlhttp.responseText);
 				pcontent = content.data.vlist;
-				timer = setTimeout('createContent()', 10);
+				timer = setTimeout('createContent()', 40);
 			}
 		}
 		//海星，看起来没什么问题
@@ -69,13 +69,15 @@
 			//然后就可以吃了
 			bvdiv.className = "bvideo";
 			
+			
 			container.insertBefore(bvdiv, container.lastChild.nextSibling);
 			//把pcontent[pindex]丢进container里面
 			pindex += 1;
 			//等一段时间后进行下一个，这样加载起来就很欠抽
-			//timer = setTimeout('createContent()', 1);//每10tick(?)更新一个视频
+			timer = setTimeout('createContent()', 40);//每10tick(?)更新一个视频
 			//所以这个想法被抛弃了！
-			createContent();
+			//然后又被捡了回来！可喜可贺！
+			//createContent();
 		}
 	}
 	
