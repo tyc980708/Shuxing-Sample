@@ -21,13 +21,15 @@
 	var kaken = 0;
 		
 	var chatMap = new Map();
-	chatMap.set("你好", [["<img src='./botemoji/greetings.jpg'></img>",""],["<img src='./botemoji/greetings_alt1.jpg'></img>",""],["<img src='./botemoji/greetings_alt2.jpg'></img>",""]]);
-	chatMap.set("早上好", [["<img src='./botemoji/gm.gif'></img>",""]]);
-	chatMap.set("早安", [["<img src='./botemoji/gm.gif'></img>",""]]);
-	chatMap.set("早", [["<img src='./botemoji/gm.gif'></img>",""]]);
-	chatMap.set("中午好", [["<img src='./botemoji/gnoon.gif'></img>",""]]);
-	chatMap.set("下午好", [["<img src='./botemoji/ga.gif'></img>",""]]);
-	chatMap.set("晚上好", [["<img src='./botemoji/gn.gif'></img>",""]]);
+	chatMap.set("关键词", [["$CMD$showkeyword()"]]);
+	chatMap.set("关键字", [["$CMD$showkeyword()"]]);
+	chatMap.set("你好", [["<img src='./botemoji/greetings.jpg'></img>"],["<img src='./botemoji/greetings_alt1.jpg'></img>"],["<img src='./botemoji/greetings_alt2.jpg'></img>"]]);
+	chatMap.set("早上好", [["<img src='./botemoji/gm.gif'></img>"]]);
+	chatMap.set("早安", [["<img src='./botemoji/gm.gif'></img>"]]);
+	chatMap.set("早", [["<img src='./botemoji/gm.gif'></img>"]]);
+	chatMap.set("中午好", [["<img src='./botemoji/gnoon.gif'></img>"]]);
+	chatMap.set("下午好", [["<img src='./botemoji/ga.gif'></img>"]]);
+	chatMap.set("晚上好", [["<img src='./botemoji/gn.gif'></img>"]]);
 	chatMap.set("再见", [["再见←A←"]]);
 	chatMap.set("关于", [["HaNA(SH1)41-Bot<br/>Generation:Genesis2:01<br/>Created by Alligrater, Serve for Alligrater.<br/>The world ends when the world ends when the world ends..."]]);
 	chatMap.set("你是谁", [["我是Alligrater创造出的第一代聊天机器人Hanashiai-Bot. 正式一点的名字叫HaNA(SH1)41-Bot[[Genesis2:01]]。这个页面现在由我来负责管理哟~★"],["2.4岁，是人工智能。","身高是227行代码，体重是12.8K","<font color=\"#FF0000\"size=\"50px\">这 个 可 以 有 ！</font>"]]);
@@ -81,22 +83,12 @@
 				}
 			}
 
-			if(usermessage.toLowerCase().indexOf("关键字") > -1 || usermessage.toLowerCase().indexOf("关键词") > - 1){
-				
-				botmessage = "以下是我认识的所有关键字： <br/>";
-				for (var entry of chatMap.entries()) {
-					botmessage += entry[0] + " | ";
-				}
-				messagequeue = [botmessage];
-				canfind = true;
-			}
-
 			if(canfind == false){
 				if(Math.random() > 0.9){
 					messagequeue = ["(D20+1>25)你没有收获任何相关的信息……（绝望）"];
 				}
 				else if(Math.random() > 0.8){
-					messagequeue = ["<img src='./botemoji/nayan.gif'></img>","怎么搞得像我听得懂一样"];
+					messagequeue = ["<img src='./botemoji/nayan.gif'></img>","怎么搞得像我知道一样"];
 				}
 				else if(Math.random() > 0.7){
 					messagequeue = ["这种东西我怎么会知道呢（心虚）"];
@@ -111,7 +103,7 @@
 					messagequeue = ["你再问一句这样的话我就……好像也不能把你怎么样（悲）"];
 				}
 				else if(Math.random() > 0.3){
-					messagequeue = ["用户提出了不该问的问题，开始执行排除程式"];
+					messagequeue = ["[!]用户做出了不该做出的反应","[15%]正在尝试启动排除程序","[54%]排除程序启动成功","[99%]开始执行排除程序","[Warning]排除程序遇到了不可预料的错误","[0%]排除程序已自动关闭"];
 				}
 				else if(Math.random() > 0.2){
 					messagequeue = ["听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂"];
@@ -139,7 +131,6 @@
 	/*Client Side Message Sending*/
 	function message(){
 		if(document.getElementById('chatbox').value == ""){
-			
 			return;
 		}
 		usermessage = document.getElementById('chatbox').value;
@@ -166,25 +157,25 @@
 			window.scrollTo(0,document.body.scrollHeight);
 			return;
 		}
-		if(messagequeue[queueindex] == ""){
-			window.scrollTo(0,document.body.scrollHeight);
-			queueindex = 0;
-			messagequeue = []; //Finished sending all messages in the queue
-			document.getElementById('chatbox').placeholder = "言いたいことを書いてください..."
-			document.getElementById('sendbutton').disabled = false;
-			//Scrolling fix, not best solution but works.
-			return;
-		}
-		var div = document.getElementById('chatarea');
-		greetingmessage = document.createElement("div")
-		greetingmessage.innerHTML = messagequeue[queueindex];
-		greetingmessage.className = "aite";
 		
-		div.insertBefore(greetingmessage, div.lastChild.nextSibling);
-		audio.play();
-		//Always scroll to bottom, witchery.
-		window.scrollTo(0,document.body.scrollHeight);
-		queueindex += 1;
+		//在这之前，先加点新东西
+		//开头为$CMD$的转化成指令
+		//就不发消息了
+		if(messagequeue[queueindex].startsWith("$CMD$")){
+			eval(messagequeue[queueindex].substring(5))//理论可用
+		}
+		else{
+			var div = document.getElementById('chatarea');
+			greetingmessage = document.createElement("div")
+			greetingmessage.innerHTML = messagequeue[queueindex];
+			greetingmessage.className = "aite";
+			
+			div.insertBefore(greetingmessage, div.lastChild.nextSibling);
+			audio.play();
+			//Always scroll to bottom, witchery.
+			window.scrollTo(0,document.body.scrollHeight);
+			queueindex += 1;
+		}
 		if(messagequeue[queueindex] != null){
 		//Calls botsend if the bot have something to say
 			window.scrollTo(0,document.body.scrollHeight);
@@ -200,6 +191,19 @@
 		}
 
 
+	}
+	
+	function showkeyword(){
+		botmessage = "以下是我认识的所有关键字： <br/>";
+		for (var entry of chatMap.entries()) {
+			botmessage += entry[0] + " | ";
+		}
+		messagequeue = [botmessage];
+		canfind = true;
+	}
+	
+	function thriller{
+		
 	}
 	
 	/*Sends his greetings*/
@@ -221,7 +225,7 @@
 		var nuke = new Audio('./botemoji/nuke.mp3');
 		nuke.play();
 		window.scrollTo(0,document.body.scrollHeight);
-		messagequeue = ["<center>GAME OVER<br/><a background-color='#FF0000' color='#111111' class='textlink' onclick='location.reload()'>やりなおす</a></center>",""];
+		messagequeue = ["<center>GAME OVER<br/><a background-color='#FF0000' color='#111111' class='textlink' onclick='location.reload()'>やりなおす</a></center>"];
 		timer = setTimeout('botsend()', 10*messagequeue[queueindex].length + Math.random()*200+800);//botsend();
 		
 	}
