@@ -202,10 +202,6 @@
 		canfind = true;
 	}
 	
-	function thriller{
-		
-	}
-	
 	/*Sends his greetings*/
 	function greetings(){
 		messagequeue = ['你好！我是HaNA(SH1)41-Bot。有什么问题都可以来问我哟~！<br/>你可以试试向我用这些关键字发问：<br/>推荐 | Alligrater | 你是谁 | 哔哩哔哩<br/>实际存在的关键词比这个要多，还请多加尝试。','*偷偷告诉你个秘密，你可以跟我说\"关键词\"来查看所有的关键词。*' ]
