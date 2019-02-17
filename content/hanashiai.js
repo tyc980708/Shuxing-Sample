@@ -16,6 +16,9 @@
 	var audio = new Audio('../audio/notification_sound.mp3');
 	var buttonclicked;
 	
+	//List of bangumi to be recommended
+	var bangumilist = [];
+	
 	audio.play();
 	
 	var kaken = 0;
@@ -33,7 +36,7 @@
 	chatMap.set("再见", [["再见←A←"]]);
 	chatMap.set("关于", [["HaNA(SH1)41-Bot<br/>Generation:Genesis2:01<br/>Created by Alligrater, Serve for Alligrater.<br/>The world ends when the world ends when the world ends..."]]);
 	chatMap.set("你是谁", [["我是Alligrater创造出的第一代聊天机器人Hanashiai-Bot. 正式一点的名字叫HaNA(SH1)41-Bot[[Genesis2:01]]。这个页面现在由我来负责管理哟~★"],["2.4岁，是人工智能。","身高是227行代码，体重是12.8K","<font color=\"#FF0000\"size=\"50px\">这 个 可 以 有 ！</font>"]]);
-	chatMap.set("推荐", [["<center>今日的推荐是……<br/><a href=\"./creations.html\" class=\"textlink\">作品页！</a><br/>非常有意思哟！<center/>"],["<center>今日的推荐是……<br/><a href=\"./hanashiai.html\" class=\"textlink\">我 推 荐 我 自 己</a><br/>非常有意思哟！<center/>"]]);
+	chatMap.set("推荐", [["$CMD$recommendbangumi()"],["<center>今日的推荐是……<br/><a href=\"./creations.html\" class=\"textlink\">作品页！</a><br/>非常有意思哟！<center/>"],["<center>今日的推荐是……<br/><a href=\"./hanashiai.html\" class=\"textlink\">我 推 荐 我 自 己</a><br/>非常有意思哟！<center/>"]]);
 	chatMap.set("alligrater", [["写代码不打草稿的屑"]]);
 	chatMap.set("bilibili", [["<center>不来看一发吗（诱惑）<br/><a href=\"http://space.bilibili.com/2936578\" class=\"textlink\">前往哔哩哔哩动画</a></center>"]]);
 	chatMap.set("哔哩哔哩", [["<center>不来看一发吗（诱惑）<br/><a href=\"http://space.bilibili.com/2936578\" class=\"textlink\">前往哔哩哔哩动画</a></center>"]]);
@@ -84,31 +87,32 @@
 			}
 
 			if(canfind == false){
-				if(Math.random() > 0.9){
-					messagequeue = ["(D20+1>25)你没有收获任何相关的信息……（绝望）"];
+				var res = Math.random();
+				if(res > 0.9){
+					messagequeue = ["(D20+" + rnd(0,4) + ">25)你没有收获任何相关的信息……（绝望）"];
 				}
-				else if(Math.random() > 0.8){
-					messagequeue = ["<img src='./botemoji/nayan.gif'></img>","怎么搞得像我知道一样"];
+				else if(res > 0.8){
+					messagequeue = ["<img src='./botemoji/nayan.gif'></img>","怎么搞得像我能回答上来一样"];
 				}
-				else if(Math.random() > 0.7){
-					messagequeue = ["这种东西我怎么会知道呢（心虚）"];
+				else if(res > 0.7){
+					messagequeue = ["<img src='./botemoji/es.gif'></img>","吔屎啦你，这种事情我怎么会知道呢（暴言）"];
 				}
-				else if(Math.random() > 0.6){
+				else if(res > 0.6){
 					messagequeue = ["不懂的东西问100遍我也不会懂的，不过问1000遍可能就不一样了"];
 				}
-				else if(Math.random() > 0.5){
+				else if(res > 0.5){
 					messagequeue = ["<center><font color=\"red\">ERROR: INTEL_NETWORK_FAILURE<br/>LEVEL: SEVERE<br/>MANUAL OVERRIDE REQUIRED<br/><a background-color='#FF0000' color='#111111' id='override' class='textlink' onclick='override()'>OVERRIDE</a><br/>DO NOT OVERRIDE UNADVISED</font><center>"];
 				}
-				else if(Math.random() > 0.4){
+				else if(res > 0.4){
 					messagequeue = ["你再问一句这样的话我就……好像也不能把你怎么样（悲）"];
 				}
-				else if(Math.random() > 0.3){
+				else if(res > 0.3){
 					messagequeue = ["[!]用户做出了不该做出的反应","[15%]正在尝试启动排除程序","[54%]排除程序启动成功","[99%]开始执行排除程序","[Warning]排除程序遇到了不可预料的错误","[0%]排除程序已自动关闭"];
 				}
-				else if(Math.random() > 0.2){
-					messagequeue = ["听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂听不懂"];
+				else if(res > 0.2){
+					messagequeue = ["虽然完全不知道答案是什么，但是只要装做好像听懂了一样就行了吧"];
 				}
-				else if(Math.random() > 0.1){
+				else if(res > 0.1){
 					messagequeue = ["好厉害好厉害（完全没在听）"];
 				}
 				else{
@@ -163,6 +167,7 @@
 		//就不发消息了
 		if(messagequeue[queueindex].startsWith("$CMD$")){
 			eval(messagequeue[queueindex].substring(5))//理论可用
+			//queueindex += 1;
 		}
 		else{
 			var div = document.getElementById('chatarea');
@@ -199,7 +204,7 @@
 			botmessage += entry[0] + " | ";
 		}
 		messagequeue = [botmessage];
-		canfind = true;
+		console.log("keywordshown");
 	}
 	
 	/*Sends his greetings*/
@@ -225,3 +230,44 @@
 		timer = setTimeout('botsend()', 10*messagequeue[queueindex].length + Math.random()*200+800);//botsend();
 		
 	}
+	
+	function fetchbangumi(){
+				var xmlhttp;
+		if (window.XMLHttpRequest)
+		{
+			//  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+			xmlhttp=new XMLHttpRequest();
+		}
+		else
+		{
+			// IE6, IE5 浏览器执行代码
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.onreadystatechange=function()
+		{
+			if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+				//这里应该开始Parse返回的结果
+				//然后加进container里面
+				var content = JSON.parse(xmlhttp.responseText);
+				bangumilist = content.data.result;
+				console.log(bangumilist);
+			}
+		}
+		//海星，看起来没什么问题
+		xmlhttp.open("GET","https://cors-anywhere.herokuapp.com/https://space.bilibili.com/ajax/Bangumi/getList?mid=2936578&page=1&pagesize=100",true);
+		xmlhttp.send();
+	}
+	
+	function recommendbangumi(){
+		if(bangumilist.length == 0){
+			messagequeue = ["本来想给你推荐番剧的","可惜服务器连不上就算了"];
+			timer = setTimeout('botsend()', 10*messagequeue[queueindex].length + Math.random()*200+800);//botsend();
+		}
+		else{
+			var bm = bangumilist[rnd(0,bangumilist.length - 1)];
+			queueindex = 0;
+			messagequeue = ["<center><img src='" + bm.cover + "'></img>" + bm.title + "</center>", "<center>"+ bm.brief + "<br/><a class='textlink' href='" + bm.share_url + "'>让我看看！（震声）</a></center>"];
+		}
+	}
+	
