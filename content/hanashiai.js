@@ -263,7 +263,8 @@
 			}
 		}
 		//海星，看起来没什么问题
-		xmlhttp.open("GET","https://cors-anywhere.herokuapp.com/https://space.bilibili.com/ajax/Bangumi/getList?mid=2936578&page=1&pagesize=100",true);
+		//现在有自己的cors代理了，再也不用担心第三方倒了
+		xmlhttp.open("GET","https://alligrater.com/php/corsproxy.php?url=https://space.bilibili.com/ajax/Bangumi/getList?mid=2936578&page=1&pagesize=30",true);
 		xmlhttp.send();
 	}
 	
