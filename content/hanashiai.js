@@ -36,7 +36,7 @@
 	chatMap.set("再见", [["再见←A←"]]);
 	chatMap.set("关于", [["HaNA(SH1)41-Bot<br/>Generation:Genesis2:01<br/>Created by Alligrater, Serve for Alligrater.<br/>The world ends when the world ends when the world ends..."]]);
 	chatMap.set("你是谁", [["我是Alligrater创造出的第一代聊天机器人Hanashiai-Bot. 正式一点的名字叫HaNA(SH1)41-Bot[[Genesis2:01]]。这个页面现在由我来负责管理哟~★"],["2.4岁，是人工智能。","身高是227行代码，体重是12.8K","<font color=\"#FF0000\"size=\"50px\">这 个 可 以 有 ！</font>"]]);
-	chatMap.set("推荐", [["$CMD$recommendbangumi()"],["<center>今日的推荐是……<br/><a href=\"./creations.html\" class=\"textlink\">作品页！</a><br/>非常有意思哟！<center/>"],["<center>今日的推荐是……<br/><a href=\"./hanashiai.html\" class=\"textlink\">我 推 荐 我 自 己</a><br/>非常有意思哟！<center/>"]]);
+	chatMap.set("番剧推荐", [["$CMD$recommendbangumi()"]]);
 	chatMap.set("alligrater", [["写代码不打草稿的屑"]]);
 	chatMap.set("bilibili", [["<center>不来看一发吗（诱惑）<br/><a href=\"http://space.bilibili.com/2936578\" class=\"textlink\">前往哔哩哔哩动画</a></center>"]]);
 	chatMap.set("哔哩哔哩", [["<center>不来看一发吗（诱惑）<br/><a href=\"http://space.bilibili.com/2936578\" class=\"textlink\">前往哔哩哔哩动画</a></center>"]]);
@@ -161,13 +161,21 @@
 			window.scrollTo(0,document.body.scrollHeight);
 			return;
 		}
-		
+		if(messagequeue[queueindex] == ""){
+			window.scrollTo(0,document.body.scrollHeight);
+			queueindex = 0;
+			messagequeue = []; //Finished sending all messages in the queue
+			document.getElementById('chatbox').placeholder = "言いたいことを書いてください..."
+			document.getElementById('sendbutton').disabled = false;
+			return;
+		}
 		//在这之前，先加点新东西
 		//开头为$CMD$的转化成指令
 		//就不发消息了
 		if(messagequeue[queueindex].startsWith("$CMD$")){
 			eval(messagequeue[queueindex].substring(5))//理论可用
 			//queueindex += 1;
+			return;
 		}
 		else{
 			var div = document.getElementById('chatarea');
@@ -267,7 +275,38 @@
 		else{
 			var bm = bangumilist[rnd(0,bangumilist.length - 1)];
 			queueindex = 0;
-			messagequeue = ["<center><img src='" + bm.cover + "'></img>" + bm.title + "</center>", "<center>"+ bm.brief + "<br/><a class='textlink' href='" + bm.share_url + "'>让我看看！（震声）</a></center>"];
+			//干脆直接一条消息发到底
+			messagequeue = ["<center><img src='" + bm.cover + "'></img><h3 class='title'>" + bm.title + "<h3></center>" + bm.brief + "<br/><center>"+ getreviewstring(bm) + "<br/><a class='textlink' href='" + bm.share_url + "'>让我看看！（震声）</a></center>",""];
+			timer = setTimeout('botsend()', 10*messagequeue[queueindex].length + Math.random()*20+800);//botsend();
+		}
+	}
+	
+	function getreviewstring(bm){
+		//大・人・気！
+		if(bm.title == "兽娘动物园 2"){
+			return "角川请立刻原地爆炸，谢谢茄子"
+		}
+		if(bm.favorites >= 2000000){
+			return "大・人・気！"
+		}
+		else if(bm.favorites >= 1000000){
+			return "人气爆表！赶紧看一眼吧！"
+		}
+		else if(bm.favorites >= 800000){
+			return "看起来人气极佳！不如趁机去看一看吧！";
+		}
+		//风评不错
+		else if(bm.favorites >= 500000){
+			return "人气还算不错，不考虑看一看吗？"
+		}
+		else if(bm.favorites >= 300000){
+			return "人气不算最好的番剧，但是应该还是挺好看的吧"
+		}
+		else if(bm.favorites >= 100000){
+			return "人气少不一定就不好看哟"
+		}
+		else{
+			return "应该算是冷门番的级别了吧"
 		}
 	}
 	
