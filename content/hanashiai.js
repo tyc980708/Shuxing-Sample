@@ -19,7 +19,7 @@
 	//List of bangumi to be recommended
 	var bangumilist = [];
 	
-	audio.play();
+
 	
 	var kaken = 0;
 		
@@ -150,7 +150,7 @@
 		//Always scroll to bottom, witchery.
 		window.scrollTo(0,document.body.scrollHeight);
 		document.getElementById('chatbox').value = "";
-		document.getElementById('chatbox').placeholder = "ロボットが入力しています..."
+		document.getElementById('chatbox').placeholder = "少々お待ちください..."
 		timer = setTimeout('hanashiai()', 400);
 	}
 	
@@ -219,7 +219,7 @@
 	function greetings(){
 		messagequeue = ['你好！我是HaNA(SH1)41-Bot。有什么问题都可以来问我哟~！<br/>你可以试试向我用这些关键字发问：<br/>推荐 | Alligrater | 你是谁 | 哔哩哔哩<br/>实际存在的关键词比这个要多，还请多加尝试。','*偷偷告诉你个秘密，你可以跟我说\"关键词\"来查看所有的关键词。*' ]
 		queueindex = 0;
-		timer = setTimeout('botsend()', 10*messagequeue[0].length + Math.random()*200+800);//botsend();
+		botsend();
 	}
 	
 	/*Summon RNGesus*/
@@ -264,7 +264,7 @@
 		}
 		//海星，看起来没什么问题
 		//现在有自己的cors代理了，再也不用担心第三方倒了
-		xmlhttp.open("GET","https://alligrater.com/php/corsproxy.php?url=https://space.bilibili.com/ajax/Bangumi/getList?mid=2936578&page=1&pagesize=30",true);
+		xmlhttp.open("GET","https://alligrater.com/php/corsproxy.php?url=https://space.bilibili.com/ajax/Bangumi/getList?mid=2936578&page=1&pagesize=100",true);
 		xmlhttp.send();
 	}
 	
