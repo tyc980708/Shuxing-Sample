@@ -213,6 +213,7 @@
 		}
 		messagequeue = [botmessage];
 		console.log("keywordshown");
+		timer = setTimeout('botsend()', 10*messagequeue[queueindex].length + Math.random()*20+800);//botsend();
 	}
 	
 	/*Sends his greetings*/
