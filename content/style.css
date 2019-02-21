@@ -321,6 +321,10 @@
 		height: auto;
 	}
 	
+	small.title{
+		
+	}
+	
 	/*Auto animate populated fields*/
 	@keyframes slide-up {
 		0% {
@@ -332,3 +336,4 @@
 			transform: translateY(0);
 		}
 	}
+
