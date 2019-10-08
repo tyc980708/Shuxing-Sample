@@ -150,7 +150,7 @@
 		//Always scroll to bottom, witchery.
 		window.scrollTo(0,document.body.scrollHeight);
 		document.getElementById('chatbox').value = "";
-		document.getElementById('chatbox').placeholder = "少々お待ちください..."
+		document.getElementById('chatbox').placeholder = "机器人回复中……"
 		timer = setTimeout('hanashiai()', 400);
 	}
 	
@@ -165,7 +165,7 @@
 			window.scrollTo(0,document.body.scrollHeight);
 			queueindex = 0;
 			messagequeue = []; //Finished sending all messages in the queue
-			document.getElementById('chatbox').placeholder = "言いたいことを書いてください..."
+			document.getElementById('chatbox').placeholder = "输入你要问的内容……"
 			document.getElementById('sendbutton').disabled = false;
 			return;
 		}
@@ -198,7 +198,7 @@
 		else{
 			queueindex = 0;
 			messagequeue = []; //Finished sending all messages in the queue
-			document.getElementById('chatbox').placeholder = "言いたいことを書いてください..."
+			document.getElementById('chatbox').placeholder = "输入你要问的内容……"
 			document.getElementById('sendbutton').disabled = false;
 			return;
 		}
@@ -235,7 +235,7 @@
 		var nuke = new Audio('./botemoji/nuke.mp3');
 		nuke.play();
 		window.scrollTo(0,document.body.scrollHeight);
-		messagequeue = ["<center>GAME OVER<br/><a background-color='#FF0000' color='#111111' class='textlink' onclick='location.reload()'>やりなおす</a></center>"];
+		messagequeue = ["<center>GAME OVER<br/><a background-color='#FF0000' color='#111111' class='textlink' onclick='location.reload()'>重来</a></center>"];
 		timer = setTimeout('botsend()', 10*messagequeue[queueindex].length + Math.random()*200+800);//botsend();
 		
 	}
