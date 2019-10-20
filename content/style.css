@@ -258,8 +258,8 @@
 		transform: scale(1.01, 1.01);
 	}
 	img.pictureonly{
-		background-color: #EFEFEF;
-		object-fit: cover;
+		background-color: #FFFFFF;
+		object-fit: scale-down;
 		min-height:500px;
 		width: 100%;
 		height: 100%;
