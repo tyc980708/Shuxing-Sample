@@ -1,0 +1,33 @@
+h1 { 
+
+	color: #EA9215; 
+	text-align:center;
+	  font-family: "Microsoft YaHei";
+
+}
+h2 { 
+	color: #9AA7B0;
+	text-align:center; 
+	font-family: "Microsoft YaHei";
+}
+hr { background-color:#9AA7B0; }
+small {
+	color: #5A6770;
+	text-align:center;
+}
+body {
+  color: #BBBBBB;
+  background: #303841;
+  margin: 50px;
+  padding: 50px;
+  font-family: "Microsoft JhengHei";
+
+  }
+  
+  p {
+	
+  }
+  
+img {
+	opacity:0.7;
+}

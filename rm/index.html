@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <title>Affectiva Emotion Detector</title>
+    <!-- import jQuery -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    <!--import default Affectiva CSS code-->
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+
+    <!--import Affectiva javascript support-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://download.affectiva.com/js/3.2/affdex.js"></script>
+
+    <!--import Howler-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.9/howler.min.js"></script>
+
+    <!--import custom CSS-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- the entire window container -->
+<div>
+    <h2>Reactive Music - Hear your facial expressions</h2><br>
+
+    <div class="camera-box">
+
+        <!-- actual/'physical' camera containers: col-md-8 (child) & affdex_elements (parent selector) -->
+        <div class="col-md-8" id="affdex_elements"></div>
+        <div class="button-container container-fluid">
+            <button id="start" class="bt1" onclick="onStart()">Start</button>
+            <button id="stop" class="bt2" onclick="onStop()">Stop</button>
+            <button id="reset" class="bt3" onclick="onReset()">Reset</button>
+        </div>
+    </div>
+
+
+    <br>
+    <div class="emotion-box">
+        Waiting for camera...
+    </div>
+    <br>
+    <div class="instructions-box">
+        <p>
+        <ol><h4>Instructions</h4>
+            <li>Press the start button to activate the camera and detector. <em>Note: it may take a few moments for
+                everything initialize</em></li>
+            <li>When a facial expression is detected, the music and background color will adjust to match your perceived
+                emotion".
+            </li>
+            <li> Press the stop button to stop the camera and detection system and/or press reset to restart the
+                detector.
+            </li>
+        </ol>
+        </p>
+    </div>
+
+</div>
+
+<!-- END: ENTIRE SCREEN container -->
+
+<!-- Connect locally-hosted default affectiva camera script that makes everything work-->
+<script src="script.js"></script>
+</body>
+</html>
