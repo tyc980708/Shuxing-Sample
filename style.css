@@ -228,6 +228,10 @@ div.projects-content:hover {
 		padding-top: 5vh;
 		width: 80vw;
 	}
+
+	img.backdrop{
+		visibility: hidden;
+	}
 }
 
 
