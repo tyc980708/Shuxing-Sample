@@ -13,8 +13,14 @@
 	background: #d81159;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 html {
 	scroll-behavior: smooth;
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
 }
 
 body {
@@ -43,6 +49,7 @@ section {
 	padding: 0;
 	overflow:hidden;
 	height: 100vh;
+
 }
 
 section.autofit {
@@ -58,11 +65,13 @@ section.autofit {
 	background-color: #333333;
 	color: #ffffff;
 	padding: 14px 20px;
+	border: 1px solid #666666;
 	display: inline-block;
 }
 
 .button:hover {
 	background-color: #d81159;
+	border: 1px solid #f841a9;
 }
 
 .pink {
@@ -75,7 +84,7 @@ section.autofit {
 
 p {
 	font-size: 18px;
-	color: #666666;
+	color: #888888;
 }
 
 a{
@@ -93,20 +102,30 @@ img.pixel {
 	image-rendering: pixelated;
 }
 
+.backdrop {
+	height: 100vh;
+	width:  auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: -1;
+	object-fit: contain;
+	opacity: 20%;
+}
 
 /* GREETINGS SECTION */
 /*The clickables at the greetings page*/
 ul {
 	list-style-type: none;
 	padding: 0;
-	overflow: hidden;
+	overflow-x: hidden;
 	width: max-content;
 	margin-top: 10px;
 }
 
 li {
 	float: left;
-	border-right: 3px solid #ffffff;
+	margin-right: 3px;
 }
 
 li a {
@@ -119,16 +138,18 @@ li a {
 div.section-container{
 	padding-left: 10vw;
 	min-width: 650px;
+	position:relative;
 }
 
 div.greetings {
 	padding-top: 40vh;
 	width: 45vw;
 	min-width: 850px;
+
 }
 
 div.about-me {
-	padding-top: 25vh;
+	padding-top: 5vh;
 	width: 45vw;
 	min-width: 850px;
 }
@@ -146,7 +167,7 @@ div.gallery {
 }
 
 div.contact {
-	padding-top: 40vh;
+	padding-top: 5vh;
 	width: 45vw;
 	min-width: 850px;
 }
@@ -163,7 +184,14 @@ div.projects-content{
 	height: available;
 	box-shadow: 0px 5px 15px #33333333;
 	margin: 6px;
+	border: 1px solid #ffffffaa;
+	transition: 0.1s;
 }
+
+div.projects-content:hover {
+	transform: translateY(-3px);
+}
+
 
 @media only screen and (max-width: 1080px) {
 	div.projects-container {
@@ -197,7 +225,7 @@ div.projects-content{
 	}
 
 	div.contact {
-		padding-top: 40vh;
+		padding-top: 5vh;
 		width: 80vw;
 	}
 }
@@ -211,6 +239,10 @@ div.text-container{
 	font-size: 16px;
 }
 
+.small {
+	font-size: 12px;
+}
+
 a.link {
 	color: #d81159;
 	text-decoration: #d81159 underline;
@@ -219,4 +251,9 @@ a.link {
 
 .center {
 	text-align: center;
+}
+
+svg{
+	height:auto;
+	fill: white;
 }
