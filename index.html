@@ -1,198 +1,139 @@
 <html>
-  <head>
-  <script>
-  (function(d) {
-    var config = {
-      kitId: 'pgj7ufp',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-</script>
-	<meta charset="UTF-8">
-	<title>Alligrater ~头鳄鳄~</title>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.3/bowser.min.js"></script>
-	<link rel="icon" href="img/icon.png" />
-	<script type="text/javascript">
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css2?family=Miriam+Libre:wght@400;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<section id="greetings">
+			<!-- Greetings -->
+			<div class="greetings section-container">
+				<h1 class="greetings title">Hi. I'm <span class="pink">Shuxing Li.</span></h1>
+				<p>Think of this as a virtual bar. I'm the virtual bartender, and you are my favorite virtual customer. What can I get for you today?</p>
+				<ul class="noselect">
+					<li class="clickable button"><a href="#about-me">About Me</a></li>
+					<li class="clickable button"><a href="#project">Projects</a></li>
+					<li class="clickable button"><a href="#gallery">Galleries</a></li>
+					<li class="clickable button"><a href="#contact">Contact Me</a></li>
+				</ul>
+			</div>
+			<!-- Paintings of the void -->
+		</section>
 
-	var understand = false;
-	var divTyping;
-	let i = 0,
-	timer = 0,
-	str = 'Connect'
-	
-	function typing(){
-		if (i <= str.length) {
-			var append = ' ';
-			if(i%2==0){
-				append = '_';
-			}
-			else{
-				append = ' ';
-			}
-			divTyping.innerHTML = str.slice(0, i++) + append;
-			timer = setTimeout('typing()', 100);
-		}
-		else {
-			divTyping.innerHTML = str;//结束打字,移除 _ 光标
-			clearTimeout(timer);
-		}
-	}
+		<section id="about-me">
+			<div class="about-me section-container">
+				<h1 class="about-me title"><span class="pink">About Me</span></h1>
+				<p>I am an indie game developer and director and enjoy making my ideas into actual games.
+					Currently I am pursuing my Master of Entertainment Technology degree at the Entertainment Technology Center at CMU.
+					I did my undergrad in CS and Interactive Media and Game Development at WPI.
+					I believe that games are friends that one can put his full trust in,
+					so I intend to make my games focus more on the fun aspect instead of the memorable story aspect.
+					I want my games to make people come back at their feet, even if every day is the worst day of their life.
+				</p>
+				<br/>
+				<a class="clickable button noselect" href="files/Shuxing_Li_CV.pdf">Résumé</a>
+			</div>
+		</section>
 
-	//现有的代码为什么不拿来用呢
-	window.onload = function() {
-		divTyping = document.getElementById("typebox");
-		typing();
-
-	}
-		
-	function redirect(){
-		if(bowser.name != "Chrome"){
-			if(!understand){
-				var bd = document.getElementById("backdrop");
-				bd.innerHTML = "USE CHROME"
-				bd.className = "wntm"
-				var ft = document.getElementById("fronttext");
-				ft.innerHTML = "Chrome is Recommended"
-				ft.className = "wnoverlay"
-				var tb = document.getElementById("typebox");
-				tb.innerHTML = "Proceed Regardless"
-				tb.className = "warning"
-				understand = true;
-				return;
-			}
-		}
-		window.location='./content/homepage.html';
-	}
-	
-	</script>
-	<style>
-	html{
-		overflow: hidden;
-	}
-	div{
-		position: relative;
-		padding-top:20%;
-	}
-	h2.tm {
-		align:center;
-		text-align:center;
-		color:rgba(255,255,255,0.1);
-		position: abosolute;
-		/*padding-top:50%;*/
-		margin:1px auto;
-		max-width:800px;
-		min-width:500px;
-		font-size: 100px;
-				font-family: source-han-serif-sc,serif;
-		font-weight: 400;
-			letter-spacing: 10px;
-		font-style: black;
-	}
-	h2.wntm {
-		align:center;
-		text-align:center;
-		color:rgba(255,80,80,0.2);
-		position: abosolute;
-		/*padding-top:50%;*/
-		margin:1px auto;
-		max-width:800px;
-		min-width:500px;
-		font-size: 100px;
-				font-family: source-han-serif-sc,serif;
-		font-weight: 400;
-			letter-spacing: 0px;
-		font-style: black;
-	}
-	h2.overlay {
-		align:center;
-		text-align:center;
-		color: #FFFFFF; 
-		position: abosolute;
-		margin:-90px auto;
-		max-width:800px;
-		min-width:500px;
-		font-size: 38px;
-		
-		letter-spacing: 20px;
-			font-family: source-han-serif-sc,serif;
-		font-weight: 400;
-		font-style: black;
-	}
-	h2.wnoverlay {
-		align:center;
-		text-align:center;
-		color: rgba(255,20,20);
-		position: abosolute;
-		margin:-90px auto;
-		max-width:800px;
-		min-width:500px;
-		font-size: 38px;
-		
-		letter-spacing: 3px;
-			font-family: source-han-serif-sc,serif;
-		font-weight: 400;
-		font-style: black;
-	}
-	button {
-		background-color: transparent;
-		border: 3px solid #FFFFFF;
-		border-radius: 30px;
-		color: #FFFFFF; 
-		padding: 8px 20px;
-		text-align: center;
-		align: center;
-		text-decoration: none;
-		display: inline-block;
-		font-size: 16px;
-		
-		margin: 120px auto;
-		transition: color 0.2s, background-color 0.2s;
-		font-family: source-han-serif-sc,serif;
-		font-weight: 400;
-		font-style: black;
-	}
-	button:hover{
-		color: #000000;
-		background-color: #FFFFFF;
-	}
-	.warning{
-		animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-	}
-	body {
-		background: url(img/noise.jpg) ;
-		
-	}
-	
-	@keyframes shake {
-		10%, 90% {
-			transform: translate3d(-1px, 0, 0);
-		}
-		
-		20%, 80% {
-			transform: translate3d(2px, 0, 0);
-		}
-		
-		30%, 50%, 70% {
-			transform: translate3d(-4px, 0, 0);
-		}
-		
-		40%, 60% {
-			transform: translate3d(4px, 0, 0);
-		}
-	}
-	
-
-	</style>
-  </head>
-  <body style="padding:0px;margin:0px;">
-	<div class = "heading">
-	<h2 class="tm" id="backdrop">Alligrater</h2>
-	<h2 class="overlay" id="fronttext">头鳄鳄</h2>
-	<center>
-	<button class="btn" id="typebox" onclick="redirect()">_</button>
-	</center>
-	</div>
-  </body>
+		<section class="autofit" id="project">
+			<div class="projects section-container">
+				<h1 class="projects title"><span class="pink">Projects</span></h1>
+				<p>Let's see if I can get you something you like... Most projects are playable. If you don't feel like downloading anything, I also have a video link prepared for you.</p>
+				<div class="projects-container">
+					<div class="projects-content item1">
+						<div class="image-container">
+							<img class="project-cover pixel" src="images/groove.png"/>
+						</div>
+						<div class="text-container">
+							<h2>Groove Sushi House</h2>
+							<p class="lesser">In a sushi house in the distance future, the master begins his adventure on paying his debt. Unexpected things happened as the last group of customers arrived...</p>
+							<a class="clickable link noselect lesser" href="https://github.com/Alligrater/GSH-Open/releases">Download the Game</a>
+							<br/>
+							<a class="clickable link noselect lesser" href="https://vimeo.com/373458973">Watch Video</a>
+						</div>
+					</div>
+					<div class="projects-content item2">
+						<div class="image-container">
+							<img class="project-cover pixel" src="images/cybar99.png"/>
+						</div>
+						<div class="text-container">
+							<h2>Project Gremlins</h2>
+							<p class="lesser">A metroidvania mario maker. Build your own levels with the built in level editor.</p>
+							<a class="clickable link noselect lesser" href="https://vimeo.com/378804199">Watch Video</a>
+						</div>
+					</div>
+					<div class="projects-content item3">
+						<div class="image-container">
+							<img class="project-cover pixel" src="images/duck.gif"/>
+						</div>
+						<div class="text-container">
+							<h2>Gamejam Submissions</h2>
+							<p class="lesser">Submissions to weekly game jam and lowrezjam 2020</p>
+							<a class="clickable link noselect lesser" href="https://Alligrater.itch.io">Play Online</a>
+						</div>
+					</div>
+					<div class="projects-content item4">
+						<div class="image-container">
+							<img class="project-cover pixel" src="images/bvwr2.png"/>
+						</div>
+						<div class="text-container">
+							<h2>Building Virtual World</h2>
+							<p class="lesser">Building 5 games, each taking less than 2 weeks in this collaborative academic project. Participated as an artist.</p>
+							<a class="clickable link noselect lesser" href="#gallery">Gallery</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="autofit" id="gallery">
+			<div class="gallery section-container">
+				<h1 class="gallery title"><span class="pink">Gallery</span></h1>
+				<p>I keep all my art works here. Some from the BVW projects, some done in my free time.</p>
+				<div class="projects-container">
+					<div class="projects-content item1">
+						<img class="project-cover" src="images/gallery/freehand.png"/>
+						<div class="text-container">
+							<h3 class="center">Structures, Freehand</h3>
+						</div>
+					</div>
+					<div class="projects-content item2">
+						<img class="project-cover" src="images/gallery/foes.png"/>
+						<div class="text-container">
+							<h3 class="center">BVW Round 3: Foes Design</h3>
+						</div>
+					</div>
+					<div class="projects-content item3">
+						<img class="project-cover" src="images/gallery/bwahbwah.jpg"/>
+						<div class="text-container">
+							<h3 class="center">Monster Tree Freehand</h3>
+						</div>
+					</div>
+					<div class="projects-content item4">
+						<img class="project-cover" src="images/gallery/cyber.jpg"/>
+						<div class="text-container">
+							<h3 class="center">Cyberpunk Freehand</h3>
+						</div>
+					</div>
+					<div class="projects-content item5">
+						<img class="project-cover" src="images/gallery/icu.png"/>
+						<div class="text-container">
+							<h3 class="center">BVW Round 1: I See You...</h3>
+						</div>
+					</div>
+					<div class="projects-content item6">
+						<img class="project-cover" src="images/gallery/corgi.png"/>
+						<div class="text-container">
+							<h3 class="center">BVW Round 1: Injured Corgi</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="contact">
+			<div class="contact section-container">
+				<h1 class="gallery title"><span class="pink">Contact Me</span></h1>
+				<a class="clickable noselect link" href="mailto:shuxingl@andrew.cmu.edu">E-Mail: shuxingl@andrew.cmu.edu</a>
+			</div>
+		</section>
+	</body>
 </html>
