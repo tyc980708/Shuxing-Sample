@@ -172,6 +172,12 @@ div.contact {
 	min-width: 850px;
 }
 
+div.drink-intro {
+	padding-top: 40vh;
+	width: 30vw;
+	min-width: 225px;
+}
+
 
 div.projects-container {
 	display: grid;
@@ -232,6 +238,12 @@ div.projects-content:hover {
 	img.backdrop{
 		visibility: hidden;
 	}
+
+	div.drink-intro {
+		padding-top: 40vh;
+		width: 30vw;
+		min-width: 225px;
+	}
 }
 
 
@@ -260,4 +272,10 @@ a.link {
 svg{
 	height:auto;
 	fill: white;
+}
+
+canvas {
+	position: absolute;
+	right:0;
+	top:0;
 }
