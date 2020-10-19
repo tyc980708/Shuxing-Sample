@@ -1,6 +1,6 @@
 
 import {GLTFLoader} from "./modules/GLTFLoader.js";
-import {OrbitControls} from "./modules/OrbitControls.js";
+import {OrbitControls} from "./modules/OrbitControlsMod.js";
 import * as THREE from "./modules/three.module.js"
 
 
@@ -51,13 +51,14 @@ function init(){
                 child.material = drinkMaterial;
             }
         });
+        drinkModel = gltf.scene;
         scene.add(gltf.scene);
         camera.position.z = 0.5;
-
+        update();
     }, undefined, function (error) {
         console.error(error);
     });
-    update();
+
 }
 
 
@@ -65,7 +66,7 @@ function init(){
 
 function update(){
     renderer.render(scene, camera);
-    //cube.rotation.y += 0.1;
+    drinkModel.rotation.y -= 0.005;
     requestAnimationFrame(update);
 }
 
@@ -77,7 +78,12 @@ function onWindowResize(){
 
 function onMouseMove(event){
     //Calculate out the normalized position of the mouse:
-    console.log(event.movementX);
+    //console.log(event.movementX);
+    //
+}
+
+function onMouseClick(event){
+
 }
 
 init();
