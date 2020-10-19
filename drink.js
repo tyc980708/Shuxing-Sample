@@ -13,7 +13,7 @@ const MODEL_EXTENSION = ".glb";
 const PATH_TO_TEXTURE = "models/";
 const TEXTURE_EXTENSION = ".png";
 const PATH_TO_DESC = "desc/"
-const DESC_EXTENSION = ".ddsc"
+const DESC_EXTENSION = ".json"
 
 
 let scene;
@@ -40,7 +40,7 @@ function init(){
         0.1, 5000
     );
     //So the background is clear
-    renderer = new THREE.WebGLRenderer({ alpha:true });
+    renderer = new THREE.WebGLRenderer({ alpha:true, antialias:true });
     renderer.setSize(window.innerWidth, window.innerHeight)
     document.body.appendChild(renderer.domElement);
     //let controls = new OrbitControls( camera, renderer.domElement );
@@ -104,8 +104,8 @@ function readDrinkDesc(drinkName){
             console.error(response.status);
         }
         //updateDOMElements(drinkName, response.text())
-        response.text().then(function (text) {
-            updateDOMElements(drinkName, text)
+        response.json().then(function (json) {
+            updateDOMElements(json.formalName, json.description)
         });
        // console.log(response);
     });
