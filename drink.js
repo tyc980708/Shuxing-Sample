@@ -5,7 +5,7 @@ import * as THREE from "./modules/three.module.js"
 
 //Just too lazy to store it elsewhere
 const LIST_OF_DRINKS = [
-    "Nile", "Vitality"
+    "Nile", "Vitality", "Breeze"
 ];
 
 const PATH_TO_MODEL = "models/";
