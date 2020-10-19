@@ -114,7 +114,7 @@ function readDrinkDesc(drinkName){
 function update(){
     if(!isModelLoaded) return;
     renderer.render(scene, camera);
-    //drinkModel.rotation.y -= 0.005;
+    drinkModel.rotation.y -= 0.005;
     requestAnimationFrame(update);
 }
 
@@ -130,8 +130,8 @@ function onMouseMove(event){
     //console.log(event.movementX);
     //
     //Rotate the model based on mouse vector X only:
-    drinkModel.rotation.y += event.movementX * 2 / window.innerWidth;
-    drinkModel.rotation.x += event.movementY / 2 / window.innerHeight;
+    //drinkModel.rotation.y += event.movementX * 2 / window.innerWidth;
+    //drinkModel.rotation.x += event.movementY / 2 / window.innerHeight;
 }
 
 function onMouseClick(event){
