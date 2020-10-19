@@ -241,8 +241,8 @@ div.projects-content:hover {
 
 	div.drink-intro {
 		padding-top: 40vh;
-		width: 30vw;
-		min-width: 225px;
+		width: 35vw;
+		min-width: 250px;
 	}
 }
 
@@ -276,6 +276,7 @@ svg{
 
 canvas {
 	position: absolute;
+	z-index: -1;
 	right:0;
 	top:0;
 }

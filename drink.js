@@ -39,6 +39,8 @@ function init(){
         60, window.innerWidth / window.innerHeight,
         0.1, 5000
     );
+    camera.position.z = 0.5;
+    camera.position.x = -0.05;
     //So the background is clear
     renderer = new THREE.WebGLRenderer({ alpha:true, antialias:true });
     renderer.setSize(window.innerWidth, window.innerHeight)
@@ -77,7 +79,6 @@ function init(){
         });
         drinkModel = gltf.scene;
         scene.add(gltf.scene);
-        camera.position.z = 0.5;
         isModelLoaded = true;
         update();
         updateDrinkElements(drinkName);
@@ -94,7 +95,7 @@ function updateDrinkElements(drinkName){
 
 function updateDOMElements(drinkName, drinkDesc){
     drinkNameDOM.innerHTML = drinkName;
-    drinkDescDOM.innerHTML = drinkDesc;
+    drinkDescDOM.innerHTML = "\"" + drinkDesc + "\"";
 }
 
 function readDrinkDesc(drinkName){
