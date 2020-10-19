@@ -4,16 +4,15 @@ import {GLTFLoader} from "./modules/GLTFLoader.js";
 import * as THREE from "./modules/three.module.js"
 
 //Just too lazy to store it elsewhere
-const LIST_OF_DRINKS = [
-    "Nile", "Vitality", "Breeze"
-];
+
 
 const PATH_TO_MODEL = "models/";
 const MODEL_EXTENSION = ".glb";
 const PATH_TO_TEXTURE = "models/";
 const TEXTURE_EXTENSION = ".png";
-const PATH_TO_DESC = "desc/"
-const DESC_EXTENSION = ".json"
+const PATH_TO_DESC = "desc/";
+const DESC_EXTENSION = ".json";
+const DRINKLIST_PATH = "drinklist.json";
 
 
 let scene;
@@ -23,8 +22,11 @@ let gltfLoader, textureLoader;
 let drinkModel;
 let drinkMaterial;
 let isModelLoaded = false;
-
 let drinkNameDOM, drinkDescDOM;
+
+let LIST_OF_DRINKS = [
+    "Nile", "Vitality", "Breeze"
+];
 
 
 
@@ -32,18 +34,39 @@ function init(){
     //Assign the DOM Elements
     drinkNameDOM = document.getElementById("drink-name");
     drinkDescDOM = document.getElementById("drink-desc");
+    //Fetch the drinklist:
+    fetchDrinkList();
+}
 
+function fetchDrinkList(){
+    fetch(DRINKLIST_PATH).then(response => {
+        if (!response.ok) {
+            console.error(response.status);
+            //On failed, try again:
+            console.log("retrying...")
+            setInterval(fetchDrinkList, 500);
+        }
+        response.json().then(function (json) {
+            LIST_OF_DRINKS = json.drinks;
+            //On success, setup drink scene.
+            setupDrinkScene();
+        });
+    });
+}
+
+
+function setupDrinkScene(){
     //init the scene... basically the manual from threejs.org
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(
-        60, window.innerWidth / window.innerHeight,
+        40, 16/9, //just make everything 16:9 then
         0.1, 5000
     );
-    camera.position.z = 0.5;
+    camera.position.z = 0.8;
     camera.position.x = -0.05;
     //So the background is clear
     renderer = new THREE.WebGLRenderer({ alpha:true, antialias:true });
-    renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.setSize(window.innerWidth, window.innerWidth * 9 /16)
     document.body.appendChild(renderer.domElement);
     //let controls = new OrbitControls( camera, renderer.domElement );
 
@@ -55,10 +78,14 @@ function init(){
     let drinkIndex = Math.floor(Math.random() * LIST_OF_DRINKS.length);
     let drinkName = LIST_OF_DRINKS[drinkIndex];
 
+    loadDrink(drinkName);
+}
+
+
+function loadDrink(drinkName){
     //Create loaders
     gltfLoader = new GLTFLoader();
     textureLoader = new THREE.TextureLoader();
-
     //Make unlit texture:
     textureLoader.load(PATH_TO_TEXTURE + drinkName + TEXTURE_EXTENSION, function(texture) {
         texture.magFilter = THREE.NearestFilter
@@ -81,34 +108,22 @@ function init(){
         scene.add(gltf.scene);
         isModelLoaded = true;
         update();
-        updateDrinkElements(drinkName);
-        //let drinkDesc = readDrinkDesc(drinkName);
+        updateDrinkDesc(drinkName);
     }, undefined, function (error) {
         console.error(error);
     });
 }
 
-
-function updateDrinkElements(drinkName){
-    let drinkDesc = readDrinkDesc(drinkName);
-}
-
-function updateDOMElements(drinkName, drinkDesc){
-    drinkNameDOM.innerHTML = drinkName;
-    drinkDescDOM.innerHTML = "\"" + drinkDesc + "\"";
-}
-
-function readDrinkDesc(drinkName){
+function updateDrinkDesc(drinkName){
     let filePath = PATH_TO_DESC + drinkName + DESC_EXTENSION;
-    return fetch(filePath).then(response => {
+    fetch(filePath).then(response => {
         if (!response.ok) {
             console.error(response.status);
         }
-        //updateDOMElements(drinkName, response.text())
         response.json().then(function (json) {
-            updateDOMElements(json.formalName, json.description)
+            drinkNameDOM.innerHTML = json.formalName;
+            drinkDescDOM.innerHTML = "\"" + json.description + "\"";
         });
-       // console.log(response);
     });
 }
 
@@ -120,9 +135,9 @@ function update(){
 }
 
 function onWindowResize(){
-    camera.aspect = window.innerWidth / window.innerHeight;
+    //camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize( window.innerWidth, window.innerWidth * 9 / 16 );
 }
 
 function onMouseMove(event){

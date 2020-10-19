@@ -49,12 +49,15 @@ section {
 	padding: 0;
 	overflow:hidden;
 	height: 100vh;
-
 }
 
 section.autofit {
 	height: auto;
 	padding-bottom: 5vh;
+}
+
+section.drink {
+	position:relative;
 }
 
 .clickable {
@@ -275,8 +278,10 @@ svg{
 }
 
 canvas {
+	margin:0;
 	position: absolute;
 	z-index: -1;
-	right:0;
-	top:0;
+	top:50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
