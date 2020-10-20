@@ -140,8 +140,8 @@ function notifyError(drinkName){
 	drinkNameDOM.innerHTML = "MISSINGNO.";
 	drinkDescDOM.innerHTML = "Hey, I had a drink for you, but now the drink somehow lost in the void. Don't panic. I'll bring it back."
 	setInterval(function(){
-		loadDrink(drinkName);
-	}, 500);
+		location.reload();
+	}, 5000);
 }
 
 function onWindowResize(){
