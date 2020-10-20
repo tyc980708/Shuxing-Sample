@@ -94,6 +94,7 @@ function loadDrink(drinkName){
         });
     }, undefined, function(error){
         console.error(error);
+		notifyError(drinkName);
     });
 
     //Load, then call back maybe
@@ -111,6 +112,7 @@ function loadDrink(drinkName){
         updateDrinkDesc(drinkName);
     }, undefined, function (error) {
         console.error(error);
+		notifyError(drinkName);
     });
 }
 
@@ -134,6 +136,14 @@ function update(){
     requestAnimationFrame(update);
 }
 
+function notifyError(drinkName){
+	drinkNameDOM.innerHTML = "MISSINGNO.";
+	drinkDescDOM.innerHTML = "Hey, I had a drink for you, but now the drink somehow lost in the void. Don't panic. I'll bring it back."
+	setInterval(function(){
+		loadDrink(drinkName);
+	}, 500);
+}
+
 function onWindowResize(){
     //camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
@@ -151,7 +161,7 @@ function onMouseMove(event){
 }
 
 function onMouseClick(event){
-
+	
 }
 
 init();
