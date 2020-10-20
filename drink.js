@@ -22,6 +22,7 @@ let gltfLoader, textureLoader;
 let drinkModel;
 let drinkMaterial;
 let isModelLoaded = false;
+let isMaterialLoaded = false;
 let drinkNameDOM, drinkDescDOM;
 
 let LIST_OF_DRINKS = [
@@ -78,11 +79,17 @@ function setupDrinkScene(){
     let drinkIndex = Math.floor(Math.random() * LIST_OF_DRINKS.length);
     let drinkName = LIST_OF_DRINKS[drinkIndex];
 
-    loadDrink(drinkName);
+    //Wonder if multiple callbacks is a idea
+    loadDrinkMaterial(drinkName, function(){
+        loadDrinkModel(drinkName, function(){
+            updateDrinkDesc(drinkName);
+            update();
+        })
+    });
 }
 
 
-function loadDrink(drinkName){
+function loadDrinkMaterial(drinkName, callback){
     //Create loaders
     gltfLoader = new GLTFLoader();
     textureLoader = new THREE.TextureLoader();
@@ -92,27 +99,33 @@ function loadDrink(drinkName){
         drinkMaterial = new THREE.MeshBasicMaterial( {
             map: texture
         });
+        callback();
     }, undefined, function(error){
         console.error(error);
 		notifyError(drinkName);
     });
 
+
+}
+
+function loadDrinkModel(drinkName, callback){
     //Load, then call back maybe
     gltfLoader.load(PATH_TO_MODEL + drinkName + MODEL_EXTENSION, function(gltf){
         gltf.scene.traverse( function ( child ) {
             if ( child.isMesh ) {
                 child.geometry.center(); // center here
-                child.material = drinkMaterial;
+                if(child.material != null){
+                    child.material = drinkMaterial;
+                }
             }
         });
         drinkModel = gltf.scene;
         scene.add(gltf.scene);
         isModelLoaded = true;
-        update();
-        updateDrinkDesc(drinkName);
+        callback();
     }, undefined, function (error) {
         console.error(error);
-		notifyError(drinkName);
+        notifyError(drinkName);
     });
 }
 
