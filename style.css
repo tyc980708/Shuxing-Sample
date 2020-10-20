@@ -102,7 +102,9 @@ img.project-cover {
 }
 
 img.pixel {
+	/*Lets see if firefox likes this*/
 	image-rendering: pixelated;
+
 }
 
 .backdrop {
@@ -281,6 +283,7 @@ canvas {
 	margin:0;
 	position: absolute;
 	z-index: -1;
+
 	top:50%;
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
