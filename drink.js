@@ -138,7 +138,7 @@ function update(){
 
 function notifyError(drinkName){
 	drinkNameDOM.innerHTML = "MISSINGNO.";
-	drinkDescDOM.innerHTML = "Hey, I had a drink for you, but now the drink somehow lost in the void. Don't panic. I'll bring it back."
+	drinkDescDOM.innerHTML = "Hey, I had a drink for you, but now the drink somehow lost in the void. Don't panic. I'll bring it back in a few seconds."
 	setInterval(function(){
 		location.reload();
 	}, 5000);
