@@ -32,7 +32,11 @@ function SeededRng(){
     let date = new Date();
     let dayString = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
     //These three info should make it unique to all devices. Hopefully.
-    let sysString = navigator.appName.toString() + navigator.language.toString() + navigator.platform.toString();
+    let sysString = navigator.appName.toString() +
+        navigator.appVersion.toString() +
+        navigator.language.toString() +
+        navigator.platform.toString();
+    console.log(sysString);
 
     let seededRNG = new Math.seedrandom(dayString + sysString);
     return seededRNG();
