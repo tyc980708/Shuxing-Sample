@@ -4,8 +4,6 @@ import {GLTFLoader} from "./modules/GLTFLoader.js";
 import * as THREE from "./modules/three.module.js"
 
 //Just too lazy to store it elsewhere
-
-
 const PATH_TO_MODEL = "models/";
 const MODEL_EXTENSION = ".glb";
 const PATH_TO_TEXTURE = "models/";
@@ -29,7 +27,16 @@ let LIST_OF_DRINKS = [
     "Nile", "Vitality", "Breeze"
 ];
 
+function SeededRng(){
+    //Use something with the date as the rng.
+    let date = new Date();
+    let dayString = date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
+    //These three info should make it unique to all devices. Hopefully.
+    let sysString = navigator.appName.toString() + navigator.language.toString() + navigator.platform.toString();
 
+    let seededRNG = new Math.seedrandom(dayString + sysString);
+    return seededRNG();
+}
 
 function init(){
     //Assign the DOM Elements
@@ -76,7 +83,7 @@ function setupDrinkScene(){
     window.addEventListener('mousemove', onMouseMove, false);
 
     //Pick a random drink from the list:
-    let drinkIndex = Math.floor(Math.random() * LIST_OF_DRINKS.length);
+    let drinkIndex = Math.floor(SeededRng() * LIST_OF_DRINKS.length);
     let drinkName = LIST_OF_DRINKS[drinkIndex];
 
     //Wonder if multiple callbacks is a idea
