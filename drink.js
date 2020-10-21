@@ -11,6 +11,7 @@ const TEXTURE_EXTENSION = ".png";
 const PATH_TO_DESC = "desc/";
 const DESC_EXTENSION = ".json";
 const DRINKLIST_PATH = "drinklist.json";
+const COOKIE_STRING = "drinkName";
 
 
 let scene;
@@ -66,6 +67,43 @@ function fetchDrinkList(){
     });
 }
 
+/*
+function setDrinkCookie(drinkName){
+    //Store two things! 1. When the cookie expires (tomorrow, of course.) 2. What drink appeared for today.
+    if(navigator.cookieEnabled){
+        let cookieToStore = COOKIE_STRING + "=" + drinkName + ";"; //This is the first part. Second part: expire date.
+        //First we need to again, get the current date.
+        let today = new Date();
+        let tomorrow = new Date(today);
+        tomorrow.setDate(today.getDate() + 1); //This is only one step
+        tomorrow.setHours(0);
+        tomorrow.setMinutes(0);
+        tomorrow.setSeconds(0);
+        cookieToStore += "expires=" + tomorrow.toUTCString();
+        //console.log(cookieToStore);
+        document.cookie = cookieToStore;
+    }
+}
+
+//Canary Cherry Rush. Nice drink name. I'll make it a drink one day.
+//Too lazy. Just copy and pasted from stackoverflow. Should work.
+function getCookie(name) {
+    if(navigator.cookieEnabled){
+        let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        if (match) return match[2];
+    }
+}*/
+
+function forceLoadDrink(drinkName){
+    //Clear everything in the scene first:
+    scene = new THREE.Scene();
+    loadDrinkMaterial(drinkName, function(){
+        loadDrinkModel(drinkName, function(){
+            updateDrinkDesc(drinkName);
+            update();
+        })
+    });
+}
 
 function setupDrinkScene(){
     //init the scene... basically the manual from threejs.org
@@ -86,9 +124,10 @@ function setupDrinkScene(){
     window.addEventListener('resize', onWindowResize, false);
     window.addEventListener('mousemove', onMouseMove, false);
 
-    //Pick a random drink from the list:
+    //Try fetch the cookie:
     let drinkIndex = Math.floor(SeededRng() * LIST_OF_DRINKS.length);
     let drinkName = LIST_OF_DRINKS[drinkIndex];
+
 
     //Wonder if multiple callbacks is a idea
     loadDrinkMaterial(drinkName, function(){
