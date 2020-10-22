@@ -1,4 +1,24 @@
 {
 	"formalName": "Nile",
-	"description": "A delightful treat from the future Egypt. Made from grapes and mint. The most unexpected combination can bring the most unexpected outcome."
+	"description": "A delightful treat from the future Egypt. Made from grapes and mint. The most unexpected combination can bring the most unexpected outcome.",
+	"sequence": [
+		{
+			"choice": "Did you just say... 'future?'",
+			"response": "Yes. This drink comes from the future, in a world where alcohol is not banned in Egypt.",
+			"sequence": [
+				{
+					"choice":"So how did you get this drink?",
+					"response": "Top secret. Actually, it's not a secret - you just need to dig it out."
+				},
+				{
+					"choice": "So you can time travel.",
+					"response": "That will remain a secret - actually - just a mystery. Seek for yourself."
+				}
+			]
+		},
+		{
+			"choice": "Egypt.",
+			"response": "Yes. "
+		}
+	]
 }

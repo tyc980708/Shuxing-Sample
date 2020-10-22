@@ -89,6 +89,10 @@ section.drink {
 	color: #ffffff;
 }
 
+.underline{
+	text-decoration: underline;
+}
+
 p {
 	font-size: 18px;
 	color: #888888;

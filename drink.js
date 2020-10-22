@@ -45,6 +45,7 @@ function SeededRng(){
 
 function init(){
     //Assign the DOM Elements
+    document.getElementById("bar-ambient").play();
     drinkNameDOM = document.getElementById("drink-name");
     drinkDescDOM = document.getElementById("drink-desc");
     //Fetch the drinklist:
