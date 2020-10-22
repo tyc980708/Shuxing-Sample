@@ -72,6 +72,10 @@ section.drink {
 	display: inline-block;
 }
 
+.poi {
+	background-color: #883344;
+}
+
 .button:hover {
 	background-color: #d81159;
 	border: 1px solid #f841a9;
@@ -287,4 +291,8 @@ canvas {
 	top:50%;
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
+}
+
+.nomargin{
+	margin:0;
 }
