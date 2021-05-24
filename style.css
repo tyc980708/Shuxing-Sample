@@ -300,3 +300,7 @@ canvas {
 .nomargin{
 	margin:0;
 }
+img.hidden{
+	width:0px;
+	height:0px;
+}

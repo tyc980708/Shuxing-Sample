@@ -4,6 +4,7 @@ let driftables = [];
 
 function init(){
     //Populate driftables:
+	/*
     driftables = document.getElementsByClassName("driftables");
     document.addEventListener("mousemove", e=>{
 
@@ -14,5 +15,60 @@ function init(){
         for(let d of driftables){
             d.style["transform"] = "translateX(" + normalizedMovement * MOVE_AMOUNT + "px)";
         }
-    })
+    })*/
+	
+	
+	//Attach listeners to each of the divs:
+
+
+    let projectContainers = document.getElementsByClassName("projects-content")
+    console.log(projectContainers)
+    for(let i = 0; i < projectContainers.length; i++){
+        let container = projectContainers.item(i)
+        let animatedImages = container.getElementsByClassName("animate")
+        for(let j = 0; j < animatedImages.length; j++){
+            let image = animatedImages.item(j)
+            image.classList.add("hidden")
+            //image.classList.remove("hidden")
+        }
+        let staticImages = container.getElementsByClassName("static")
+
+        container.addEventListener("mouseover", ()=>{
+            for(let j = 0; j < animatedImages.length; j++){
+                let image = animatedImages.item(j)
+                image.classList.remove("hidden")
+                //image.classList.remove("hidden")
+            }
+            for(let j = 0; j < staticImages.length; j++){
+                let image = staticImages.item(j)
+                image.classList.add("hidden")
+                //image.classList.remove("hidden")
+            }
+        })
+
+        container.addEventListener("mouseout", ()=>{
+            for(let j = 0; j < animatedImages.length; j++){
+                let image = animatedImages.item(j)
+                image.classList.add("hidden")
+                //image.classList.remove("hidden")
+            }
+            for(let j = 0; j < staticImages.length; j++){
+                let image = staticImages.item(j)
+                image.classList.remove("hidden")
+                //image.classList.remove("hidden")
+            }
+        })
+        /*
+        for(let j = 0; j < animatedImages.length; j++){
+            let image = animatedImages.item(j)
+            image.addEventListener("mouseover", ()=>{
+                image.src = image.getAttribute("on-hover")
+            })
+            image.addEventListener("mouseout", ()=>{
+                image.src = image.getAttribute("on-unhover")
+            })
+        }*/
+
+    }
+	
 }
