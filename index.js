@@ -33,11 +33,14 @@ function init(){
         }
         let staticImages = container.getElementsByClassName("static")
 
-        container.addEventListener("mouseover", ()=>{
+        container.addEventListener("mouseenter", ()=>{
             for(let j = 0; j < animatedImages.length; j++){
                 let image = animatedImages.item(j)
-                image.classList.remove("hidden")
-                image.src = image.src
+                if(image.classList.contains("hidden")){
+                    image.classList.remove("hidden")
+                    image.src = image.src
+                }
+
                 //image.classList.remove("hidden")
             }
             for(let j = 0; j < staticImages.length; j++){
@@ -47,7 +50,7 @@ function init(){
             }
         })
 
-        container.addEventListener("mouseout", ()=>{
+        container.addEventListener("mouseleave", ()=>{
             for(let j = 0; j < animatedImages.length; j++){
                 let image = animatedImages.item(j)
                 image.classList.add("hidden")
