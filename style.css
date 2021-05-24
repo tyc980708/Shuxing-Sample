@@ -199,6 +199,7 @@ div.projects-container {
 }
 
 div.projects-content{
+	position: relative;
 	background-color: #fafafa;
 	height: available;
 	box-shadow: 0px 5px 15px #33333333;
@@ -303,4 +304,39 @@ canvas {
 img.hidden{
 	width:0px;
 	height:0px;
+}
+
+img.play-gif{
+	position: absolute;
+	top:0px;
+	right:10px;
+	width:50px;
+	height:50px;
+}
+
+@keyframes flickerAnimation {
+	0%   { opacity:1; }
+	50%  { opacity:0; }
+	100% { opacity:1; }
+}
+@-o-keyframes flickerAnimation{
+	0%   { opacity:1; }
+	50%  { opacity:0; }
+	100% { opacity:1; }
+}
+@-moz-keyframes flickerAnimation{
+	0%   { opacity:1; }
+	50%  { opacity:0; }
+	100% { opacity:1; }
+}
+@-webkit-keyframes flickerAnimation{
+	0%   { opacity:1; }
+	50%  { opacity:0; }
+	100% { opacity:1; }
+}
+.animate-flicker {
+	-webkit-animation: flickerAnimation 4s infinite;
+	-moz-animation: flickerAnimation 4s infinite;
+	-o-animation: flickerAnimation 4s infinite;
+	animation: flickerAnimation 4s infinite;
 }
