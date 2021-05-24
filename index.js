@@ -37,6 +37,7 @@ function init(){
             for(let j = 0; j < animatedImages.length; j++){
                 let image = animatedImages.item(j)
                 image.classList.remove("hidden")
+                image.src = image.src
                 //image.classList.remove("hidden")
             }
             for(let j = 0; j < staticImages.length; j++){
