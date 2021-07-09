@@ -1,0 +1,15 @@
+{
+  "default-lang" : "en",
+  "greetings": {
+    "zh": "你好，我是 <span class=\"pink\">黎书行。</span>",
+    "en": "Hi. I'm <span class=\"pink\">Shuxing Li.</span>"
+  },
+  "greetings-desc": {
+    "zh": "游戏是你我最值得信赖的好朋友。",
+    "en": "I see video game as friends - friends you can trust."
+  },
+  "projects": {
+    "zh":
+  }
+
+}

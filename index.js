@@ -38,7 +38,7 @@ function init(){
                 let image = animatedImages.item(j)
                 if(image.classList.contains("hidden")){
                     image.classList.remove("hidden")
-                    image.src = image.src
+                    //image.src = image.src
                 }
 
                 //image.classList.remove("hidden")
@@ -62,17 +62,36 @@ function init(){
                 //image.classList.remove("hidden")
             }
         })
-        /*
-        for(let j = 0; j < animatedImages.length; j++){
-            let image = animatedImages.item(j)
-            image.addEventListener("mouseover", ()=>{
-                image.src = image.getAttribute("on-hover")
-            })
-            image.addEventListener("mouseout", ()=>{
-                image.src = image.getAttribute("on-unhover")
-            })
-        }*/
-
     }
-	
+
+
+    fetchDynatext("zh")
+}
+
+function fetchDynatext(language){
+    let dynatextDescFile = "lang-" + language + ".json"
+    //fetch file...
+    fetch(dynatextDescFile).then(function(response){
+        updateDynatext(response.json().then(data => updateDynatext(data)))
+    }).catch(error => console.log("failed to fetch language json."))
+
+    /*
+    let dynatextContainers = document.getElementsByClassName("dynatext")
+    for(let i = 0; i < dynatextContainers.length; i++){
+        let item = dynatextContainers.item(i)
+
+    }*/
+}
+
+function updateDynatext(dynatextDescriptor){
+    console.log(dynatextDescriptor)
+    let dynatextContainers = document.getElementsByClassName("dynatext")
+    for(let i = 0; i < dynatextContainers.length; i++){
+        let item = dynatextContainers.item(i)
+        let dynatextContent = dynatextDescriptor[item.getAttribute("langdesc")]
+        if(dynatextContent){
+            item.innerHTML = dynatextContent
+            console.log("updated text to" + dynatextContent)
+        }
+    }
 }

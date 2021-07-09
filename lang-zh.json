@@ -1,0 +1,10 @@
+{
+  "greetings": "你好，我是<span class=\"pink\">黎书行。</span>",
+  "greetings-desc": "游戏是你我最值得信赖的好朋友。",
+  "projects": "项目",
+  "about": "关于我",
+  "galleries": "展览室",
+  "self-intro": "我是一个喜欢把想法做成现实的游戏制作人。\n当前在卡耐基梅隆大学的娱乐技术中心读研究生，2022年毕业。\n",
+  "resume": "<a class=\"clickable button noselect\" href=\"files/CV_CHS.pdf\">简历</a>",
+  "tel": "<a class=\"clickable button noselect\" href=\"tel:+8613662547407\">Cell: +86 13662547407</a>"
+}
