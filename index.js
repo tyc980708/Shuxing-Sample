@@ -65,7 +65,7 @@ function init(){
     }
 
 
-    fetchDynatext("zh")
+    fetchDynatext("en")
 }
 
 function fetchDynatext(language){
