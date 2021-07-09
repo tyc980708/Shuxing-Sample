@@ -75,12 +75,6 @@ function fetchDynatext(language){
         updateDynatext(response.json().then(data => updateDynatext(data)))
     }).catch(error => console.log("failed to fetch language json."))
 
-    /*
-    let dynatextContainers = document.getElementsByClassName("dynatext")
-    for(let i = 0; i < dynatextContainers.length; i++){
-        let item = dynatextContainers.item(i)
-
-    }*/
 }
 
 function updateDynatext(dynatextDescriptor){
@@ -88,10 +82,14 @@ function updateDynatext(dynatextDescriptor){
     let dynatextContainers = document.getElementsByClassName("dynatext")
     for(let i = 0; i < dynatextContainers.length; i++){
         let item = dynatextContainers.item(i)
-        let dynatextContent = dynatextDescriptor[item.getAttribute("langdesc")]
-        if(dynatextContent){
-            item.innerHTML = dynatextContent
-            console.log("updated text to" + dynatextContent)
+        let attr = item.getAttribute("langdesc")
+        if(attr){
+            let dynatextContent = dynatextDescriptor[attr]
+            if(dynatextContent){
+                item.innerHTML = dynatextContent
+                console.log("updated text to" + dynatextContent)
+            }
         }
+
     }
 }
