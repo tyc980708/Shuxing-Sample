@@ -21,6 +21,9 @@
   "gj-name": "Gamejam作品",
   "gj-desc": "参与的Gamejam作品（Weekly Game Jam, Lowrez Jam 2020, Global Game Jam 2021）",
   "gj-play": "在浏览器里游玩",
+  "lovelights-name": "Lovelights",
+  "lovelights-desc": "LOVE2d引擎的高度图2D光照系统",
+  "lovelights-github": "Github Repo",
   "solo": "单干",
   "lang-switch": "<li class=\"clickable button\" onclick=\"fetchDynatext('en')\">EN / 中文</li>"
 }
