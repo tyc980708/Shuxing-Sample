@@ -87,7 +87,7 @@ function updateDynatext(dynatextDescriptor){
             let dynatextContent = dynatextDescriptor[attr]
             if(dynatextContent){
                 item.innerHTML = dynatextContent
-                console.log("updated text to" + dynatextContent)
+                //console.log("updated text to" + dynatextContent)
             }
         }
 
