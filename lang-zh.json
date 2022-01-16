@@ -2,6 +2,10 @@
   "greetings": "你好，我是<span class=\"pink\">黎书行。</span>",
   "greetings-desc": "游戏是你我最值得信赖的好朋友。",
   "projects": "项目",
+  "technical": "Technical",
+  "technical-art": "Tech-Art",
+  "design": "Design",
+  "art": "Art&Design",
   "projects-desc": "以下是我参与/制作的一些项目。把鼠标放在各个项目面板上时会播放动图。",
   "about": "关于我",
   "galleries": "展览室",
@@ -24,6 +28,9 @@
   "lovelights-name": "Lovelights",
   "lovelights-desc": "LOVE2d引擎的高度图2D光照系统",
   "lovelights-github": "Github Repo",
+  "vl-name": "体积光",
+  "vl-desc": "Unity体积光容量",
+  "vl-github": "Github Repo",
   "solo": "单干",
   "lang-switch": "<li class=\"clickable button\" onclick=\"fetchDynatext('en')\">EN / 中文</li>"
 }
