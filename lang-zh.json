@@ -32,12 +32,17 @@
   "vl-desc": "Unity体积光容量",
   "vl-github": "Github Repo",
   "sp-name": "Shader-Practice",
-  "sp-desc": "练习Shader，但是一开始不准参考其他人的做法。完成后对比reference，探讨自己摸索的方法与reference之间的优劣之处。",
+  "sp-desc": "练习Shader，但是一开始不准参考其他人的做法。完成后再对比reference，探讨自己摸索的方法与reference之间的优劣之处。",
   "sp-github": "Github Repo",
   "lss-name": "激光实验室",
   "lss-desc": "游戏《Tower Unite》中的激光投影仪shader。受制作者及不少玩家青睐。",
   "lss-forum": "Forum Post",
   "lss-github": "Github Repo",
+  "ros-name": "Molten Corps",
+  "ros-desc": "使用AR技术，让废弃的炼铁厂重现当年的光辉及黑暗。",
+  "ros-etc": "项目网站",
+  "ros": "Rivers of Steel官网",
+  "ros-member": "<b>网络程序&技美: 黎书行</b>\n<br/> 3D模型: Sheenu You\n<br/> 声效设计: 曹添翼\n<br/> AR程序: 朱煜\n</p>",
   "solo": "单干",
   "lang-switch": "<li class=\"clickable button\" onclick=\"fetchDynatext('en')\">EN / 中文</li>"
 }

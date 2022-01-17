@@ -38,6 +38,11 @@
   "lss-desc": "Laser projector codes for the game Tower Unite. Enjoyed by quite a few players. ",
   "lss-forum": "Forum Post",
   "lss-github": "Github Repo",
+  "ros-name": "Molten Corps",
+  "ros-desc": "Reanimate abandoned metal behemoths with augmented reality, in hope for the Carrie Furnace to relive its glory and dark days.",
+  "ros-etc": "Project Website",
+  "ros": "Rivers of Steel Homepage",
+  "ros-member": "<b>Network Programmer & Tech-Art: Shuxing Li</b>\n<br/> 3D Modeling: Sheenu You\n<br/> Sound Design: Tianyi Cao\n<br/> AR Programmer: Yu Zhu\n</p>",
   "solo": "Solo Project",
   "lang-switch": "<li class=\"clickable button\" onclick=\"fetchDynatext('zh')\">EN / 中文</li>"
 }
