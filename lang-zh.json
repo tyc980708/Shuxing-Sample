@@ -1,7 +1,7 @@
 {
   "greetings": "你好，我是<span class=\"pink\">黎书行。</span>",
   "greetings-desc": "游戏是你我最值得信赖的好朋友。",
-  "projects": "项目",
+  "projects": "Technical",
   "technical": "Technical",
   "technical-art": "Tech-Art",
   "design": "Design",
@@ -31,6 +31,13 @@
   "vl-name": "体积光",
   "vl-desc": "Unity体积光容量",
   "vl-github": "Github Repo",
+  "sp-name": "Shader-Practice",
+  "sp-desc": "练习Shader，但是一开始不准参考其他人的做法。完成后对比reference，探讨自己摸索的方法与reference之间的优劣之处。",
+  "sp-github": "Github Repo",
+  "lss-name": "激光实验室",
+  "lss-desc": "游戏《Tower Unite》中的激光投影仪shader。受制作者及不少玩家青睐。",
+  "lss-forum": "Forum Post",
+  "lss-github": "Github Repo",
   "solo": "单干",
   "lang-switch": "<li class=\"clickable button\" onclick=\"fetchDynatext('en')\">EN / 中文</li>"
 }
