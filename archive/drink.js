@@ -1,7 +1,7 @@
 
-import {GLTFLoader} from "./modules/GLTFLoader.js";
+import {GLTFLoader} from "../modules/GLTFLoader.js";
 //import {OrbitControls} from "./modules/OrbitControlsMod.js";
-import * as THREE from "./modules/three.module.js"
+import * as THREE from "../modules/three.module.js"
 
 //Just too lazy to store it elsewhere
 const PATH_TO_MODEL = "models/";
