@@ -28,3 +28,8 @@ function init() {
     }
   }, 100);
 }
+
+function update() {
+
+  requestAnimationFrame(update);
+}
