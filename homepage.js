@@ -22,8 +22,8 @@ function init() {
   setInterval(function() {
     let randomIndex = Math.floor(Math.random() * randomLoadText.length);
     timeElapsed += 0.15;
-    document.getElementById("loadtext").innerHTML = randomLoadText[randomIndex];
-    if(timeElapsed >= 1.5) {
+    document.getElementById("loadtext").innerHTML = randomLoadText[randomIndex].toUpperCase();
+    if(timeElapsed >= 1.0) {
       document.getElementById("loadtext").innerHTML = loadedText;
     }
   }, 100);
