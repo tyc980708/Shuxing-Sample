@@ -9,7 +9,7 @@ h1 {
     font-variation-settings: 'wght' 90, 'wdth' 150, 'ital' 0;
     font-size: 4em;
     letter-spacing: -4px;
-    color: #AA0000;
+    color: #d30049;/*#AA0000;*/
 }
 
 h4 {
@@ -24,11 +24,22 @@ h4 {
     text-align: right;
     font-size: 1.2em;
     color: #fff;
-    background-color:#AA0000;
+    background-color:#d30049;
 }
 
 div.title {
+
     text-align: center;
     width: fit-content;
     margin: 0 auto;
+}
+
+div.center {
+    margin: 0 auto;
+}
+
+#myVideo {
+    position: fixed;
+    top: 0;
+    min-height: 100%;
 }
