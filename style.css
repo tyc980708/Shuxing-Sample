@@ -18,13 +18,13 @@ h4 {
     margin-left: 3px;
     margin-right: -3px;
     padding: 5px 5px;
-    font-family: 'WhirlyBirdieVariable', sans-serif;
-    font-variation-settings: 'wght' 60, 'wdth' 150, 'ital' 0;
+    font-family: futura-pt, sans-serif;
+    font-weight: 400;
     letter-spacing: 2px;
     text-align: right;
     font-size: 1.2em;
     color: #fff;
-    background-color:#d30049;
+    background-color: #d30049;
 }
 
 div.title {
@@ -42,4 +42,26 @@ div.center {
     position: fixed;
     top: 0;
     min-height: 100%;
+}
+
+.vertical-menu {
+    width: 200px;
+}
+
+.vertical-menu a {
+    color: #d30049;
+    display: block;
+    padding: 5px;
+    margin-top: 3px;
+    font-family: futura-pt, sans-serif;
+    text-align: right;
+    font-size: 1.2em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #d30049;
+    color: #fff;
 }
