@@ -45,7 +45,8 @@ div.center {
 }
 
 .vertical-menu {
-    width: 200px;
+    width: auto;
+    margin-left: 30vw;
 }
 
 .vertical-menu a {
@@ -65,3 +66,47 @@ div.center {
     background-color: #d30049;
     color: #fff;
 }
+
+.button06 {
+    overflow: hidden;
+}
+.button06::before {
+    right: auto;
+    bottom: auto;
+    width: 120%;
+    height: 100%;
+    transform-origin: left top;
+    transform: skewX(-30deg) scale(0, 1);
+}
+.button06:hover::before {
+    transform-origin: right top;
+    transform: skewX(-30deg) scale(1, 1);
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    padding: .8em 4em;
+
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+}
+.button::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    content: '';
+    background: #a30029;
+    transition: transform .3s;
+}
+.button:hover {
+    color: #fff;
+}
+
