@@ -1,7 +1,3 @@
-@font-face {
-    font-family: WhirlyBirdieVariable;
-    src: url("font_embed/WhirlyBirdieGX.ttf");
-}
 
 h1 {
     font-family: 'WhirlyBirdieVariable', sans-serif;
@@ -18,7 +14,7 @@ h4 {
     margin-left: 3px;
     margin-right: -3px;
     padding: 5px 5px;
-    font-family: futura-pt, sans-serif;
+    font-family: 'Miriam Libre', sans-serif;
     font-weight: 400;
     letter-spacing: 2px;
     text-align: right;
@@ -54,7 +50,7 @@ div.center {
     display: block;
     padding: 5px;
     margin-top: 3px;
-    font-family: futura-pt, sans-serif;
+    font-family: 'Miriam Libre', sans-serif;
     text-align: right;
     font-size: 1.2em;
     font-weight: 400;
@@ -89,7 +85,6 @@ div.center {
     padding: .8em 4em;
 
     font-size: 18px;
-    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     text-align: center;
     text-decoration: none;
@@ -110,3 +105,9 @@ div.center {
     color: #fff;
 }
 
+body {
+    background-image: url("archive/bg.png");
+    background-repeat: repeat;
+    padding: 0;
+    margin: 0;
+}

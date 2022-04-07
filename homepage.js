@@ -25,6 +25,7 @@ function init() {
     document.getElementById("loadtext").innerHTML = randomLoadText[randomIndex].toUpperCase();
     if(timeElapsed >= 1.0) {
       document.getElementById("loadtext").innerHTML = loadedText;
+      clearInterval(this);
     }
   }, 100);
 }
