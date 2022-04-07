@@ -1,8 +1,5 @@
 
 h1 {
-    font-family: 'WhirlyBirdieVariable', sans-serif;
-    /*wght - font weight, wdth - font width, ital - italics*/
-    font-variation-settings: 'wght' 90, 'wdth' 150, 'ital' 0;
     font-size: 4em;
     letter-spacing: -4px;
     color: #d30049;/*#AA0000;*/
@@ -110,4 +107,31 @@ body {
     background-repeat: repeat;
     padding: 0;
     margin: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.small {
+    font-size: .8em;
+}
+
+.title {
+    font-family: 'WhirlyBirdieVariable', sans-serif;
+    /*wght - font weight, wdth - font width, ital - italics*/
+    font-variation-settings: 'wght' 90, 'wdth' 150, 'ital' 0;
+}
+
+.subtitle {
+    font-family: 'Miriam Libre', sans-serif;
+}
+
+.copyright {
+    /*leave this at the bottom of hte page*/
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    color: #888;
 }
