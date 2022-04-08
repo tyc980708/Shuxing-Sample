@@ -23,7 +23,7 @@ h4 {
 div.title {
     text-align: center;
     width: fit-content;
-    margin-left: 40px;
+    margin-left: 120px;
     margin-top: 40vh;
     /*margin: 0 auto;*/
 }
@@ -61,10 +61,10 @@ div.center {
     color: #fff;
 }
 
-.button06 {
+.future-button {
     overflow: hidden;
 }
-.button06::before {
+.future-button::before {
     right: auto;
     bottom: auto;
     width: 120%;
@@ -72,7 +72,7 @@ div.center {
     transform-origin: left top;
     transform: skewX(-30deg) scale(0, 1);
 }
-.button06:hover::before {
+.future-button:hover::before {
     transform-origin: right top;
     transform: skewX(-30deg) scale(1, 1);
 }
