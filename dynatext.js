@@ -1,6 +1,16 @@
 let loadedJSON;
 let activeLanguage = "none";
 
+function switchDynatext(){
+    if(activeLanguage === "en"){
+        activeLanguage = "zh";
+    }
+    else{
+        activeLanguage = "en";
+    }
+    fetchDynatext(activeLanguage);
+}
+
 function fetchDynatext(language){
     activeLanguage = language;
     let dynatextDescFile = "lang-" + language + ".json"

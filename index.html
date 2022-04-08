@@ -17,9 +17,12 @@
 <!--on body loaded, run init()-->
 
 <body onload="init()">
-<video autoplay muted loop id="myVideo">
-    <source src="videos/grater_take2.webm" type="video/webm">
-</video>
+<div class="video-container">
+    <video autoplay muted loop id="myVideo">
+        <source src="videos/grater_take2.webm" type="video/webm">
+    </video>
+</div>
+
 <div class="title-container">
     <div class="title">
         <h1 class="title">DEVELOGRATER</h1>
@@ -30,6 +33,7 @@
             <a href="#" class="future-button button dynatext" langdesc="menu-about">ABOUT ME</a>
             <a href="#" class="future-button button dynatext" langdesc="menu-cool">COOL STUFFS</a>
             <a href="#" class="future-button button dynatext" langdesc="menu-games">PLAY MY GAMES!</a>
+            <a href="#" class="future-button button dynatext" onclick="switchDynatext()" langdesc="lang-switch">PLAY MY GAMES!</a>
         </div>
 
     </div>
