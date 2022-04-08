@@ -27,7 +27,8 @@
     bottom: 30px;
     width: 100%;
     text-align: center;
-    color: #888;
+    color: #fff;
+    opacity: 0.5;
 }
 
 body {
