@@ -57,6 +57,20 @@ function updateLoadingText(){
     }, 100);
 }
 
+function visitShowreel(){
+    switch(activeLanguage){
+        case "en":
+            window.location.href = "https://vimeo.com/685028828";
+            break;
+        case "zh":
+            window.location.href = "https://www.bilibili.com/video/BV11Z4y1R7fd";
+            break;
+        default:
+            window.location.href = "https://vimeo.com/685028828";
+            break;
+    }
+}
+
 function update() {
 
   requestAnimationFrame(update);
