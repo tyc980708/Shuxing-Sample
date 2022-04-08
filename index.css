@@ -24,8 +24,13 @@ div.title {
     text-align: center;
     width: fit-content;
     margin-left: 120px;
-    margin-top: 40vh;
-    /*margin: 0 auto;*/
+    padding-top: 40vh;
+}
+
+div.title-container{
+    height: 100vh;
+    margin-top: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
 div.center {
@@ -96,7 +101,7 @@ div.center {
     left: 0;
     z-index: -1;
     content: '';
-    background: #aaa;
+    background: #fff;
     transition: transform .3s;
 }
 .button:hover {
