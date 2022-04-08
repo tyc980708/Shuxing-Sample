@@ -1,12 +1,12 @@
 
 h1 {
-    font-size: 4em;
+    font-size: 3.5em;
     letter-spacing: -4px;
-    color: #fff;/*#d30049;*//*#AA0000;*/
+    color: #ff0000;/*#d30049;*//*#AA0000;*/
 }
 
 h4 {
-    margin-top: -2.5em;
+    margin-top: -2.3em;
     /*padding: 5px 5px;*/
     margin-left: 3px;
     margin-right: -3px;
@@ -16,13 +16,15 @@ h4 {
     letter-spacing: 2px;
     text-align: left;
     font-size: 1.2em;
-    color: #d30049;
-    background-color: #fff;
+    color: #ff0000;
+    /*background-color: #ff0000;*/
 }
 
 div.title {
     text-align: center;
     width: fit-content;
+    margin-left: 40px;
+    margin-top: 40vh;
     /*margin: 0 auto;*/
 }
 
@@ -38,11 +40,11 @@ div.center {
 
 .vertical-menu {
     width: auto;
-    margin-right: 30vw;
+    margin-right: 20vw;
 }
 
 .vertical-menu a {
-    color: #fff;
+    color: #ff0000;
     display: block;
     padding: 5px;
     margin-top: 3px;
@@ -55,8 +57,8 @@ div.center {
 }
 
 .vertical-menu a:hover {
-    background-color: #fff;
-    color: #d30049;
+    background-color: #ff0000;
+    color: #fff;
 }
 
 .button06 {
@@ -98,7 +100,7 @@ div.center {
     transition: transform .3s;
 }
 .button:hover {
-    color: #fff;
+    color: #ff0000;
 }
 
 #myVideo {
