@@ -26,6 +26,7 @@ function init() {
     }
     else{
         fetchDynatext('en');
+        window.location.href = "#?lang=en";
     }
 
 

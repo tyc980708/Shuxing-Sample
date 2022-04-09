@@ -7,8 +7,10 @@ function switchDynatext(){
     }
     else{
         activeLanguage = "en";
+
     }
     fetchDynatext(activeLanguage);
+    window.location.href = "#?lang=" + activeLanguage;
 }
 
 function fetchDynatext(language){
