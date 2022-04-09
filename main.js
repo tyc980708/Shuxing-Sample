@@ -28,7 +28,6 @@ function init() {
         fetchDynatext('en');
     }
     buttonListenMouseHover();
-    updateLoadingText();
 }
 
 function buttonListenMouseHover(){

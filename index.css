@@ -38,12 +38,6 @@ div.center {
     margin: 0 auto;
 }
 
-#myVideo {
-    position: fixed;
-    top: 0;
-    min-height: 100%;
-}
-
 .vertical-menu {
     width: auto;
     margin-right: 20vw;

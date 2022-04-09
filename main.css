@@ -1,0 +1,71 @@
+
+h1 {
+    font-size: 3.5em;
+    letter-spacing: -4px;
+    color: #ff0000;/*#d30049;*//*#AA0000;*/
+    text-align: left;
+}
+
+h4 {
+    margin-top: -2.8em;
+    /*padding: 5px 5px;*/
+    margin-left: 3px;
+    margin-right: -3px;
+    padding: 5px 5px;
+    font-family: 'Miriam Libre', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: left;
+    font-size: 1.2em;
+    color: #ff0000;
+    /*background-color: #ff0000;*/
+}
+
+p {
+    font-family: 'Miriam Libre', sans-serif;
+    font-weight: 400;
+    text-align: left;
+    font-size: 1em;
+    color: #ffffff;
+    opacity: 0.75;
+    margin-top: -0.75em;
+    /*background-color: #ff0000;*/
+}
+
+div.content {
+    /*text-align: center;*/
+    width: fit-content;
+    margin-left: 120px;
+}
+
+section.container {
+    height: 50vh;
+
+    display: flex;
+}
+
+section.gradient {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+}
+
+section.filler {
+    height: 50vh;
+    margin-top: 0;
+}
+
+div.center {
+    margin: 0 auto;
+}
+
+#myVideo {
+    z-index: -1;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+
+    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+    width: auto;
+    height: auto;
+}
