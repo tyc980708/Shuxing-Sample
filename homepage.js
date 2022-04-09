@@ -82,7 +82,7 @@ function visitShowreel(){
 }
 
 function visitOldPortfolio(){
-    window.location.href = "https://alligrater.github.io/archive/index.html?lang=" + activeLanguage;
+    window.location.href = "main.html?lang=" + activeLanguage;
 }
 
 function update() {
