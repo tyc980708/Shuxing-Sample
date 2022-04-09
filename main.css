@@ -13,7 +13,7 @@ h4 {
     margin-right: -3px;
     padding: 5px 5px;
     font-family: 'Miriam Libre', sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 2px;
     text-align: left;
     font-size: 1.2em;
@@ -25,10 +25,11 @@ p {
     font-family: 'Miriam Libre', sans-serif;
     font-weight: 400;
     text-align: left;
-    font-size: 1.1em;
+    font-size: 1.05em;
     color: #ffffff;
     opacity: 0.75;
     margin-top: -0.75em;
+
     /*background-color: #ff0000;*/
 }
 
@@ -98,24 +99,37 @@ div.projects-container {
 
 }
 
-div.projects-content {
-    position: relative;
-    background-color: #fafafa;
-    height: available;
-    box-shadow: 0px 5px 15px #33333333;
-    margin: 6px;
-    border: 1px solid #ffffffaa;
-    transition: 0.1s;
-}
-
-
-div.projects-content:hover {
-    transform: translateY(-3px);
-}
-
 div.image-container {
     padding: 0;
     margin: 0;
+}
+
+div.project-block {
+    display: flex;
+    /*background-color: #ddd;*/
+}
+
+h5.project-title {
+    font-size: 1.3em;
+    color: #f00;
+    text-align: left;
+    font-family: 'Miriam Libre', sans-serif;
+    font-weight: 550;
+    /*background-color: #f00;*/
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+
+div.project-desc {
+    padding-left: 25px;
+    /*background-color: #d81159;*/
+    background-image: linear-gradient(to right, rgba(64, 0, 0, 1), rgba(32, 0, 0, 0.9), rgba(32, 0, 0, 0));
+    transform: skewX(-15deg) scale(1, 1) translate(-25px, 0px);
+}
+
+div.project-desc-child {
+    transform: skewX(15deg) scale(1, 1);
 }
 
 

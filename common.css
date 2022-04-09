@@ -47,6 +47,11 @@ body {
     margin: 0;
 }
 
+::selection {
+    background-color: #f00;
+    color: #000;
+}
+
 /* Works on Firefox */
 * {
     scrollbar-width: thin;
