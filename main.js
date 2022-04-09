@@ -18,6 +18,7 @@ function init() {
     //set the text randomly
     //every 0.5 seconds
     //for a total of 2 seconds.
+    boxProjects();
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const defaultLang = urlParams.get('lang')
@@ -27,6 +28,7 @@ function init() {
     else{
         fetchDynatext('en');
     }
+
     buttonListenMouseHover();
 }
 
@@ -75,6 +77,52 @@ function visitShowreel(){
         default:
             window.location.href = "https://vimeo.com/685028828";
             break;
+    }
+}
+
+
+function boxProjects(){
+    let projectContainers = document.getElementsByClassName("projects-content")
+    console.log(projectContainers)
+    for(let i = 0; i < projectContainers.length; i++){
+        let container = projectContainers.item(i)
+        let animatedImages = container.getElementsByClassName("animate")
+        for(let j = 0; j < animatedImages.length; j++){
+            let image = animatedImages.item(j)
+            image.classList.add("hidden")
+            //image.classList.remove("hidden")
+        }
+        let staticImages = container.getElementsByClassName("static")
+
+        container.addEventListener("mouseenter", ()=>{
+            for(let j = 0; j < animatedImages.length; j++){
+                let image = animatedImages.item(j)
+                if(image.classList.contains("hidden")){
+                    image.classList.remove("hidden")
+                    //image.src = image.src
+                }
+
+                //image.classList.remove("hidden")
+            }
+            for(let j = 0; j < staticImages.length; j++){
+                let image = staticImages.item(j)
+                image.classList.add("hidden")
+                //image.classList.remove("hidden")
+            }
+        })
+
+        container.addEventListener("mouseleave", ()=>{
+            for(let j = 0; j < animatedImages.length; j++){
+                let image = animatedImages.item(j)
+                image.classList.add("hidden")
+                //image.classList.remove("hidden")
+            }
+            for(let j = 0; j < staticImages.length; j++){
+                let image = staticImages.item(j)
+                image.classList.remove("hidden")
+                //image.classList.remove("hidden")
+            }
+        })
     }
 }
 

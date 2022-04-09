@@ -20,7 +20,22 @@ function init(){
 	
 	//Attach listeners to each of the divs:
 
+    boxProjects();
 
+
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const defaultLang = urlParams.get('lang')
+    if(defaultLang === 'en' || defaultLang === 'zh') {
+        fetchDynatext(defaultLang);
+    }
+    else{
+        fetchDynatext('en');
+    }
+}
+
+function boxProjects(){
     let projectContainers = document.getElementsByClassName("projects-content")
     console.log(projectContainers)
     for(let i = 0; i < projectContainers.length; i++){
@@ -62,18 +77,6 @@ function init(){
                 //image.classList.remove("hidden")
             }
         })
-    }
-
-
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const defaultLang = urlParams.get('lang')
-    console.log("DFL" + defaultLang);
-    if(defaultLang === 'en' || defaultLang === 'zh') {
-        fetchDynatext(defaultLang);
-    }
-    else{
-        fetchDynatext('en');
     }
 }
 
