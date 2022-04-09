@@ -39,6 +39,7 @@ div.content {
 }
 
 div.filler {
+    padding-top: 20vh;
     width: 100%;
 }
 
@@ -51,6 +52,8 @@ section.container {
 
 section.gradient {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    height: fit-content;
+    padding-bottom: 10vh;
 }
 
 section.filler {
