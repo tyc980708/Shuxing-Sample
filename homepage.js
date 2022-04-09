@@ -18,7 +18,17 @@ function init() {
     //set the text randomly
     //every 0.5 seconds
     //for a total of 2 seconds.
-    fetchDynatext("en")
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const defaultLang = urlParams.get('lang')
+    if(defaultLang === 'en' || defaultLang === 'zh') {
+        fetchDynatext(defaultLang);
+    }
+    else{
+        fetchDynatext('en');
+    }
+
+
     buttonListenMouseHover();
     updateLoadingText();
 }
@@ -69,6 +79,10 @@ function visitShowreel(){
             window.location.href = "https://vimeo.com/685028828";
             break;
     }
+}
+
+function visitOldPortfolio(){
+    window.location = "https://alligrater.github.io/archive/index.html?lang=" + activeLanguage;
 }
 
 function update() {

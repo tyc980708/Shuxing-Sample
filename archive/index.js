@@ -65,7 +65,16 @@ function init(){
     }
 
 
-    fetchDynatext("en")
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const defaultLang = urlParams.get('lang')
+    console.log("DFL" + defaultLang);
+    if(defaultLang === 'en' || defaultLang === 'zh') {
+        fetchDynatext(defaultLang);
+    }
+    else{
+        fetchDynatext('en');
+    }
 }
 
 function fetchDynatext(language){
