@@ -4,5 +4,8 @@
   "menu-cool": "GITHUB",
   "menu-games": "游戏",
   "lang-switch": "语言: EN / 中文",
-  "embed-video": "<iframe src=\"//player.bilibili.com/player.html?aid=381523107&bvid=BV11Z4y1R7fd&cid=515022709&page=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" width=\"640\" height=\"640\" framespacing=\"0\" allowfullscreen=\"true\"> </iframe>"
+  "embed-video": "<iframe src=\"//player.bilibili.com/player.html?aid=381523107&bvid=BV11Z4y1R7fd&cid=515022709&page=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" width=\"640\" height=\"640\" framespacing=\"0\" allowfullscreen=\"true\"> </iframe>",
+  "whois-subtitle": "我是谁",
+  "showreel-subtitle": "作品展示",
+  "contact-subtitle": "联系方式"
 }

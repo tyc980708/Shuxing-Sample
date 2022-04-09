@@ -4,5 +4,8 @@
   "menu-cool": "GITHUB",
   "menu-games": "PLAY MY GAMES",
   "lang-switch": "LANGUAGE: EN / 中文",
-  "embed-video": "<iframe src=\"https://player.vimeo.com/video/685028828?h=32d13e5635\" width=\"640\" height=\"640\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen></iframe>"
+  "embed-video": "<iframe src=\"https://player.vimeo.com/video/685028828?h=32d13e5635\" width=\"640\" height=\"640\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen></iframe>",
+  "whois-subtitle": "SHUXING LI",
+  "showreel-subtitle": "IN CASE YOU MISSED IT...",
+  "contact-subtitle": "CHIT CHAT, JOBS, SEND ME ANYTHING."
 }
