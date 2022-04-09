@@ -8,7 +8,21 @@
   "whois-subtitle": "我是谁",
   "showreel-subtitle": "作品展示",
   "contact-subtitle": "联系方式",
+  "projects-subtitle": "过往项目",
   "work-email": "学校: shuxingl@andrew.cmu.edu",
   "personal-email": "私人: alligrater@outlook.com",
-  "phone-number": "电话: +86 13662547407"
+  "phone-number": "电话: +86 13662547407",
+  "whois-content": "我是黎书行，一个热爱用代码作画的学生。目前在卡耐基梅隆大学攻读娱乐技术。自从接触了图形学之后，我对技术美术方向产生了浓厚的兴趣，并且开始深入钻研相关的技术。 <br/><br/> 你可以在背景的电视里，或者在《作品展示》一节中的嵌入视频里看到我用Shader做的一些作品。",
+  "dw-title": "归梦",
+  "dw-role": "前端工程师 & 技术美术",
+  "dw-desc": "填补历史的空缺，重新传述金城公主的故事。",
+  "ros-title": "Molten Corps",
+  "ros-role": "网络工程师 & 技术美术",
+  "ros-desc": "使用AR技术，让废弃的炼铁厂重现当年的光辉及黑暗。",
+  "panacea-title": "Panacea",
+  "panacea-role": "程序",
+  "panacea-desc": "突如其来的变异让整个食物王国的子民们变得有攻击性了！是时候寻找解药，让这些变异的人们恢复自我！",
+  "gsh-title": "节奏寿司店",
+  "gsh-role": "程序",
+  "gsh-desc": "故事围绕着经营赤字的寿司店老板发生。常年光顾寿司店\n的几名熟客，在驾驶的途中，发现自己无论如何也无法离开寿司店所在的公路......"
 }
