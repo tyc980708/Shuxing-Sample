@@ -3,6 +3,7 @@ h1 {
     font-size: 3.5em;
     letter-spacing: -4px;
     color: #ff0000;/*#d30049;*//*#AA0000;*/
+    text-align: left;
 }
 
 h4 {
